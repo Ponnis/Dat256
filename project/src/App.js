@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FarmerInformation name={"hej"} />
+        <FarmerInformation name={"Bästa bondgården"} distance={"20 km"} />
       </div>
     );
   }

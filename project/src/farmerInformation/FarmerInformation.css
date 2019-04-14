@@ -1,9 +1,26 @@
 .FarmerInformation{
     background-color: rgba(2, 117, 31, 0.185);
-    border-color: black;
+    border: 2px solid black;
+    border-radius: 10px;
     width: 40vw;
     height: 100vh;
-    font-size: 20px;
+}
+
+.Pictures{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.FarmerName{
+    font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
     text-align: left;
+    margin-left: 15px;
+}
+
+.DistanceInfo{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
 }

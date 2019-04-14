@@ -6,8 +6,13 @@ class FarmerInformation extends React.Component {
     render() {
         return (
             <div className="FarmerInformation">
-                <img src={require('../farmerInformation/images/exampleFarm.jpg')} />
-                <div>{this.props.name}</div>
+                <img src={require('../farmerInformation/images/exampleFarm.jpg')} className="Pictures"/>
+                <div className="FarmerName">
+                    {this.props.name}
+                </div>
+                <div className="DistanceInfo">
+                    {this.props.distance}
+                </div>
             </div>
         );
     }

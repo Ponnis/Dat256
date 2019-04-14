@@ -1,8 +1,9 @@
 .FarmerInformation{
-    background-color: aliceblue;
+    background-color: rgba(2, 117, 31, 0.185);
     border-color: black;
-    width: 40%;
-    height: 100%;
-    font-size: 14px;
+    width: 40vw;
+    height: 100vh;
+    font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
+    text-align: left;
 }

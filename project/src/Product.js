@@ -7,7 +7,7 @@ import './App.css'
 class ShoppingItem extends Component{
     constructor(props){
       super(props);
-      
+      this.props.src = props.src;
       this.state={
         clicks: 0,
         show: true,

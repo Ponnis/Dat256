@@ -23,9 +23,6 @@ class Ppp extends Component {
          <Product></Product>
          <Product></Product>
         <p></p>
-        <header className="App-header">
-        
-        </header>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ConfirmationBox from './ConfirmationBox'
+// Test Data API
 import testPurchases from './TestPurchases'
 
 class App extends Component {
@@ -10,12 +11,14 @@ class App extends Component {
     this.state={products: testPurchases, clicked: false}
   }
 
+  //Called when Buy Button is clicked, shows confirm-box
   clickedBuy =()=>{
       this.setState({
           clicked: true
       })
   };
 
+  //Called when "X" is pressed in confirm-box
   clickedClosed=()=>{
       this.setState({
           clicked: false
@@ -26,8 +29,8 @@ class App extends Component {
 
   render() {
 
+      // Renders cBox depending on state
       let cBox = (<div></div>);
-
       if(this.state.clicked){
           cBox = (<ConfirmationBox products={this.state.products} click={this.clickedClosed}/>)
       }
@@ -38,7 +41,6 @@ class App extends Component {
     return (
       <div className="App">
           <button onClick={this.clickedBuy}>Buy</button>
-
           {cBox}
       </div>
     );

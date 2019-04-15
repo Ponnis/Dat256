@@ -3,13 +3,18 @@ import React, { Component } from 'react';
 import tomato from './tomato.jpg';
 import './App.css';
 
-class Ppp extends Component {
+class ShoppingItem extends Component{
   constructor(props){
     super(props);
-    this.state ={
-      clicks:0,
-      show: true
+    
+    this.state={
+      clicks: 0,
+      show: true,
     };
+    this.vars={
+      src:tomato
+    };
+    
   }
   IncrementItem =()=>{
     this.setState({clicks:this.state.clicks +1});
@@ -20,36 +25,37 @@ class Ppp extends Component {
   ConfirmPurchase =()=>{
     //TODO
   }
+  SetSrc =(src)=>{
+    this.setState(this.vars.src=src);
+  }
+  render(){
+    return(
+      <div>
+      <button onClick={this.DecreaseItem}>-</button>
+      <img src={this.vars.src} alt={"kulk"} className="Tomato-logo"></img>
+      <button onClick={this.IncrementItem}>+</button>
+      {this.state.show ?<h2>{this.state.clicks}</h2>:''}
+      <button>köp</button>
+     </div>
+    );
+  }
   
-  clicked(){
-    var amount=0;
-    console.log('Klickeliklick');
-    amount++;
+}
+
+class Ppp extends Component {
+  constructor(props){
+    super(props);
+    
   }
   render() {
     
     return (
-        
-        <div className="App">
-        <button onClick ={this.IncrementItem}>+</button>
-        <button onClick ={this.DecreaseItem}>-</button>
-        <button onClick ={this.ConfirmPurchase}>KÖP</button>
-        <img src={tomato} className="Tomato-logo"></img>
        
-        {this.state.show ? <h2>{this.state.clicks}</h2>:''}
-        
-        <variable onClick ={this.clicked}>tomater</variable>
+        <div className="App">
+         <ShoppingItem></ShoppingItem>
         <p></p>
         <header className="App-header">
-          
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          Rubrikjävl
         </header>
       </div>
     );

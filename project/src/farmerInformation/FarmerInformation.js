@@ -6,7 +6,7 @@ class FarmerInformation extends React.Component {
     render() {
         return (
             <div className="FarmerInformation">
-                <img src={require('../farmerInformation/images/exampleFarm.jpg')} className="Pictures"/>
+                <img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>
                 <div className="FarmerName">
                     {this.props.farmer.name}
                 </div>

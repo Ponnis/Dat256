@@ -4,17 +4,13 @@ import './App.css';
 import ConfirmationBox from './ConfirmationBox'
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
-import farmers from './farmerInformation/Farmers'
+import { getFarmerById } from './farmerInformation/Farmers'
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state={farmer: farmers}
-  }
   render() {
     return (
       <div className="App">
-        <FarmerInformation farmer={this.state.farmer} />
+        <FarmerInformation farmer={getFarmerById(0)} />
       </div>
     );
   }

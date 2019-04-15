@@ -1,0 +1,51 @@
+.FarmerInformation{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vw;
+    min-width: 250px;
+    height: 100vh;
+}
+
+.Pictures{
+    border-radius: 50%;
+    border: 2px solid green;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.FarmerName{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.DistanceInfo{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.Description{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.Button {
+    margin: 30px;
+    font-size: 18px;
+    height: 65px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: rgb(24, 124, 54);
+     cursor: pointer;
+   }

@@ -4,6 +4,8 @@ import './App.css';
 import ConfirmationBox from './ConfirmationBox'
 // Test Data API
 import testPurchases from './TestPurchases'
+import FarmerInformation from './farmerInformation/FarmerInformation'
+import { getFarmerById } from './farmerInformation/Farmers'
 
 class App extends Component {
   constructor(){
@@ -42,6 +44,7 @@ class App extends Component {
       <div className="App">
           <button onClick={this.clickedBuy}>Buy</button>
           {cBox}
+        <FarmerInformation farmer={getFarmerById(1)} />
       </div>
     );
   }

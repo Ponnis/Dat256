@@ -11,11 +11,11 @@ const farmers = [{"id": 0,
 
 function getFarmerById(id){
     let f;
-    for(let i = 0; i < farmers.length; i++) {
-        if(farmers[i].id === id){
-            f = farmers[i]
+    farmers.forEach(farmer => {
+        if(farmer.id === id){
+            f = farmer
         }
-    }
+    });
     return f;
 };
 

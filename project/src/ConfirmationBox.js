@@ -8,7 +8,6 @@ class ConfirmationBox extends React.Component {
         return( 
         <div className= "ConfirmationBox">
             <div className="CloseIconPage"><CloseIconPage/></div>
-            
             {products}
         </div>
         )

@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <button>Köp</button>
         <ConfirmationBox products={this.state.products}/>
       </div>
     );

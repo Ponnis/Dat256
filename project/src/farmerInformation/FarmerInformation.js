@@ -13,6 +13,9 @@ class FarmerInformation extends React.Component {
                 <div className="DistanceInfo">
                     {this.props.farmer.distance} km
                 </div>
+                <div className="Description">
+                    {this.props.farmer.description}
+                </div>
                 <button className = "Button" onClick = {() => alert("Tack för ditt köp!")}>
                 KÖP
                 </button>

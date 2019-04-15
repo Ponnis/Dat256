@@ -1,3 +1,7 @@
+/**
+ * "farmers" contains all farmers and the information about them.
+ * A farmer consits of a unique ID, name, distance and description.
+ */
 const farmers = [{"id": 0, 
                 "name": "Bästa bondgården", 
                 "distance": 15, 

@@ -9,6 +9,10 @@ const farmers = [{"id": 0,
             ];
 
 
+/**
+ * Finds and returns a farmer by using their unique id.
+ * @param {Farmer's id} id 
+ */
 function getFarmerById(id){
     let f;
     farmers.forEach(farmer => {

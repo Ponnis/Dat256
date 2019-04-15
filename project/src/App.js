@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import tomato from './tomato.jpg';
 import egg from './egg.jpg';
 import './App.css'
-import ShoppingItem from './Product'
+import Product from './Product'
 
 
 class Ppp extends Component {
@@ -16,8 +16,12 @@ class Ppp extends Component {
     return (
        
         <div className="App">
-         <ShoppingItem></ShoppingItem>
-         <ShoppingItem></ShoppingItem>
+         <Product></Product>
+         <Product></Product>
+         <Product></Product>
+         <Product></Product>
+         <Product></Product>
+         <Product></Product>
         <p></p>
         <header className="App-header">
         

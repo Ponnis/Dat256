@@ -38,14 +38,14 @@ class App extends Component {
           cBox = (<ConfirmationBox products={this.state.products} click={this.clickedClosed}/>)
       }
       else{
-          cBox = (<div>Click to show you purchases...</div>)
+          cBox = (<div></div>)
       }
 
     return (
       <div className="App">
-          <button onClick={this.clickedBuy}>Buy</button>
           {cBox}
-        <FarmerInformation farmer={getFarmerById(1)} />
+        <FarmerInformation farmer={getFarmerById(1)} buyClick={this.clickedBuy} />
+
       </div>
     );
   }

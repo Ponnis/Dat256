@@ -23,7 +23,7 @@ class FarmerInformation extends React.Component {
                 </div>
                 <ShoppingItem></ShoppingItem>
                 <ShoppingItem></ShoppingItem>
-                <button className = "Button" onClick = {() => alert("Tack för ditt köp!")}>
+                <button className = "Button" onClick = {this.props.buyClick}>
                 KÖP
                 </button>
             </div>

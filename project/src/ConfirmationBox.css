@@ -1,8 +1,9 @@
 * {/*border: 2px dashed black*/} 
 
 .ConfirmationBox {
-    border: 2px dashed black;
-    background-color:rgb(108, 151, 108);
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:rgb(151, 180, 151);
     text-align: center;
     width: 40%;
     margin: 200px auto;

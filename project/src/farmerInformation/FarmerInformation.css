@@ -7,8 +7,10 @@
 }
 
 .Pictures{
-    border-radius: 20px;
-    width: 100%;
+    border-radius: 50%;
+    border: 2px solid green;
+    width: 70%;
+    margin-top: 10px;
 }
 
 .FarmerName{

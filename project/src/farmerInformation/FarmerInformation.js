@@ -8,10 +8,10 @@ class FarmerInformation extends React.Component {
             <div className="FarmerInformation">
                 <img src={require('../farmerInformation/images/exampleFarm.jpg')} className="Pictures"/>
                 <div className="FarmerName">
-                    {this.props.name}
+                    {this.props.farmer.name}
                 </div>
                 <div className="DistanceInfo">
-                    {this.props.distance}
+                    {this.props.farmer.distance} km
                 </div>
                 <button className = "Button" onClick = {() => alert("Tack för ditt köp!")}>
                 KÖP

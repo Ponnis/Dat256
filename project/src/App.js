@@ -4,16 +4,17 @@ import './App.css';
 import ConfirmationBox from './ConfirmationBox'
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
+import farmers from './farmerInformation/Farmers'
 
 class App extends Component {
   constructor(){
     super()
-    this.state={products: testPurchases}
+    this.state={farmer: farmers}
   }
   render() {
     return (
       <div className="App">
-        <FarmerInformation name={"Bästa bondgården"} distance={"20 km"} />
+        <FarmerInformation farmer={this.state.farmer} />
       </div>
     );
   }

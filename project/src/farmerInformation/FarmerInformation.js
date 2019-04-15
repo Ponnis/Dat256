@@ -1,6 +1,10 @@
 import React from "react";
 import './FarmerInformation.css';
 
+/**
+ * Information box about a farmer.
+ * The box contains a picture, name, distance as well as a short description. 
+ */
 class FarmerInformation extends React.Component {
     state = {}
     render() {

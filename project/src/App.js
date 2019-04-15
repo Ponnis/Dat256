@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FarmerInformation farmer={getFarmerById(1)} />
+        <FarmerInformation farmer={getFarmerById(0)} />
       </div>
     );
   }

@@ -43,8 +43,6 @@ class App extends Component {
 
     return (
       <div className="App">
-          <ShoppingItem></ShoppingItem>
-          <ShoppingItem></ShoppingItem>
           <button onClick={this.clickedBuy}>Buy</button>
           {cBox}
         <FarmerInformation farmer={getFarmerById(1)} />

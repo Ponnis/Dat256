@@ -1,5 +1,6 @@
 import React from "react";
 import './FarmerInformation.css';
+import ShoppingItem from '../Product.js'
 
 /**
  * Information box about a farmer.
@@ -20,6 +21,8 @@ class FarmerInformation extends React.Component {
                 <div className="Description">
                     {this.props.farmer.description}
                 </div>
+                <ShoppingItem></ShoppingItem>
+                <ShoppingItem></ShoppingItem>
                 <button className = "Button" onClick = {() => alert("Tack för ditt köp!")}>
                 KÖP
                 </button>

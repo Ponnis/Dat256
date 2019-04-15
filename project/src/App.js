@@ -6,6 +6,7 @@ import ConfirmationBox from './ConfirmationBox'
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
+import ShoppingItem from './Product'
 
 class App extends Component {
   constructor(){
@@ -42,6 +43,8 @@ class App extends Component {
 
     return (
       <div className="App">
+          <ShoppingItem></ShoppingItem>
+          <ShoppingItem></ShoppingItem>
           <button onClick={this.clickedBuy}>Buy</button>
           {cBox}
         <FarmerInformation farmer={getFarmerById(1)} />

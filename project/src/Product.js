@@ -7,13 +7,13 @@ import './App.css'
 class ShoppingItem extends Component{
     constructor(props){
       super(props);
-      this.props.src = props.src;
       this.state={
         clicks: 0,
         show: true,
       };
       this.vars={
-        src:tomato
+        name:'GenericName',
+        price:'xx$'
       };
       
     }
@@ -26,17 +26,14 @@ class ShoppingItem extends Component{
     ConfirmPurchase =()=>{
       //TODO
     }
-    SetSrc =(src)=>{
-      this.setState(this.vars.src=src);
-    }
     render(){
       return(
         <div>
-        <button onClick={this.DecreaseItem}>-</button>
-        <img src={this.vars.src} alt={"kulk"} className="Tomato-logo"></img>
-        <button onClick={this.IncrementItem}>+</button>
         {this.state.show ?<h2>{this.state.clicks}</h2>:''}
+        <button onClick={this.DecreaseItem}>-</button>
         <button>köp</button>
+        <button onClick={this.IncrementItem}>+</button>
+        
        </div>
       );
     }

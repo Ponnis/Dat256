@@ -1,9 +1,7 @@
-
-
-const items=[{"name":Tomatoes, "price":10},{"name":eggs,"price":14}];
+const items=[{"name":"Tomatoes", "price":10},{"name":"eggs","price":14}];
 
 function getItemByName(name){
-    let f;
+    let i;
     items.forEach(item => {
         if(item.name === name){
             i = item
@@ -12,4 +10,4 @@ function getItemByName(name){
     return i;
 };
 
-module.export.getItemByName =getItemByName;
+module.exports.getItemByName = getItemByName;

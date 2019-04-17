@@ -1,7 +1,6 @@
 import React from "react";
 import './FarmerInformation.css';
 import ShoppingItem from '../Product.js'
-import {getItemByName} from '../Items.js'
 
 /**
  * Information box about a farmer.
@@ -22,7 +21,7 @@ class FarmerInformation extends React.Component {
                 <div className="Description">
                     {this.props.farmer.description}
                 </div>
-                <ShoppingItem item={getItemByName("Tomatoes")}></ShoppingItem>
+                {this.props.farmer.products.map(product => <ShoppingItem item={product}></ShoppingItem>)}
                 <button className = "Button" onClick = {this.props.buyClick}>
                 KÖP
                 </button>

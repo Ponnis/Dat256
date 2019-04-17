@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
           {cBox}
-        <FarmerInformation farmer={getFarmerById(1)} buyClick={this.clickedBuy} />
+        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
 
       </div>
     );

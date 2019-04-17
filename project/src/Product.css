@@ -1,0 +1,31 @@
+.ShoppingItem{
+    border-radius: 2px;
+    width: 10vw;
+    min-width: 50px;
+    height: 15vh;
+    position: relative;
+    padding: 15px;
+}
+.Item{
+    font-size: 14px;
+    font-family: 'Arial', Times, serif;
+    text-align: center;
+}
+.Price{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.Buttons{
+    margin: 0px;
+    font-size: 7px;
+    height: 12px;
+    width: 20px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: rgb(24, 124, 54);
+     cursor: pointer;
+    position: relative;
+   }

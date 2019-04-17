@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css'
+//import './Product.css'
 
 
 
-class ShoppingItem extends Component{
+class ShoppingItem extends React.Component{
     constructor(props){
       super(props);
       this.state={
@@ -23,14 +24,19 @@ class ShoppingItem extends Component{
     }
     render(){
       return(
-        <div>
-        {this.state.show ?<h2>{this.state.clicks}</h2>:''}
-        {this.props.item.name}
-        {this.props.item.price}
-        <button onClick={this.DecreaseItem}>-</button>
-        <button>köp</button>
-        <button onClick={this.IncrementItem}>+</button>
-        
+        <div className="ShoppingItem">
+          <div className="Item">
+            {this.props.item.name}
+          </div>
+          <div className="Price">
+            {this.props.item.price} kr
+          </div>
+          <div className="Buttons">
+            {this.state.show ? <h2>{this.state.clicks}</h2>:''}
+            <button onClick={this.DecreaseItem}>-</button>
+            <button>köp</button>
+            <button onClick={this.IncrementItem}>+</button>
+          </div>
        </div>
       );
     }

@@ -1,7 +1,7 @@
-import React from "react"
+import React from "./node_modules/react"
 import './ConfirmationBox.css';
-import './CloseIconPage.js';
-import CloseIconPage from "./CloseIconPage.js";
+import '../reusableComponents/CloseIconPage.js';
+import CloseIconPage from "../reusableComponents/CloseIconPage.js";
 class ConfirmationBox extends React.Component {
     render() {
         //Array of products mapped to elements which is then rendered

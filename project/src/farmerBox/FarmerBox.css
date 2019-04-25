@@ -1,0 +1,31 @@
+.FarmerBox{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vw;
+    min-width: 250px;
+    height: 15vh;
+}
+
+.FarmerName{
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.DistanceInfo{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.Description{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}

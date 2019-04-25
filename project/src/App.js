@@ -7,6 +7,7 @@ import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
 import ShoppingItem from './Product'
+import FarmerBox from './farmerBox/FarmerBox'
 
 class App extends Component {
   constructor(){
@@ -44,7 +45,8 @@ class App extends Component {
     return (
       <div className="App">
           {cBox}
-        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
+        {/*<FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} /> */}
+        <FarmerBox farmer={getFarmerById(0)}></FarmerBox>
 
       </div>
     );

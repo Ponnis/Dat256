@@ -5,7 +5,7 @@ class FarmerBox extends React.Component {
     state = {}
     render() {
         return (
-            <div className="FarmerBox">
+            <div className="FarmerBox" onClick = {this.props.onClick}>
                 <div className="FarmerName">
                     {this.props.farmer.name}
                 </div>

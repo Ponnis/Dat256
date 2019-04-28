@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ConfirmationBox from './confirmationBox./ConfirmationBox'
+import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
 // Test Data API
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'

@@ -1,0 +1,72 @@
+.Title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: left; 
+}
+
+.Subtitle{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: left; 
+}
+
+.PlainText{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: left; 
+}
+
+.Background{
+    background: rgb(24, 124, 54);
+}
+
+.Box{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 40vw;
+    min-width: 250px;
+    height: 100vh;
+}
+
+.SimpleButton {
+    margin: 20px;
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }
+
+.BuyButton {
+    margin: 20px;
+    font-size: 10px;
+    height: 20px;
+    width: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }
+
+.CloseIconPage {
+    margin: 2px auto;
+    margin-inline-end: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*border: 5px solid red;*/
+}
+
+.Pictures{
+    border-radius: 10%;
+    border: 2px solid green;
+    width: 70%;
+    margin-top: 10px;
+}

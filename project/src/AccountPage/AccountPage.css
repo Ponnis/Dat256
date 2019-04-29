@@ -1,0 +1,11 @@
+.ConfirmationButton{
+    margin: 0px;
+    position: relative;
+    align-self: end;
+}
+
+.PageWrapper{
+    display: grid;
+    justify-items: center;
+
+}

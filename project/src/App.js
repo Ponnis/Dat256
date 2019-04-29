@@ -7,6 +7,7 @@ import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
 import ShoppingItem from './products/Product'
+import CreateAccPage from './AccountPage/CreateAccPage'
 
 class App extends Component {
   constructor(){
@@ -40,11 +41,14 @@ class App extends Component {
       else{
           cBox = (<div></div>)
       }
+      /*
+        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />*/
 
     return (
       <div className="App">
           {cBox}
-        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
+
+          <CreateAccPage/>
       </div>
     );
   }

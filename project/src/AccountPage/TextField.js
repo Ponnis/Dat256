@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './text-input-style.css';
+import './TextField.css';
 
 class TextField extends React.Component {
     constructor(props) {
@@ -23,6 +23,7 @@ class TextField extends React.Component {
         onChange: PropTypes.func,
     };
 static defaultProps = {
+    id:'',
     locked: false,
     focussed: false,
     value: '',
@@ -31,18 +32,27 @@ static defaultProps = {
     predicted: '',
     onChange: () => '',
  };
+
+onChange = async(event) => {
+    const value = event.target.value;
+    await this.setState({value: value});
+    console.log(this.props.id)
+    console.log(this.state.value)
+    this.props.handleChange(this.props.id, this.state.value)
+}
  render() {
     const { focussed, value, error, label } = this.state;
     const { id, type, locked } = this.props;
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className="field">
+      <div className="TextField">
         <input
           id={id}
           type="text"
           value={value}
           placeholder={label}
+          onChange={this.onChange}
         />
       </div>
     );

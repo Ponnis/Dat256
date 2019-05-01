@@ -1,6 +1,7 @@
 import React from "react";
 import './FarmerInformation.css';
 import ShoppingItem from '../Product.js'
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * Information box about a farmer.
@@ -11,6 +12,9 @@ class FarmerInformation extends React.Component {
     render() {
         return (
             <div className="FarmerInformation">
+            <button type="button" class="close" aria-label="Close" onClick = {this.props.onClose}>
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>
                 <div className="FarmerName">
                     {this.props.farmer.name}

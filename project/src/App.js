@@ -8,65 +8,69 @@ import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
 import ShoppingItem from './Product'
 import FarmerBox from './farmerBox/FarmerBox'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={products: testPurchases, clicked: false,farmerInformation: false,farmerID: 0}
+    this.state = { products: testPurchases, clicked: false, farmerInformation: false, farmerID: 0 }
   }
 
   //Called when Buy Button is clicked, shows confirm-box
-  clickedBuy =()=>{
-      this.setState({
-          clicked: true
-      })
+  clickedBuy = () => {
+    this.setState({
+      clicked: true
+    })
   };
 
   //Called when "X" is pressed in confirm-box
-  clickedClosed=()=>{
-      this.setState({
-          clicked: false
-      })
+  clickedClosed = () => {
+    this.setState({
+      clicked: false
+    })
   };
 
-  //Called when Buy Button is clicked, shows confirm-box
-  clickedOpenFarmerInformation(id){
+  //Farmer state gets updated
+  clickedOpenFarmerInformation(id) {
     this.setState({
-      farmerInformation: true,
-      farmerID: id
-    })
-};
+      farmerID: id,
+      farmerInformation: true
+    });
+  };
 
-//Called when "X" is pressed in confirm-box
-clickedCloseFarmerInformation=()=>{
+  //Farmer state gets updated
+  clickedCloseFarmerInformation = () => {
     this.setState({
       farmerInformation: false
     })
-};
-
+  };
 
 
   render() {
 
-      // Renders cBox depending on state
-      let cBox = (<div></div>);
-      if(this.state.clicked){
-          cBox = (<ConfirmationBox products={this.state.products} click={this.clickedClosed}/>)
-      }
-      else{
-          cBox = (<div></div>)
-      }
- 
-    return (
-      <div className="App">
-          {cBox}
-        {/*<FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} /> */}
-        <FarmerBox farmer={getFarmerById(0)} onClick ={() => this.clickedOpenFarmerInformation(0)}/>
-        <FarmerBox farmer={getFarmerById(1)} onClick ={() => this.clickedOpenFarmerInformation(1)}/>
+    // Renders cBox depending on state
+    let cBox = (<div></div>);
+    if (this.state.clicked) {
+      cBox = (<ConfirmationBox products={this.state.products} click={this.clickedClosed} />)
+    }
+    else {
+      cBox = (<div></div>)
+    }
 
-      {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy}/>: <div></div>}
-      </div>
-      
+    return (
+      <Container fluid={true}>
+        <Row noGutters={true}>
+          <Col xs={"auto"}>
+            <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />
+            <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
+          </Col>
+          <Col xs={"auto"}>{this.state.farmerInformation ?
+            <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} /> : <div></div>}
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

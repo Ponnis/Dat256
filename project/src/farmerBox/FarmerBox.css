@@ -29,3 +29,15 @@
     margin-right: 15px;
     margin-top: 10px;
 }
+
+.Icon{
+    margin-top: 3px;
+    margin-left: 15px;
+    height: 10%;
+    width: 5%;
+}
+
+.IconBox{
+    display: flex;
+    justify-content: left;
+}

@@ -5,6 +5,7 @@
 const farmers = [{"id": 0, 
                 "name": "Bästa bondgården", 
                 "distance": 15, 
+                "rating": "two",
                 "types": [
                     {"type": "egg"},
                     {"type": "sheep"},
@@ -19,6 +20,7 @@ const farmers = [{"id": 0,
                 {"id": 1, 
                 "name": "Djurens bondgård", 
                 "distance": 27, 
+                "rating": "five",
                 "types": [
                     {"type": "bread"},
                     {"type": "meat"},

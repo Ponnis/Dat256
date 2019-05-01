@@ -41,3 +41,10 @@
     display: flex;
     justify-content: left;
 }
+
+.Stars{
+    margin-top: 3px;
+    margin-left: 75%;
+    height: 10%;
+    width: 20%;
+}

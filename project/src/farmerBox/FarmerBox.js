@@ -6,6 +6,7 @@ class FarmerBox extends React.Component {
     render() {
         return (
             <div className="FarmerBox" onClick = {this.props.onClick}>
+                <img src={require('../farmerInformation/images/stars/' + this.props.farmer.rating + '.png')} className="Stars"/>
                 <div className="FarmerName">
                     {this.props.farmer.name}
                 </div>

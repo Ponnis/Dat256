@@ -11,6 +11,7 @@ import FarmerBox from './farmerBox/FarmerBox'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
+import { List } from 'react-virtualized';
 
 class App extends Component {
   constructor() {
@@ -59,12 +60,24 @@ class App extends Component {
       cBox = (<div></div>)
     }
 
+    const list = [
+      <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />,
+      <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
+    ];
+
+    function rowRenderer ({index}) {return (list[index])}
+
     return (
       <Container fluid={true}>
         <Row noGutters={true}>
           <Col xs={"auto"}>
-            <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />
-            <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
+         <List
+    width={600}
+    height={300}
+    rowCount={list.length}
+    rowHeight={200}
+    rowRenderer={rowRenderer}
+  />,
           </Col>
           <Col xs={"auto"}>{this.state.farmerInformation ?
             <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} /> : <div></div>}

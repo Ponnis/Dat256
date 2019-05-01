@@ -20,7 +20,10 @@ const farmers = [{"id": 0,
                 "name": "Djurens bondgård", 
                 "distance": 27, 
                 "types": [
-                    {"type": "fish"}
+                    {"type": "bread"},
+                    {"type": "meat"},
+                    {"type": "milk"},
+                    {"type": "fruit"}
                 ],
                 "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
                 "products": [

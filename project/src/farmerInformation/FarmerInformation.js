@@ -1,6 +1,6 @@
 import React from "react";
 import './FarmerInformation.css';
-import ShoppingItem from '../Product.js'
+import ShoppingItem from '../products/Product.js'
 
 /**
  * Information box about a farmer.

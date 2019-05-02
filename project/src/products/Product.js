@@ -1,5 +1,5 @@
-import React, { Component } from './node_modules/react';
-import './App.css'
+import React, { Component } from 'react';
+import '../App.css'
 //import './Product.css'
 
 

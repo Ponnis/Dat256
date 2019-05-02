@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ConfirmationBox from './ConfirmationBox'
+import ConfirmationBox from './confirmationBox/ConfirmationBox'
 // Test Data API
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
-import ShoppingItem from './Product'
+
 
 class App extends Component {
   constructor(){

@@ -67,20 +67,21 @@ class App extends Component {
 
     function rowRenderer ({index}) {return (list[index])}
 
+    let w = (this.props.width);
     return (
       <Container fluid={true}>
         <Row noGutters={true}>
           <Col xs={"auto"}>
          <List
-    width={600}
+    width={550}
     height={300}
     rowCount={list.length}
     rowHeight={200}
     rowRenderer={rowRenderer}
   />,
           </Col>
-          <Col xs={"auto"}>{this.state.farmerInformation ?
-            <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} /> : <div></div>}
+          <Col xs={"auto"}>
+            {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} /> : <div></div>}
           </Col>
         </Row>
       </Container>

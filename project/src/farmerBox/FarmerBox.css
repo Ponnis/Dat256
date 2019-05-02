@@ -4,7 +4,7 @@
     border-radius: 10px;
     width: 40vw;
     min-width: 250px;
-    height: 25vh;
+    height: auto;
 }
 
 .FarmerName{
@@ -44,7 +44,6 @@
 
 .Stars{
     margin-top: 3px;
-    margin-left: 75%;
-    height: 10%;
-    width: 20%;
+    margin-left: 72%;
+    width: 23%;
 }

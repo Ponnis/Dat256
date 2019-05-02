@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "./TextField.js"
 import AccountPage from "./AccountPage.css"
 
+
 class CreateAccPage extends React.Component{
     constructor(){
         super()
@@ -10,7 +11,10 @@ class CreateAccPage extends React.Component{
             firstName:"",
             surName:"",
             email:"",
-            password:""}
+            password:"",
+            confirmPassword:"", 
+            valid: false}
+
     }
 
     handleChange=(id,value)=>{
@@ -40,12 +44,35 @@ class CreateAccPage extends React.Component{
                     password: value
                 })
                 break;
+             case"confirmPassword":
+                this.setState({
+                    confirmPassword: value
+                })
+                break;    
 
+        }
+        this.checkPassword()
+    }
+
+    checkPassword= ()=>{
+        if (this.state.password!==this.state.confirmPassword){
+        console.log ("lösenorden matchar inte")
+        this.setState({valid: false});
+        }
+        else{
+        this.setState({valid: true});
         }
     }
 
     confirm=()=>{
-        alert(JSON.stringify(this.state))
+        if(this.state.valid){
+            alert("Create account successfull "+JSON.stringify(this.state))
+        }
+        else{
+            alert("Incorrect Information")
+        }
+        
+    
     }
 
 
@@ -58,7 +85,7 @@ class CreateAccPage extends React.Component{
                     <TextField label={"First Name"} id={"firstName"} handleChange={this.handleChange}/>
                     <TextField label={"Surname"} id={"surName"} handleChange={this.handleChange}/>
                     <TextField label={"Email"} id={"email"} handleChange={this.handleChange}/>
-                    <TextField label={"Password"} id={"password"} handleChange={this.handleChange}/>
+                    <TextField label={"Password"} id={"password"} handleChange={this.handleChange} />
                     <TextField label={"Confirm Password"} id={"confirmPassword"} handleChange={this.handleChange}/>
                 </div>
                 <div className="ConfirmationButton">

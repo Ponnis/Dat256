@@ -88,7 +88,7 @@ class CreateAccPage extends React.Component{
                     <TextField label={"Password"} id={"password"} handleChange={this.handleChange} />
                     <TextField label={"Confirm Password"} id={"confirmPassword"} handleChange={this.handleChange}/>
                 </div>
-                <div className="ConfirmationButton">
+                <div className="SimpleButton">
                     <button onClick={this.confirm}>Create account</button>
                 </div>
             </div>

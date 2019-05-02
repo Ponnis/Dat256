@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import ConfirmationBox from './confirmationBox/ConfirmationBox'
+=======
+import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
+>>>>>>> createAccount
 // Test Data API
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
+<<<<<<< HEAD
 
+=======
+import ShoppingItem from './products/Product'
+import CreateAccPage from './AccountPage/CreateAccPage'
+>>>>>>> createAccount
 
 class App extends Component {
   constructor(){
@@ -40,12 +49,14 @@ class App extends Component {
       else{
           cBox = (<div></div>)
       }
+      /*
+        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />*/
 
     return (
       <div className="App">
           {cBox}
-        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
 
+          <CreateAccPage/>
       </div>
     );
   }

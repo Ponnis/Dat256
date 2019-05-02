@@ -2,6 +2,7 @@ import React from "react"
 import './ConfirmationBox.css';
 import '../reusableComponents/CloseIconPage.js';
 import CloseIconPage from "../reusableComponents/CloseIconPage.js";
+
 class ConfirmationBox extends React.Component {
     render() {
         //Array of products mapped to elements which is then rendered

@@ -7,5 +7,6 @@
 .PageWrapper{
     display: grid;
     justify-items: center;
+    background: rgb(125, 179, 141);
 
 }

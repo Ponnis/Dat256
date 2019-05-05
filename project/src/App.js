@@ -12,11 +12,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import { List } from 'react-virtualized';
+import SearchField from "react-search-field"
 
 class App extends Component {
   constructor() {
     super()
-    this.state = { products: testPurchases, clicked: false, farmerInformation: false, farmerID: 0 }
+    this.state = { products: testPurchases, clicked: false, farmerInformation: false, farmerID: 0,search: "" }
   }
 
   //Called when Buy Button is clicked, shows confirm-box
@@ -52,6 +53,21 @@ class App extends Component {
   reRender = () => {
     this.setState({ state: this.state })
   };
+  filterFarmers(list){
+    const newList = [];
+      list.forEach(element => {
+          if(element.farmer.name.includes(this.props.search)){
+            newList.push(element);
+          }
+      });
+      return newList;
+  }
+
+  onChangeBound(value, event) {
+    this.setState({
+      search: value,
+    });
+  }
 
 
   render() {
@@ -70,7 +86,7 @@ class App extends Component {
       <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
     ];
 
-    function rowRenderer ({index}) {return (list[index])}
+    function rowRenderer({ index }) { return (list[index]) }
 
     //Calls reRender when the window's size is changed
     var self = this;
@@ -80,6 +96,11 @@ class App extends Component {
 
     return (
       <Container fluid={true}>
+        <SearchField
+          placeholder="Sök bondgård"
+          onChange = {this.onChangeBound}
+        />
+        <div>{this.state.search}</div>
         <Row noGutters={true}>
           <Col xs={"auto"}>
          <List
@@ -98,6 +119,7 @@ class App extends Component {
     );
   }
 }
+
 
 
 export default App;

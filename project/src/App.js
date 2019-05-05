@@ -48,6 +48,11 @@ class App extends Component {
     })
   };
 
+  //Updates render()
+  reRender = () => {
+    this.setState({ state: this.state })
+  };
+
 
   render() {
 
@@ -67,18 +72,23 @@ class App extends Component {
 
     function rowRenderer ({index}) {return (list[index])}
 
-    let w = (this.props.width);
+    //Calls reRender when the window's size is changed
+    var self = this;
+    window.onresize = function(event) {
+      self.reRender()
+    };
+
     return (
       <Container fluid={true}>
         <Row noGutters={true}>
           <Col xs={"auto"}>
          <List
-    width={550}
-    height={300}
-    rowCount={list.length}
-    rowHeight={200}
-    rowRenderer={rowRenderer}
-  />,
+            width={window.innerWidth*0.4}
+            height={window.innerHeight/2}
+            rowCount={list.length}
+            rowHeight={window.innerHeight/2}
+            rowRenderer={rowRenderer}
+          />
           </Col>
           <Col xs={"auto"}>
             {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} /> : <div></div>}

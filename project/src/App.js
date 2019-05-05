@@ -11,6 +11,8 @@ import { getFarmerById } from './farmerInformation/Farmers'
 
 import ShoppingItem from './products/Product'
 import CreateAccPage from './AccountPage/CreateAccPage'
+import ShoppingCartdud from './shoppingCart/ShoppingCartdud';
+
 
 
 class App extends Component {
@@ -51,8 +53,9 @@ class App extends Component {
     return (
       <div className="App">
           {cBox}
-
+          
           <CreateAccPage/>
+          <ShoppingCartdud/>
       </div>
     );
   }

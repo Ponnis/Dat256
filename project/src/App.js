@@ -53,21 +53,35 @@ class App extends Component {
   reRender = () => {
     this.setState({ state: this.state })
   };
-  filterFarmers(list){
+
+
+  filterFarmers(){
+    const list = [
+      <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />,
+      <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
+    ];
     const newList = [];
+    if(this.state.search == ""){
+      return list;
+    }
+
       list.forEach(element => {
-          if(element.farmer.name.includes(this.props.search)){
+          if(element.props.farmer.name.toLowerCase().includes(this.state.search.toLowerCase())){
             newList.push(element);
           }
       });
       return newList;
   }
 
-  onChangeBound(value, event) {
+  onChangeBound(value) {
     this.setState({
       search: value,
     });
   }
+
+  rowRenderer = ({ index }) => { 
+    return (this.filterFarmers()[index]) 
+  };
 
 
   render() {
@@ -80,14 +94,6 @@ class App extends Component {
     else {
       cBox = (<div></div>)
     }
-
-    const list = [
-      <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />,
-      <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
-    ];
-
-    function rowRenderer({ index }) { return (list[index]) }
-
     //Calls reRender when the window's size is changed
     var self = this;
     window.onresize = function(event) {
@@ -98,7 +104,7 @@ class App extends Component {
       <Container fluid={true}>
         <SearchField
           placeholder="Sök bondgård"
-          onChange = {this.onChangeBound}
+          onChange = {(value) => this.onChangeBound(value)}
         />
         <div>{this.state.search}</div>
         <Row noGutters={true}>
@@ -106,9 +112,9 @@ class App extends Component {
          <List
             width={window.innerWidth*0.4}
             height={window.innerHeight/2}
-            rowCount={list.length}
+            rowCount={this.filterFarmers().length}
             rowHeight={window.innerHeight/2}
-            rowRenderer={rowRenderer}
+            rowRenderer={this.rowRenderer}
           />
           </Col>
           <Col xs={"auto"}>

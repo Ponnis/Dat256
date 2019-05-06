@@ -33,6 +33,48 @@ const farmers = [{"id": 0,
                     {"name":"Eggs","price":14}
                 ]
             },
+                {"id": 2, 
+                "name": "Ellens bondgård", 
+                "distance": 27, 
+                "rating": "five",
+                "types": [
+                    {"type": "bread"},
+                    {"type": "fruit"}
+                ],
+                "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
+                "products": [
+                    {"name":"Bröd", "price":25},
+                    {"name":"Muffins","price":7},
+                    {"name":"Äpplen","price":3}
+                ]
+            },
+                {"id": 3, 
+                "name": "Henriks bondgård", 
+                "distance": 27, 
+                "rating": "four",
+                "types": [
+                    {"type": "meat"},
+                    {"type": "milk"}
+                ],
+                "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
+                "products": [
+                    {"name":"Fläskfilé", "price":100},
+                    {"name":"Oxfilé","price":400},
+                    {"name":"Mjölk","price":12}
+                ]
+            },
+            {"id": 4, 
+                "name": "Göteborgs fårfarm", 
+                "distance": 27, 
+                "rating": "one",
+                "types": [
+                    {"type": "sheep"}
+                ],
+                "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
+                "products": [
+                    {"name":"Lamm", "price":300}
+                ]
+            },
             ];
 
 

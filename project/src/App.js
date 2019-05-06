@@ -58,7 +58,10 @@ class App extends Component {
   filterFarmers(){
     const list = [
       <FarmerBox farmer={getFarmerById(0)} onClick={() => this.clickedOpenFarmerInformation(0)} />,
-      <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />
+      <FarmerBox farmer={getFarmerById(1)} onClick={() => this.clickedOpenFarmerInformation(1)} />,
+      <FarmerBox farmer={getFarmerById(2)} onClick={() => this.clickedOpenFarmerInformation(2)} />,
+      <FarmerBox farmer={getFarmerById(3)} onClick={() => this.clickedOpenFarmerInformation(3)} />,
+      <FarmerBox farmer={getFarmerById(4)} onClick={() => this.clickedOpenFarmerInformation(4)} />
     ];
     const newList = [];
     if(this.state.search == ""){
@@ -111,9 +114,9 @@ class App extends Component {
           <Col xs={"auto"}>
          <List
             width={window.innerWidth*0.4}
-            height={window.innerHeight/2}
+            height={window.innerHeight-25}
             rowCount={this.filterFarmers().length}
-            rowHeight={window.innerHeight/2}
+            rowHeight={window.innerHeight/3.5}
             rowRenderer={this.rowRenderer}
           />
           </Col>

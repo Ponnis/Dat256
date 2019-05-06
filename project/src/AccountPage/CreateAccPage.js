@@ -51,7 +51,7 @@ class CreateAccPage extends React.Component{
                 this.setState({
                     confirmPassword: value
                 })
-                break;  
+                break;
             case "companyName":
                 this.setState({
                     companyName: value
@@ -93,12 +93,16 @@ class CreateAccPage extends React.Component{
     confirm=()=>{
         if(this.state.valid){
             alert("Create account successfull "+JSON.stringify(this.state))
+            let account = {
+                "accountOption":this.state.accountOption,"username":this.state.username,"password":this.state.password,
+                "firstName":this.state.firstName,"surName":this.state.surName,"email":this.state.email,"companyName":this.state.companyName,"companyNum":this.state.companyNum
+            }
+            this.props.addAccount(account)
         }
         else{
             alert("Incorrect Information")
         }
-        
-    
+
     }
 
     handleAccountChange =(changeEvent)=> {

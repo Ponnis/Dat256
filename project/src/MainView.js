@@ -1,4 +1,5 @@
 import React from "react"
+import CreateAccPage from "./AccountPage/CreateAccPage";
 
 class MainView extends React.Component{
 

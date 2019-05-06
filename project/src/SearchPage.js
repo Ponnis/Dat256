@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container'
 import { List } from 'react-virtualized'
 import SearchField from 'react-search-field'
 import Filter from './filterBox/Filter'
+import './SearchPage.css';
 
 class SearchPage extends Component {
     constructor() {
@@ -77,7 +78,7 @@ class SearchPage extends Component {
                           <Filter></Filter>
                     </Col>
                     <Col xs={"auto"}>
-                        <SearchField
+                        <SearchField classNames='SearchField'
                           placeholder="Sök bondgård"
                           onChange={(value) => this.onChangeBound(value)}
                         />

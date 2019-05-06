@@ -4,26 +4,19 @@ import Checkbox from 'rc-checkbox';
 
 class Filter extends Component {
     render() {
+        const categories = ["bread","egg","fish","fruit","meat","milk","sheep"];
         return (
             <div className="FilterBox">
                 <div className="Header"> 
                     Kategorier:
                 </div>
-                <label className="Label">
-                    <Checkbox>
-                    </Checkbox>
-                    &nbsp; <img src={require('../farmerInformation/images/icons/bread.png')} className="IconFilter"/>
-                </label>
-                <label className="Label">
-                    <Checkbox>
-                    </Checkbox>
-                    &nbsp; <img src={require('../farmerInformation/images/icons/egg.png')} className="IconFilter"/>
-                </label>
-                <label>
-                    <Checkbox>
-                    </Checkbox>
-                    &nbsp; <img src={require('../farmerInformation/images/icons/fish.png')} className="IconFilter"/>
-                </label>
+                {categories.map(cat => 
+                    <label className="Label">
+                        <Checkbox className="CheckBox">
+                        </Checkbox>
+                         &nbsp; <img src={require('../farmerInformation/images/icons/' + cat + '.png')} className="IconFilter"/>
+                    </label>
+                )}
             </div>
         )
     }

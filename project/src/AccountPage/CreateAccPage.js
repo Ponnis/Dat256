@@ -112,18 +112,18 @@ class CreateAccPage extends React.Component{
                     <label>Consumer<input name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} /></label>
                     <label>Producer<input name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} /></label>
                 </div>
-                <h3>Insert your account information!</h3>
+                <h3>Fyll i dina personuppgifter!</h3>
                 <div>
-                    <TextField label={"Username"} id={"username"} handleChange={this.handleChange}/>
-                    <TextField label={"First Name"} id={"firstName"} handleChange={this.handleChange}/>
-                    <TextField label={"Surname"} id={"surName"} handleChange={this.handleChange}/>
+                    <TextField label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
+                    <TextField label={"Förnamn"} id={"firstName"} handleChange={this.handleChange}/>
+                    <TextField label={"Efternamn"} id={"surName"} handleChange={this.handleChange}/>
                     {options}
                     <TextField label={"Email"} id={"email"} handleChange={this.handleChange}/>
-                    <TextField label={"Password"} id={"password"} handleChange={this.handleChange} />
-                    <TextField label={"Confirm Password"} id={"confirmPassword"} handleChange={this.handleChange}/>
+                    <TextField label={"Lösenord"} id={"password"} handleChange={this.handleChange} />
+                    <TextField label={"Bekräfta lösenord"} id={"confirmPassword"} handleChange={this.handleChange}/>
                 </div>
                 <div className="SimpleButton">
-                    <button onClick={this.confirm}>Create account</button>
+                    <button onClick={this.confirm}>Skapa konto</button>
                 </div>
             </div>
         )

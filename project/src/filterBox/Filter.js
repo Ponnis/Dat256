@@ -12,7 +12,8 @@ class Filter extends Component {
                 </div>
                 {categories.map(cat => 
                     <label className="Label">
-                        <Checkbox className="CheckBox">
+                        <Checkbox className="CheckBox"
+                        onChange={(event) => this.props.onClick(cat,event.target.checked)}>
                         </Checkbox>
                          &nbsp; <img src={require('../farmerInformation/images/icons/' + cat + '.png')} className="IconFilter"/>
                     </label>

@@ -10,11 +10,12 @@ import { List } from 'react-virtualized'
 import SearchField from 'react-search-field'
 import Filter from './filterBox/Filter'
 import './SearchPage.css';
+import _ from 'lodash';
 
 class SearchPage extends Component {
     constructor() {
         super()
-        this.state = { farmerInformation: false, farmerID: 0, search: "" }
+        this.state = { farmerInformation: false, farmerID: 0, search: "", filter: [] }
     }
     //Farmer state gets updated
     clickedOpenFarmerInformation(id) {
@@ -35,6 +36,18 @@ class SearchPage extends Component {
     reRender = () => {
         this.setState({ state: this.state })
     };
+
+    categoryFilter(category, catState) {
+        let filteredCat = this.state.filter;
+        if (catState) {
+            filteredCat.push(category);
+        } else {
+            filteredCat = _.remove(filteredCat, category)
+        }
+        this.setState({
+            filter: filteredCat
+        });
+    }
 
 
     filterFarmers() {
@@ -74,13 +87,18 @@ class SearchPage extends Component {
         return (
             <Container fluid={true}>
                 <Row noGutters={true}>
+                    <div>
+                        {this.state.filter}
+                    </div>
                     <Col xs={"auto"}>
-                          <Filter></Filter>
+                        <Filter
+                            onClick={(category, number) => this.categoryFilter(category, number)}
+                        ></Filter>
                     </Col>
                     <Col xs={"auto"}>
                         <SearchField classNames='SearchField'
-                          placeholder="Sök bondgård"
-                          onChange={(value) => this.onChangeBound(value)}
+                            placeholder="Sök bondgård"
+                            onChange={(value) => this.onChangeBound(value)}
                         />
                         <List
                             width={window.innerWidth * 0.4}

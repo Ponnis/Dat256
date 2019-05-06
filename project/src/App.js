@@ -12,6 +12,8 @@ import { getFarmerById } from './farmerInformation/Farmers'
 import ShoppingItem from './products/Product'
 import CreateAccPage from './AccountPage/CreateAccPage'
 import ShoppingCartdud from './shoppingCart/ShoppingCartdud';
+import Header from "./Header";
+import MainView from "./MainView";
 
 
 
@@ -48,14 +50,16 @@ class App extends Component {
           cBox = (<div></div>)
       }
       /*
-        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />*/
+        <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
+        {cBox}
+        <ShoppingCartdud/>
+        <CreateAccPage/>
+        */
 
     return (
       <div className="App">
-          {cBox}
-          
-          <CreateAccPage/>
-          <ShoppingCartdud/>
+          <Header/>
+          <MainView/>
       </div>
     );
   }

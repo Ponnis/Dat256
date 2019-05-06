@@ -1,0 +1,29 @@
+.home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/4/40/Field_in_K%C3%A4rk%C3%B6l%C3%A4.jpg");
+    background-size: 100% 100%;
+    color: black;
+}
+
+.SearchButton {
+    margin: 20px;
+    font-size: 10px;
+    height: 5vh;
+    width: 40px;
+    border-radius: 1px;
+    border: none;
+    color: white;
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }
+
+.input-field{
+    width: 30vw;
+    height: 5vh;
+}

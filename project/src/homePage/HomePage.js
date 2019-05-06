@@ -1,4 +1,5 @@
 import React from "react"
+import "./home.css"
 
 class HomePage extends React.Component{
     constructor(){
@@ -7,7 +8,9 @@ class HomePage extends React.Component{
 
     render(){
         return(
-            <div></div>
+            <div className={"home-container"}>
+
+            </div>
         )
     }
 }

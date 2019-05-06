@@ -1,6 +1,7 @@
 import React from "react"
 import CreateAccPage from "./AccountPage/CreateAccPage";
 import TestAccounts from "./AccountPage/TestAccounts";
+import HomePage from "./homePage/HomePage";
 
 class MainView extends React.Component{
 
@@ -23,10 +24,11 @@ class MainView extends React.Component{
     }
 
     render(){
+        /*<CreateAccPage addAccount={this.newAccount}/>*/
         return(
             <main className={"main-container"}>
-                <div>Home Page!</div>
-                <CreateAccPage addAccount={this.newAccount}/>
+                <HomePage/>
+                
             </main>
         )
     }

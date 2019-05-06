@@ -2,4 +2,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
+    width: 100vw;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.SearchButton {
+    margin: 20px;
+    font-size: 10px;
+    height: 5vh;
+    width: 40px;
+    border-radius: 1px;
+    border: none;
+    color: white;
+    box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.3);
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }
+
+.input-field{
+    width: 30vw;
+    height: 5vh;
 }

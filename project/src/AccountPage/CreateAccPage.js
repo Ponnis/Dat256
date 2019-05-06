@@ -98,6 +98,7 @@ class CreateAccPage extends React.Component{
                 "firstName":this.state.firstName,"surName":this.state.surName,"email":this.state.email,"companyName":this.state.companyName,"companyNum":this.state.companyNum
             }
             this.props.addAccount(account)
+
         }
         else{
             alert("Incorrect Information")

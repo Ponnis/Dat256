@@ -13,38 +13,38 @@ import { List } from 'react-virtualized';
 class FarmerInformation extends React.Component {
     state = {}
 
-    informationList(){
-    return [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>,
-    <div className="FarmerName">
-        {this.props.farmer.name}
+    informationList() {
+        return [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures" />,
+        <div className="FarmerName">
+            {this.props.farmer.name}
+        </div>,
+        <div className="DistanceInfo">
+            {this.props.farmer.distance} km
     </div>,
-    <div className="DistanceInfo">
-        {this.props.farmer.distance} km
-    </div>,
-    <div className="Description">
-        {this.props.farmer.description}
-    </div>,
-    this.props.farmer.products.map(product => <ShoppingItem item={product}></ShoppingItem>),
-    <button className = "Button" onClick = {this.props.buyClick}>
-    KÖP
+        <div className="Description">
+            {this.props.farmer.description}
+        </div>,
+        this.props.farmer.products.map(product => <ShoppingItem item={product}></ShoppingItem>),
+        <button className="Button" onClick={this.props.buyClick}>
+            KÖP
     </button>];
     }
 
-    rowRenderer = ({ index }) => { 
-        return (this.informationList()[index]) 
+    rowRenderer = ({ index }) => {
+        return (this.informationList()[index])
     };
 
     render() {
         return (
             <div className="FarmerInformation">
-            <button type="button" class="close" aria-label="Close" onClick = {this.props.onClose}>
+                <button type="button" class="close" aria-label="Close" onClick={this.props.onClose}>
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <List
-                    width={window.innerWidth*0.4}
-                    height={window.innerHeight-70}
+                    width={window.innerWidth * 0.4}
+                    height={window.innerHeight - 70}
                     rowCount={15}
-                    rowHeight={window.innerHeight/10}
+                    rowHeight={window.innerHeight / 10}
                     rowRenderer={this.rowRenderer}
                     data={this.informationList()}
                 />

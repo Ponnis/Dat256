@@ -2,10 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
     width: 100vw;
     flex-direction: column;
     font-family: 'Times New Roman', Times, serif;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/4/40/Field_in_K%C3%A4rk%C3%B6l%C3%A4.jpg");
+    background-size: 100% 100%;
+    color: black;
 }
 
 .SearchButton {

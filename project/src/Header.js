@@ -13,7 +13,7 @@ class Header extends React.Component{
                     <h1>Farmers Market</h1>
                 </div>
                 <div className={"corner-btn"}>
-                    Click here
+                    Logga in/ skapa konto
                 </div>
             </div>
         )

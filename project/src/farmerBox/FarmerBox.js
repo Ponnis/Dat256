@@ -13,8 +13,8 @@ class FarmerBox extends React.Component {
                 <div className="DistanceInfo">
                     {this.props.farmer.distance} km
                 </div>
-                <div className="IconBox">{this.props.farmer.types.map(t =>
-                    <img src={require('../farmerInformation/images/icons/' + t.type + '.png')} className="Icon" />)
+                <div className="IconBox">{this.props.farmer.types.map(type =>
+                    <img src={require('../farmerInformation/images/icons/' + type + '.png')} className="Icon" />)
                 }
                 </div>
                 <div className="Description">

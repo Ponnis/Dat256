@@ -42,25 +42,24 @@ class SearchPage extends Component {
         if (catState) {
             filteredCat.push(category);
         } else {
-            filteredCat = _.remove(filteredCat, category)
+            filteredCat = _.pull(filteredCat, category)
         }
         this.setState({
             filter: filteredCat
         });
     }
 
-
     filterFarmers() {
         const list = getAmountOfFarmers().map(index => <FarmerBox farmer={getFarmerById(index)} onClick={() => this.clickedOpenFarmerInformation(index)} />)
         const newList = [];
 
-        if (this.state.search === "") {
-            return list;
-        }
-
         list.forEach(element => {
             if (element.props.farmer.name.toLowerCase().includes(this.state.search.toLowerCase())) {
-                newList.push(element);
+                if (this.state.filter.length === 0) {
+                    newList.push(element);
+                } else if (_.difference(this.state.filter, element.props.farmer.types).length === 0) {
+                    newList.push(element);
+                }
             }
         });
         return newList;
@@ -87,9 +86,6 @@ class SearchPage extends Component {
         return (
             <Container fluid={true}>
                 <Row noGutters={true}>
-                    <div>
-                        {this.state.filter}
-                    </div>
                     <Col xs={"auto"}>
                         <Filter
                             onClick={(category, number) => this.categoryFilter(category, number)}

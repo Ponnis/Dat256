@@ -8,9 +8,9 @@ const farmers = [{
     "distance": 15,
     "rating": "two",
     "types": [
-        { "type": "egg" },
-        { "type": "sheep" },
-        { "type": "fish" }
+        "egg",
+        "sheep",
+         "fish"
     ],
     "description": "Det här är den absolut bästa bondgården. Alla våra produkter är ekologiska och riktigt goda.",
     "products": [
@@ -24,10 +24,10 @@ const farmers = [{
     "distance": 27,
     "rating": "five",
     "types": [
-        { "type": "bread" },
-        { "type": "meat" },
-        { "type": "milk" },
-        { "type": "fruit" }
+        "bread",
+        "meat",
+        "milk",
+        "fruit"
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
@@ -41,8 +41,8 @@ const farmers = [{
     "distance": 27,
     "rating": "five",
     "types": [
-        { "type": "bread" },
-        { "type": "fruit" }
+        "bread",
+        "fruit"
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
@@ -57,8 +57,8 @@ const farmers = [{
     "distance": 27,
     "rating": "four",
     "types": [
-        { "type": "meat" },
-        { "type": "milk" }
+        "meat",
+        "milk"
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
@@ -73,7 +73,7 @@ const farmers = [{
     "distance": 27,
     "rating": "one",
     "types": [
-        { "type": "sheep" }
+         "sheep"
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [

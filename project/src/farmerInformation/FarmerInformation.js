@@ -11,7 +11,7 @@ import { List } from 'react-virtualized';
 class FarmerInformation extends React.Component {
     state = {}
 
-    page(){
+    rowRenderer = ({ index }) => { 
         const listOfItems = 
             [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>,
             <div className="FarmerName">
@@ -27,11 +27,7 @@ class FarmerInformation extends React.Component {
             <button className = "Button" onClick = {this.props.buyClick}>
             KÖP
             </button>];
-        return listOfItems;
-    }
-
-    rowRenderer = ({ index }) => { 
-        return (this.page()[index]) 
+        return (listOfItems[index]) 
     };
 
     render() {

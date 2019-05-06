@@ -71,13 +71,13 @@ class CreateAccPage extends React.Component{
             if (this.state.accountOption==="producer" && this.state.companyName==="")
             this.setState({valid: false})
         }
-        
+
         else{
             if(this.checkPassword()){
                 this.setState({valid: true})
             }
 
-        } 
+        }
     }
 
     confirm=()=>{
@@ -101,7 +101,7 @@ class CreateAccPage extends React.Component{
     render(){
         let options
         if (this.state.accountOption==="producer"){
-            options=[<TextField label={"Företagsnamn"} id={"companyName"}/>, 
+            options=[<TextField label={"Företagsnamn"} id={"companyName"}/>,
             <TextField label={"Organisationsnummer"} id={"companyNum"}/>]
 
         }
@@ -109,8 +109,8 @@ class CreateAccPage extends React.Component{
             <div className="PageWrapper">
                 <div>Select Type</div>
                 <div>
-                    <label>Consumer<input name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} /></label>
-                    <label>Producer<input name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} /></label>
+                    <label>Consumer<input name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/></label>
+                    <label>Producer<input name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/></label>
                 </div>
                 <h3>Fyll i dina personuppgifter!</h3>
                 <div>

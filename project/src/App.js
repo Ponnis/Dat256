@@ -20,7 +20,7 @@ import MainView from "./MainView";
 class App extends Component {
   constructor(){
     super()
-    this.state={products: testPurchases, clicked: false}
+    this.state={products: testPurchases, clicked: false, mainView:"home"}
   }
 
   //Called when Buy Button is clicked, shows confirm-box
@@ -36,6 +36,12 @@ class App extends Component {
           clicked: false
       })
   };
+
+  changeView=(view)=>{
+      this.setState({
+          mainView:view
+      })
+  }
 
 
 
@@ -58,8 +64,8 @@ class App extends Component {
 
     return (
       <div className="App">
-          <Header/>
-          <MainView/>
+          <Header changeView={this.changeView} view={this.state.mainView}/>
+          <MainView view={this.state.mainView}/>
       </div>
     );
   }

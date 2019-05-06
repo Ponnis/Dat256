@@ -8,7 +8,6 @@ class MainView extends React.Component{
     constructor(){
         super()
         this.state={
-            currentView:"home",
             accounts:TestAccounts
         }
     }
@@ -24,11 +23,18 @@ class MainView extends React.Component{
     }
 
     render(){
-        /*<CreateAccPage addAccount={this.newAccount}/>*/
+
+        let page;
+        if(this.props.view ==="home"){
+            page = <HomePage/>
+        }
+
+        if(this.props.view ==="login"){
+            page = <CreateAccPage addAccount={this.newAccount}/>
+        }
         return(
             <main className={"main-container"}>
-                <HomePage/>
-                
+                {page}
             </main>
         )
     }

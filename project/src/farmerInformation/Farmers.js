@@ -92,4 +92,16 @@ function getFarmerById(id){
     return f;
 };
 
+/**
+ * Returns amount of connected farmers.
+ */
+function getAmountOfFarmers(){
+    const lists = [];
+    for(var i = 0; i < farmers.length;i++){
+        lists.push(i);
+    }
+    return lists;
+}
+
 module.exports.getFarmerById = getFarmerById;
+module.exports.getAmountOfFarmers = getAmountOfFarmers;

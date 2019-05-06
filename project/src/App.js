@@ -6,9 +6,7 @@ class App extends Component {
     super()
   }
   render() {
-
     return (<SearchPage></SearchPage>);
-
   }
 }
 

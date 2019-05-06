@@ -6,8 +6,9 @@ import FarmerBox from './farmerBox/FarmerBox'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import { List } from 'react-virtualized';
-import SearchField from "react-search-field"
+import { List } from 'react-virtualized'
+import SearchField from 'react-search-field'
+import Filter from './filterBox/Filter'
 
 class SearchPage extends Component {
     constructor() {
@@ -71,12 +72,15 @@ class SearchPage extends Component {
 
         return (
             <Container fluid={true}>
-                <SearchField
-                    placeholder="Sök bondgård"
-                    onChange={(value) => this.onChangeBound(value)}
-                />
                 <Row noGutters={true}>
                     <Col xs={"auto"}>
+                          <Filter></Filter>
+                    </Col>
+                    <Col xs={"auto"}>
+                        <SearchField
+                          placeholder="Sök bondgård"
+                          onChange={(value) => this.onChangeBound(value)}
+                        />
                         <List
                             width={window.innerWidth * 0.4}
                             height={window.innerHeight - 25}

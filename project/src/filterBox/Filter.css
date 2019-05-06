@@ -1,0 +1,7 @@
+.FilterBox{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 17vw;
+    height: 100vh;
+}

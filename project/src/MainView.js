@@ -14,6 +14,7 @@ class MainView extends React.Component{
         return(
             <main className={"main-container"}>
                 <div>Home Page!</div>
+                <CreateAccPage/>
             </main>
         )
     }

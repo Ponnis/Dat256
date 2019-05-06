@@ -79,6 +79,7 @@ class CreateAccPage extends React.Component{
     render(){
         return(
             <div className="PageWrapper">
+                <div>Select Type</div>
                 <h3>Insert your account information!</h3>
                 <div>
                     <TextField label={"Username"} id={"username"} handleChange={this.handleChange}/>

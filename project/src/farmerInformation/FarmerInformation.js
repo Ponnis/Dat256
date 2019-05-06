@@ -8,26 +8,30 @@ import { List } from 'react-virtualized';
  * Information box about a farmer.
  * The box contains a picture, name, distance as well as a short description. 
  */
+
+
 class FarmerInformation extends React.Component {
     state = {}
 
+    informationList(){
+    return [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>,
+    <div className="FarmerName">
+        {this.props.farmer.name}
+    </div>,
+    <div className="DistanceInfo">
+        {this.props.farmer.distance} km
+    </div>,
+    <div className="Description">
+        {this.props.farmer.description}
+    </div>,
+    this.props.farmer.products.map(product => <ShoppingItem item={product}></ShoppingItem>),
+    <button className = "Button" onClick = {this.props.buyClick}>
+    KÖP
+    </button>];
+    }
+
     rowRenderer = ({ index }) => { 
-        const listOfItems = 
-            [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>,
-            <div className="FarmerName">
-                {this.props.farmer.name}
-            </div>,
-            <div className="DistanceInfo">
-                {this.props.farmer.distance} km
-            </div>,
-            <div className="Description">
-                {this.props.farmer.description}
-            </div>,
-            this.props.farmer.products.map(product => <ShoppingItem item={product}></ShoppingItem>),
-            <button className = "Button" onClick = {this.props.buyClick}>
-            KÖP
-            </button>];
-        return (listOfItems[index]) 
+        return (this.informationList()[index]) 
     };
 
     render() {
@@ -42,6 +46,7 @@ class FarmerInformation extends React.Component {
                     rowCount={15}
                     rowHeight={window.innerHeight/10}
                     rowRenderer={this.rowRenderer}
+                    data={this.informationList()}
                 />
             </div>
         );

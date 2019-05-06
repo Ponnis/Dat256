@@ -5,3 +5,20 @@
     width: 17vw;
     height: 100vh;
 }
+
+.Label{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.IconFilter{
+    height: 24px;
+    margin-right: 8px;
+}
+
+.Header{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}

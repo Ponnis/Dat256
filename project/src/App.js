@@ -16,9 +16,10 @@ import Header from "./Header";
 import MainView from "./MainView";
 
 
+import SearchPage from './SearchPage'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state={products: testPurchases, clicked: false, mainView:"home"}
   }
@@ -70,6 +71,7 @@ class App extends Component {
     );
   }
 }
+
 
 
 export default App;

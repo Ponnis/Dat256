@@ -1,0 +1,37 @@
+.FilterBox{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 17vw;
+    height: 100vh;
+}
+
+.Label{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.IconFilter{
+    height: 24px;
+    margin-right: 8px;
+}
+
+.Header{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.CheckBox{
+    margin-left: 5px;
+}
+
+.Slider{
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid black;
+}

@@ -22,8 +22,16 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: left;
     margin-left: 5px;
+    margin-top: 10px;
 }
 
 .CheckBox{
     margin-left: 5px;
+}
+
+.Slider{
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: solid black;
 }

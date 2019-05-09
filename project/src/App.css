@@ -23,6 +23,12 @@
   align-items: center;
   color: green;
   font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.logo:hover{
+    opacity: 0.6;
+    transition: 0.2s;
 }
 
 .logo img{

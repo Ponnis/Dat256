@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <div className="App">
           <Header changeView={this.changeView} view={this.state.mainView}/>
-          <MainView view={this.state.mainView}/>
+          <MainView changeView={this.changeView} view={this.state.mainView}/>
       </div>
     );
   }

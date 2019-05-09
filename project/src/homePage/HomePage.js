@@ -6,12 +6,16 @@ class HomePage extends React.Component{
         super()
     }
 
+    search=()=>{
+        this.props.search("search")
+    }
+
     render(){
         return(
             <div className={"home-container"}>
                 <h2>Skriv din adress här för att hitta gårdar nära dig:</h2>
                 <div><input className={"input-field"} type="text"/>
-                <button className={"SearchButton"}>sök</button>
+                <button onClick={this.search} className={"SearchButton"}>sök</button>
                 </div>
             </div>
         )

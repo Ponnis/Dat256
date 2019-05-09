@@ -2,6 +2,7 @@ import React from "react"
 import CreateAccPage from "./AccountPage/CreateAccPage";
 import TestAccounts from "./AccountPage/TestAccounts";
 import HomePage from "./homePage/HomePage";
+import SearchPage from "./SearchPage";
 
 class MainView extends React.Component{
 
@@ -26,11 +27,14 @@ class MainView extends React.Component{
 
         let page;
         if(this.props.view ==="home"){
-            page = <HomePage/>
+            page = <HomePage search={this.props.changeView}/>
         }
 
         if(this.props.view ==="login"){
             page = <CreateAccPage addAccount={this.newAccount}/>
+        }
+        if(this.props.view ==="search"){
+            page = <SearchPage/>
         }
         return(
             <main className={"main-container"}>

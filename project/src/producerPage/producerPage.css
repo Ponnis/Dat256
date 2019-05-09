@@ -1,0 +1,27 @@
+.NavBar button{
+    margin: 0 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ProductsContainer{
+    
+}
+
+.ProductItem{
+    font-family: 'Times New Roman', Times, serif;
+    border: solid 2px black;
+    margin: 5px;
+    background: lightgrey;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.ProductItem input{
+    width: 50px;
+}
+
+.ProductItem .ItemInput{
+    margin: 0 50px;
+}

@@ -11,10 +11,11 @@ class Filter extends Component {
         this.state = { rating: 1 }
     }
 
-    changeRating( newRating, name ) {
+    changeRating( newRating) {
         this.setState({
           rating: newRating
         });
+        this.props.onRatingClick(newRating);
       }
 
     render() {
@@ -27,7 +28,7 @@ class Filter extends Component {
                 {categories.map(cat => 
                     <label className="Label">
                         <Checkbox className="CheckBox"
-                        onChange={(event) => this.props.onClick(cat,event.target.checked)}>
+                        onChange={(event) => this.props.onCategoryClick(cat,event.target.checked)}>
                         </Checkbox>
                          &nbsp; <img src={require('../farmerInformation/images/icons/' + cat + '.png')} className="IconFilter"/>
                     </label>

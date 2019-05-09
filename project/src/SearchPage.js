@@ -15,7 +15,7 @@ import _ from 'lodash';
 class SearchPage extends Component {
     constructor() {
         super()
-        this.state = { farmerInformation: false, farmerID: 0, search: "", filter: [] }
+        this.state = { farmerInformation: false, farmerID: 0, search: "", categoryFilter: [],minRating: 1 }
     }
     //Farmer state gets updated
     clickedOpenFarmerInformation(id) {
@@ -38,14 +38,20 @@ class SearchPage extends Component {
     };
 
     categoryFilter(category, catState) {
-        let filteredCat = this.state.filter;
+        let filteredCat = this.state.categoryFilter;
         if (catState) {
             filteredCat.push(category);
         } else {
             filteredCat = _.pull(filteredCat, category)
         }
         this.setState({
-            filter: filteredCat
+            categoryFilter: filteredCat
+        });
+    }
+
+    ratingFilter(rating){
+        this.setState({
+            minRating: rating
         });
     }
 
@@ -55,12 +61,14 @@ class SearchPage extends Component {
 
         list.forEach(element => {
             if (element.props.farmer.name.toLowerCase().includes(this.state.search.toLowerCase())) {
-                if (this.state.filter.length === 0) {
+                if(element.props.farmer.rating >= this.state.minRating){
+                if (this.state.categoryFilter.length === 0) {
                     newList.push(element);
-                } else if (_.difference(this.state.filter, element.props.farmer.types).length === 0) {
+                } else if (_.difference(this.state.categoryFilter, element.props.farmer.types).length === 0) {
                     newList.push(element);
                 }
             }
+        }
         });
         return newList;
     }
@@ -88,8 +96,8 @@ class SearchPage extends Component {
                 <Row noGutters={true}>
                     <Col xs={"auto"}>
                         <Filter
-                            onClick={(category, number) => this.categoryFilter(category, number)}
-                        ></Filter>
+                            onCategoryClick={(category, number) => this.categoryFilter(category, number)} onRatingClick={(rating) => this.ratingFilter(rating)}>
+                            </Filter>
                     </Col>
                     <Col xs={"auto"}>
                         <SearchField classNames='SearchField'

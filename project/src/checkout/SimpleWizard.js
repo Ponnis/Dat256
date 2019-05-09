@@ -3,6 +3,7 @@ import WizardText from './WizardText';
 import './WizardText.css';
 import './SimpleWizard.css';
 import CreditCardInput from 'react-credit-card-input';
+import CreditCard from './CreditCard'
 
 class SimpleWizard extends React.Component{
 constructor(){
@@ -37,9 +38,9 @@ this.setState({
 expiracyDate: value
 })
 break;
-case"cvc":
+//case"cvc":
 this.setState({
-cvc: value
+//cvc: value
 })
 break; 
 }
@@ -70,9 +71,8 @@ return(
 <div>
 <WizardText label={"Adress"} id={"address"} handleChange={this.handleChange}/>
 <WizardText label={"Upphämtningsställe"} id={"pointOfDelivery"} handleChange={this.handleChange}/>
-<WizardText label={"Kreditkortsnummer"} id={"creditCardNo"} handleChange={this.handleChange}/>
-<WizardText label={"Utgångsdatum"} id={"dateOfExpiracy"} handleChange={this.handleChange}/>
-<WizardText label={"CVC-kod"} id={"cvc"} handleChange={this.handleChange} />
+<CreditCard/>
+
 </div>
 <div className="ConfirmationButton">
 <button onClick={this.confirm}>Skicka beställning</button>

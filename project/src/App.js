@@ -8,7 +8,6 @@ import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
 import testPurchases from './TestPurchases'
 import FarmerInformation from './farmerInformation/FarmerInformation'
 import { getFarmerById } from './farmerInformation/Farmers'
-
 import ShoppingItem from './products/Product'
 import CreateAccPage from './AccountPage/CreateAccPage'
 import ShoppingCartdud from './shoppingCart/ShoppingCartdud';

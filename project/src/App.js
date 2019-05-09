@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
 
 // Test Data API
@@ -14,14 +13,20 @@ import ShoppingCartdud from './shoppingCart/ShoppingCartdud';
 import Header from "./Header";
 import MainView from "./MainView";
 import SimpleWizard from './checkout/SimpleWizard';
+import Login from './login/Login';
 
 
 
 class App extends Component {
   constructor(){
     super()
-    this.state={products: testPurchases, clicked: false, mainView:"home"}
+    this.state={
+        products: testPurchases, 
+        clicked: false, 
+        mainView:"home",
+    }
   }
+
 
   //Called when Buy Button is clicked, shows confirm-box
   clickedBuy =()=>{
@@ -67,6 +72,7 @@ class App extends Component {
           <Header changeView={this.changeView} view={this.state.mainView}/>
           <MainView view={this.state.mainView}/>
           <SimpleWizard/>
+          <Login/>
       </div>
     );
   }

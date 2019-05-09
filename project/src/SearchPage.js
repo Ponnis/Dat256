@@ -12,9 +12,7 @@ import Filter from './filterBox/Filter'
 import './SearchPage.css';
 import _ from 'lodash';
 import { Cart } from 'react-cart-components'
-import configureStore from "./store";
 import { Provider } from "react-redux";
-import { AddCartButton } from 'react-cart-components'
 
 class SearchPage extends Component {
     constructor() {
@@ -95,14 +93,12 @@ class SearchPage extends Component {
             self.reRender()
         };
 
-        var store = configureStore();
-
         return (
+            <Provider store={this.props.store}>
             <Container fluid={true}>
-                <Provider store={store}>
                     <Cart currency="SEK"
                      />
-                </Provider>,
+                
                 <Row noGutters={true}>
                     <Col xs={"auto"}>
                         <Filter
@@ -123,10 +119,11 @@ class SearchPage extends Component {
                         />
                     </Col>
                     <Col xs={"auto"}>
-                        {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} store={store} /> : <div></div>}
+                        {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} store={this.props.store} /> : <div></div>}
                     </Col>
                 </Row>
             </Container>
+            </Provider>
         );
     }
 }

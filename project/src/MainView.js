@@ -34,7 +34,7 @@ class MainView extends React.Component{
             page = <CreateAccPage addAccount={this.newAccount}/>
         }
         if(this.props.view ==="search"){
-            page = <SearchPage/>
+            page = <SearchPage store={this.props.store}/>
         }
         return(
             <main className={"main-container"}>

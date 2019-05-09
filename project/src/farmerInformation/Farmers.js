@@ -14,8 +14,8 @@ const farmers = [{
     ],
     "description": "Det här är den absolut bästa bondgården. Alla våra produkter är ekologiska och riktigt goda.",
     "products": [
-        { "name": "Tomatoes", "price": 8,"sku":"0-0" },
-        { "name": "Garlic", "price": 2, "sku":"0-1" }
+        { "name": "Tomat", "price": 8,"sku":"0-0" },
+        { "name": "Vitlök", "price": 2, "sku":"0-1" }
     ]
 },
 {
@@ -31,8 +31,8 @@ const farmers = [{
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
-        { "name": "Potatoes", "price": 10 },
-        { "name": "Eggs", "price": 14 }
+        { "name": "Potatis", "price": 10,"sku":"1-0" },
+        { "name": "Ägg", "price": 14,"sku":"1-1" }
     ]
 },
 {
@@ -46,9 +46,9 @@ const farmers = [{
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
-        { "name": "Bröd", "price": 25 },
-        { "name": "Muffins", "price": 7 },
-        { "name": "Äpplen", "price": 3 }
+        { "name": "Bröd", "price": 25,"sku":"2-0" },
+        { "name": "Muffins", "price": 7,"sku":"2-1" },
+        { "name": "Äpplen", "price": 3,"sku":"2-2" }
     ]
 },
 {
@@ -62,9 +62,9 @@ const farmers = [{
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
-        { "name": "Fläskfilé", "price": 100 },
-        { "name": "Oxfilé", "price": 400 },
-        { "name": "Mjölk", "price": 12 }
+        { "name": "Fläskfilé", "price": 100,"sku":"3-0" },
+        { "name": "Oxfilé", "price": 400, "sku":"3-1" },
+        { "name": "Mjölk", "price": 12,"sku":"3-2" }
     ]
 },
 {
@@ -77,7 +77,7 @@ const farmers = [{
     ],
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
-        { "name": "Lamm", "price": 300 }
+        { "name": "Lamm", "price": 300,"sku":"4-0" }
     ]
 },
 ];

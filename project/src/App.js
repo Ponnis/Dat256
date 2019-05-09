@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import { Provider } from "react-redux";
 import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
-
 // Test Data API
 import testPurchases from './TestPurchases'
-import FarmerInformation from './farmerInformation/FarmerInformation'
-import { getFarmerById } from './farmerInformation/Farmers'
-
-import ShoppingItem from './products/Product'
-import CreateAccPage from './AccountPage/CreateAccPage'
 import Header from "./Header";
 import MainView from "./MainView";
-import SearchPage from './SearchPage'
+import configureStore from "./store";
 
 
 class App extends Component {
@@ -60,12 +53,15 @@ class App extends Component {
           <ShoppingCartdud/>
           <CreateAccPage/>
           */
+         var store = configureStore();
 
         return (
+            <Provider store={store}>
             <div className="App">
                 <Header changeView={this.changeView} view={this.state.mainView} />
-                <MainView changeView={this.changeView} view={this.state.mainView} />
+                <MainView changeView={this.changeView} view={this.state.mainView} store={store} />
             </div>
+            </Provider>
         );
     }
 }

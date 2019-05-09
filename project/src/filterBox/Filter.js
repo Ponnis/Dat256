@@ -64,7 +64,6 @@ class Filter extends Component {
                             backgroundColor: 'grey',
                           }}
                         />
-                        <DynamicBounds />
                     
             </div>
         )

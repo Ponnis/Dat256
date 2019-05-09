@@ -11,6 +11,10 @@ import SearchField from 'react-search-field'
 import Filter from './filterBox/Filter'
 import './SearchPage.css';
 import _ from 'lodash';
+import { Cart } from 'react-cart-components'
+import configureStore from "./store";
+import { Provider } from "react-redux";
+import { AddCartButton } from 'react-cart-components'
 
 class SearchPage extends Component {
     constructor() {
@@ -93,6 +97,9 @@ class SearchPage extends Component {
 
         return (
             <Container fluid={true}>
+            <Provider store={configureStore()}>
+            <Cart currency="SEK" />
+             </Provider>,
                 <Row noGutters={true}>
                     <Col xs={"auto"}>
                         <Filter

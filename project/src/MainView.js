@@ -3,6 +3,7 @@ import CreateAccPage from "./AccountPage/CreateAccPage";
 import TestAccounts from "./AccountPage/TestAccounts";
 import HomePage from "./homePage/HomePage";
 import SearchPage from "./SearchPage";
+import ProducerPage from "./producerPage/ProducerPage"
 
 class MainView extends React.Component{
 
@@ -28,6 +29,10 @@ class MainView extends React.Component{
         let page;
         if(this.props.view ==="home"){
             page = <HomePage search={this.props.changeView}/>
+        }
+
+        if(this.props.view ==="producer"){
+            page = <ProducerPage />
         }
 
         if(this.props.view ==="login"){

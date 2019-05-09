@@ -12,7 +12,7 @@ import configureStore from "./store";
 class App extends Component {
     constructor() {
         super()
-        this.state = { products: testPurchases, clicked: false, mainView: "home" }
+        this.state = { products: testPurchases, clicked: false, mainView: "producer" }
     }
 
     //Called when Buy Button is clicked, shows confirm-box

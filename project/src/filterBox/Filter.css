@@ -32,6 +32,6 @@
 .Slider{
     color: black;
     margin-left: 10px;
-    margin-right: 10px;
-    border: solid black;
+    margin-right: 100px;
+    width: 80vw;
 }

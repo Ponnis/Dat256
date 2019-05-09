@@ -49,7 +49,23 @@ class Filter extends Component {
                 <div className="Header">
                     Avstånd:
                 </div>
-                    <Slider defaultValue={10} />
+                    <Slider 
+                        className='Slider'
+                        defaultValue={50} 
+                        min={0}
+                        max={50}
+                        step={5}
+                        railStyle={{ backgroundColor: 'lightgrey'}}
+                        trackStyle={{ backgroundColor: 'black'}}
+                        handleStyle={{
+                            borderColor: 'black',
+                            height: 15,
+                            width: 15,
+                            backgroundColor: 'grey',
+                          }}
+                        />
+                        <DynamicBounds />
+                    
             </div>
         )
     }

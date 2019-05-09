@@ -57,4 +57,9 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
+.corner-btn:hover{
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
 

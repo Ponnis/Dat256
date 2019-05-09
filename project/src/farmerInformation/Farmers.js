@@ -14,8 +14,8 @@ const farmers = [{
     ],
     "description": "Det här är den absolut bästa bondgården. Alla våra produkter är ekologiska och riktigt goda.",
     "products": [
-        { "name": "Tomatoes", "price": 8 },
-        { "name": "Garlic", "price": 2 }
+        { "name": "Tomatoes", "price": 8,"sku":"0-0" },
+        { "name": "Garlic", "price": 2, "sku":"0-1" }
     ]
 },
 {

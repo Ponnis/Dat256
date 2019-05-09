@@ -34,17 +34,15 @@ class ShoppingItem extends React.Component {
         <div className="Price">
           {this.props.item.price} kr
           </div>
-          <Provider store={configureStore()}>
-            <AddCartButton/>
-             </Provider>
-      <div className="Buttons">
-        {this.state.show ? <h2>{this.state.clicks}</h2> : ''}
-        <button onClick={this.DecreaseItem}>-</button>
-        <button>köp</button>
-        <button onClick={this.IncrementItem}>+</button>
-      </div>
-       </div >
-      );
+        <Provider store={this.props.store}>
+          <AddCartButton addLabel	= "Lägg till" product={{
+            id: this.props.item.sku,
+            name: this.props.item.name,
+            price: this.props.item.price,
+          }} />
+        </Provider>
+      </div >
+    );
   }
 
 }

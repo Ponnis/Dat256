@@ -9,7 +9,7 @@ class Filter extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { rating: 1 }
+        this.state = { rating: 1, distance: 50 }
     }
 
     changeRating(newRating) {
@@ -49,8 +49,7 @@ class Filter extends Component {
                 <div className="Header">
                     Avstånd:
                 </div>
-                    <Slider 
-                        className='Slider'
+                    <Slider
                         defaultValue={50} 
                         min={0}
                         max={50}
@@ -63,7 +62,13 @@ class Filter extends Component {
                             width: 15,
                             backgroundColor: 'grey',
                           }}
+                        onChange = {(value) => this.setState({distance: value})}
+                          
                         />
+                        <label>
+                            {this.state.distance} km
+                        </label>
+                        
                     
             </div>
         )

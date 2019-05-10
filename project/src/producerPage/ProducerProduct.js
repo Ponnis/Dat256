@@ -1,10 +1,15 @@
 import React from "react"
 import "./producerPage.css"
+// es6
+import NumericInput from 'react-numeric-input';
 
 class ProducerProduct extends React.Component{
     constructor(){
         super()
         this.state = {amount: 0, price: 0}
+        this.handleChangeAmount = this.handleChangeAmount.bind(this)
+        this.handleChangePrice = this.handleChangePrice.bind(this)
+
     }
 
     IncrementItem = () => {
@@ -26,7 +31,9 @@ class ProducerProduct extends React.Component{
       }
 
       handleChangeAmount =(e)=>{
+        if (e.target.validity.valid){
           this.setState({amount: e.target.value});
+        }
       }
 
       handleChangePrice =(e)=>{
@@ -37,13 +44,14 @@ class ProducerProduct extends React.Component{
     render(){
         return(
             <div className={"ProductItem"}>
-            <div className={"ItemInput"}><button onClick={this.DecreaseItem}>-</button><input onChange={this.handleChangeAmount} value={this.state.amount} type="number"/><button onClick={this.IncrementItem}>+</button> </div>
+            <div className={"ItemAmount"}><input onChange={this.handleChangeAmount} value={this.state.amount} min={0} max={1000} type="number"/></div>
             {this.props.itemName}
-            <div className={"ItemInput"}><button onClick={this.DecreasePrice}>-</button><input onChange={this.handleChangePrice} value={this.state.price} type="number"/><button onClick={this.IncrementPrice}>+</button></div>   
+            <div className={"ItemPrice"}><input onChange={this.handleChangePrice} value={this.state.price} min={0} max={1000} type="number"/></div>   
             </div>
         )
 
     }
 }
-
+//<button onClick={this.DecreaseItem}>-</button>
+//<button onClick={this.IncrementItem}>+</button> 
 export default ProducerProduct

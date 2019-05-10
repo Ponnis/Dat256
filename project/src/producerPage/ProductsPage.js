@@ -10,9 +10,10 @@ class ProductsPage extends React.Component{
     render(){
         return(
             <div className={"ProductsContainer"}>
-            Antal Varunamn Pris
+           <div className={"ProductHeadings"}><h6>Antal (st)</h6><h6>Varunamn</h6><h6>Pris (SEK)</h6></div>
             <ProducerProduct itemName={"Potatis"}/>   
-            <ProducerProduct itemName={"Lök"}/>   
+            <ProducerProduct itemName={"Gul lök"}/>   
+            
             </div>
         )
 

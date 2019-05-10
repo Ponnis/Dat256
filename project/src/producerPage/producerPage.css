@@ -1,9 +1,18 @@
 .NavBar button{
     margin: 0 30px;
     font-family: 'Times New Roman', Times, serif;
+    background: white;
 }
 
 .ProductsContainer{
+    
+    
+}
+
+.ProductHeadings{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     
 }
 
@@ -14,8 +23,7 @@
     background: lightgrey;
     display: flex;
     justify-content: center;
-
-
+    height: 34px;
 }
 
 .ProductItem input{
@@ -24,4 +32,14 @@
 
 .ProductItem .ItemInput{
     margin: 0 50px;
+}
+
+.ProductItem .ItemAmount {
+    position: fixed;
+    left: 265px;
+}
+
+.ProductItem .ItemPrice {
+    position: fixed;
+    right: 265px;
 }

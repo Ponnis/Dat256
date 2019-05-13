@@ -7,9 +7,7 @@ class ProductsPage extends React.Component{
     constructor(){
         super()
         this.state={
-            products: [
-                <ProducerProduct/>
-            ],
+            products: getFarmerById(2).products
         };
     }
 
@@ -28,28 +26,34 @@ class ProductsPage extends React.Component{
     addProduct =()=>{
         let tempArr = this.state.products.slice()
         console.log(tempArr)
-        tempArr.push(<ProducerProduct/>)
+        tempArr.push({
+            name:"Ny Vara!", price:0,amount:0
+        })
         this.setState({
             products: tempArr
-
         })
-
-        let farmer = getFarmerById(0)
-        farmer.products.push(<ProducerProduct/>)
-
     }
-
-    changeProduct=(sku,value)=>{
-        let farmer = getFarmerById(0)
-        let a = farmer.products.find( product => product.sku === sku );
-        a.name = value;
+    
+    handleChange=(sku, property, value)=>{
+        let i = 0
+        this.state.products.map(product =>{
+            if(product.sku === sku){
+                let newArray = this.state.products
+                let newPro = product
+                newPro[property] = value
+                newArray[i] = newPro
+                this.setState({
+                    products: newArray
+                })
+            }
+            ++i
+        })
 
     }
 
     render(){
         let farmer = getFarmerById(0)
-        let a = farmer.products.map(product => <ProducerProduct product={product} changeProduct={this.changeProduct}/>);
-        let products = a
+        let products = this.state.products.map(product => <ProducerProduct product={product} onUserInput={this.handleChange} sku={product.sku}/>);
 
 
         return(

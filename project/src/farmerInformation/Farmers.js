@@ -10,7 +10,7 @@ const farmers = [{
     "types": [
         "egg",
         "sheep",
-         "fish"
+        "fish"
     ],
     "description": "Det här är den absolut bästa bondgården. Alla våra produkter är ekologiska och riktigt goda.",
     "products": [

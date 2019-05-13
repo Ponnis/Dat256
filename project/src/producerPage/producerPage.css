@@ -9,6 +9,16 @@
     
 }
 
+.AddButton{
+    margin: 0 30px;
+    font-family: 'Times New Roman', Times, serif;
+    background: white;
+}
+
+.AddButton:hover{
+    opacity: 0.6;
+}
+
 .ProductHeadings{
     display: flex;
     justify-content: space-evenly;
@@ -22,7 +32,7 @@
     margin: 5px;
     background: lightgrey;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 34px;
 }
 
@@ -30,6 +40,10 @@
     width: 50px;
 }
 
+.ItemName{
+    width: 80px;
+}
+/*
 .ProductItem .ItemInput{
     margin: 0 50px;
 }
@@ -42,4 +56,4 @@
 .ProductItem .ItemPrice {
     position: fixed;
     right: 265px;
-}
+}*/

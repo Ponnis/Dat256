@@ -5,9 +5,10 @@ import "./producerPage.css"
 class ProducerProduct extends React.Component{
     constructor(){
         super()
-        this.state = {amount: 0, price: 0}
+        this.state = {amount: 0, price: 0, name:""}
         this.handleChangeAmount = this.handleChangeAmount.bind(this)
         this.handleChangePrice = this.handleChangePrice.bind(this)
+        this.handleChangeName = this.handleChangeName.bind(this)
 
     }
 
@@ -39,12 +40,19 @@ class ProducerProduct extends React.Component{
         this.setState({price: e.target.value});
     }
 
+    handleChangeName=(e)=> {
+        this.setState({
+            name: e.target.value
+        })
+    }
+
+
 
     render(){
         return(
             <div className={"ProductItem"}>
             <div className={"ItemAmount"}><input onChange={this.handleChangeAmount} value={this.state.amount} min={0} max={1000} type="number"/></div>
-            {this.props.itemName}
+                <div className={"ItemName"}><input value={this.state.name} onChange={this.handleChangeName} type="text"/></div>
             <div className={"ItemPrice"}><input onChange={this.handleChangePrice} value={this.state.price} min={0} max={1000} type="number"/></div>   
             </div>
         )

@@ -13,9 +13,6 @@ import CreateAccPage from './AccountPage/CreateAccPage'
 import ShoppingCartdud from './shoppingCart/ShoppingCartdud';
 import Header from "./Header";
 import MainView from "./MainView";
-import SimpleWizard from './checkout/SimpleWizard';
-
-
 
 class App extends Component {
   constructor(){
@@ -46,7 +43,7 @@ class App extends Component {
 
 
   render() {
-
+    
       // Renders cBox depending on state
       let cBox = (<div></div>);
       if(this.state.clicked){
@@ -66,7 +63,7 @@ class App extends Component {
       <div className="App">
           <Header changeView={this.changeView} view={this.state.mainView}/>
           <MainView view={this.state.mainView}/>
-          <SimpleWizard/>
+          
       </div>
     );
   }

@@ -36,6 +36,8 @@ class Login extends React.Component {
             if(this.checkPassword()){
                 this.setState({valid: true})
             }
+            else
+            this.setState({valid: false})
         }
     }
 
@@ -73,16 +75,21 @@ class Login extends React.Component {
         */
     
     render() { 
+        let style="LoginStyle"
         return (
             <div>
-                <div>
-                    <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
-                    <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
+                <div className='LoginWrapper'>
+                    <div>
+                        <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
+                        <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
+                    </div>
                 </div>
-                <div className="SimpleButton">
-                    <button onClick={this.logg}>Logga in</button>
-                    <button>Registrera dig!</button>
-                </div> 
+                <div className='ButtonWrapper'>
+                    <div className="SimpleButton">
+                        <button onClick={this.logg}>Logga in</button>
+                        <button>Registrera dig!</button>
+                    </div> 
+                </div>
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component }  from 'react';
-//import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LoginView from './LoginView';
 import './TextInputStyle.css';
 
@@ -9,9 +8,11 @@ class Login extends React.Component {
         this.state={
         username:"",
         password:"", 
+        textValue: 'Logga in',
         valid: false,
         loggedIn: false} 
     }
+    
     handleChange=(id,value)=>{
         switch (id){
             case"username":
@@ -61,9 +62,58 @@ class Login extends React.Component {
                 loggedIn: true
             })
         }
-        else
+        else {
             alert("Användarnamn eller lösenord är fel")
+        }
+    }
 
+    loggOut=()=> {
+        this.setState({
+            valid: false, 
+            loggedIn: false
+        })
+    }
+
+    get logoutButton(){
+        if(this.state.loggedIn==true){
+            return(
+                <button className="button" onClick={this.loggOut}>Logga ut</button>
+            )
+        }
+        return null;
+    }
+
+    get loginButton(){
+        if(this.state.loggedIn==false){
+            return(
+                <button className="button" onClick={this.logg}>Logga in</button>
+            )
+        }
+        return null;
+    }
+    get registerButton(){
+        if(this.state.loggedIn==false){
+            return(
+                <button className="button">Registrera dig!</button>
+            )
+        }
+        return null;
+    }
+    get usernameField() {
+        if(this.state.loggedIn==false){
+        return(
+            <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
+            )
+        }
+        return null;
+    }
+    get passwordField() {
+        if(this.state.loggedIn==false){
+            return(
+                <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
+            )
+        }
+        return null;
     }
    /* renderRedirect=()=>{
         if(this.state.redirect){
@@ -78,20 +128,13 @@ class Login extends React.Component {
         let style="LoginStyle"
         return (
             <div>
-                <div className='LoginWrapper'>
-                    <div>
-                        <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
-                        <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
-                    </div>
-                </div>
-                <div className='ButtonWrapper'>
-                    <div className="SimpleButton">
-                        <button onClick={this.logg}>Logga in</button>
-                        <button>Registrera dig!</button>
-                    </div> 
-                </div>
+                {this.usernameField}
+                {this.passwordField}
+                {this.logoutButton}
+                {this.loginButton}
+                {this.registerButton}
             </div>
-        )
+        );
     }
 }
 export default Login

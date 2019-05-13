@@ -35,7 +35,7 @@ class ShoppingItem extends React.Component {
           {this.props.item.price} kr
           </div>
         <Provider store={this.props.store}>
-          <AddCartButton addLabel	= "Lägg till" product={{
+          <AddCartButton addLabel	= "Lägg till" styles={{ backgroundColor: 'rgb(24, 124, 54)', color: 'white', border:'1px solid black' }} product={{
             id: this.props.item.sku,
             name: this.props.item.name,
             price: this.props.item.price,

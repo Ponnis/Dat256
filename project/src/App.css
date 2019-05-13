@@ -11,7 +11,7 @@
 .header-container{
   height: 12vh;
   width: 100%;
-  background: rgba(255,255,255,0.8);
+  background: 'rgba(255,255,255,0.8)';
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -38,9 +38,9 @@
 }
 
 .main-container{
-  background: rgb(125, 179, 141);
+  background: 'white';
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
 }
 
 .corner-btn{

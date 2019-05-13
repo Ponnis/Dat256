@@ -38,7 +38,7 @@ const farmers = [{
 {
     "id": 2,
     "name": "Ellens bondgård",
-    "distance": 27,
+    "distance": 30,
     "rating": 5,
     "types": [
         "bread",
@@ -54,7 +54,7 @@ const farmers = [{
 {
     "id": 3,
     "name": "Henriks bondgård",
-    "distance": 27,
+    "distance": 5,
     "rating": 5,
     "types": [
         "meat",
@@ -70,7 +70,7 @@ const farmers = [{
 {
     "id": 4,
     "name": "Göteborgs fårfarm",
-    "distance": 27,
+    "distance": 12,
     "rating": 1,
     "types": [
          "sheep"

@@ -24,10 +24,8 @@ class FarmerInformation extends React.Component {
     <div className="Description">
         {this.props.farmer.description}
     </div>,
-    this.props.farmer.products.map(product => <ShoppingItem item={product} store={this.props.store}></ShoppingItem>),
-    <button className = "Button" onClick = {this.props.buyClick}>
-    KÖP
-    </button>];
+    this.props.farmer.products.map(product => <ShoppingItem item={product} store={this.props.store}></ShoppingItem>)
+    ];
     }
 
     rowRenderer = ({ index }) => { 

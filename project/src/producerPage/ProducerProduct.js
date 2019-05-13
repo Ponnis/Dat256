@@ -46,9 +46,14 @@ class ProducerProduct extends React.Component{
         })
     }
 
-
+    handleChange=(e)=>{
+        this.props.changeProduct(this.props.product.sku,e.target.value)
+    }
 
     render(){
+
+
+
         return(
             <div className={"ProductItem"}>
             <div className={"ItemAmount"}><input onChange={this.handleChangeAmount} value={this.state.amount} min={0} max={1000} type="number"/></div>

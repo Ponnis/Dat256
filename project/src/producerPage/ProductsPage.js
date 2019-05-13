@@ -1,7 +1,7 @@
 import React from "react"
 import "./producerPage.css"
 import ProducerProduct from "./ProducerProduct"
-import Farmers from "../farmerInformation/Farmers"
+import { getFarmerById, getAmountOfFarmers } from '../farmerInformation/Farmers'
 
 class ProductsPage extends React.Component{
     constructor(){
@@ -9,8 +9,20 @@ class ProductsPage extends React.Component{
         this.state={
             products: [
                 <ProducerProduct/>
-            ]
-        }
+            ],
+        };
+    }
+
+    convertProducts=()=>{
+        let farmer = getFarmerById(0)
+        let a = farmer.products.map(product => <ProducerProduct/>);
+        let b = [
+            <ProducerProduct/>
+        ]
+        this.setState({
+            products: b,
+            test:"bör funka"
+        });
     }
 
     addProduct =()=>{
@@ -22,10 +34,23 @@ class ProductsPage extends React.Component{
 
         })
 
+        let farmer = getFarmerById(0)
+        farmer.products.push(<ProducerProduct/>)
+
+    }
+
+    changeProduct=(sku,value)=>{
+        let farmer = getFarmerById(0)
+        let a = farmer.products.find( product => product.sku === sku );
+        a.name = value;
+
     }
 
     render(){
-        let products = this.state.products
+        let farmer = getFarmerById(0)
+        let a = farmer.products.map(product => <ProducerProduct product={product} changeProduct={this.changeProduct}/>);
+        let products = a
+
 
         return(
             <div className={"ProductsContainer"}>

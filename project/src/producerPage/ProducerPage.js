@@ -18,7 +18,7 @@ class ProducerPage extends React.Component{
 
         let navPage;
         if(this.state.navPage ==="products"){
-            navPage = <ProductsPage/>
+            navPage = <ProductsPage test={25}/>
         }
         if(this.state.navPage ==="statistics"){
             navPage = <div>Statistiksida (todo)</div>
@@ -29,10 +29,19 @@ class ProducerPage extends React.Component{
         if (this.state.navPage ==="orders"){
             navPage = <div>Beställningar (todo)</div>
         }
+        if (this.state.navPage ==="information"){
+            navPage = <div>Din Information (todo)</div>
+        }
 
         return(
-            <div>
-                <nav className={"NavBar"}><button id="products" onClick={this.navigate}>Produkter</button><button id="statistics" onClick={this.navigate}>Statistik</button><button id="orders" onClick={this.navigate}>Beställningar</button><button id="deliveries" onClick={this.navigate}>Leveranser</button></nav>
+            <div className={"Page"}>
+                <nav className={"NavBar"}>
+                    <button id="products" onClick={this.navigate}>Produkter</button>
+                    <button id="statistics" onClick={this.navigate}>Statistik</button>
+                    <button id="orders" onClick={this.navigate}>Beställningar</button>
+                    <button id="deliveries" onClick={this.navigate}>Leveranser</button>
+                    <button id="information" onClick={this.navigate}>Information</button>
+                </nav>
 
                 <div>
                 {navPage}

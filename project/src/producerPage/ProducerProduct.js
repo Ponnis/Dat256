@@ -1,7 +1,6 @@
 import React from "react"
 import "./producerPage.css"
 // es6
-import NumericInput from 'react-numeric-input';
 
 class ProducerProduct extends React.Component{
     constructor(){

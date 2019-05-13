@@ -49,9 +49,10 @@ class Filter extends Component {
                 <div className="Header">
                     Avstånd:
                 </div>
+                <div className="SliderBox">
                     <Slider
                         defaultValue={50} 
-                        min={0}
+                        min={10}
                         max={50}
                         step={5}
                         railStyle={{ backgroundColor: 'lightgrey'}}
@@ -63,11 +64,12 @@ class Filter extends Component {
                             backgroundColor: 'grey',
                           }}
                         onChange = {(value) => this.setState({distance: value})}
-                          
                         />
                         <label>
                             {this.state.distance} km
                         </label>
+
+            </div>
                         
                     
             </div>

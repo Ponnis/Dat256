@@ -21,14 +21,15 @@ class Login extends React.Component {
                 break;
             case"password":
                 this.setState({
-                    firstName: value
+                    password: value
                 })
                 break;
             }
+        this.confirm()
         }
 
     checkUser= ()=>{
-        if (this.state.username != "user"){
+        if (this.state.username !== "user"){
             this.setState({valid: false})
         }   
         else {
@@ -39,7 +40,7 @@ class Login extends React.Component {
     }
 
     checkPassword = ()=> {
-        if(this.state.password != "password123"){
+        if(this.state.password !== "password123"){
             return false;
         }
         else {
@@ -47,17 +48,20 @@ class Login extends React.Component {
             return true; 
         }
     }
-
     confirm=()=>{
         this.checkUser()
+    }
+
+    logg=()=> {
         if(this.state.valid){
             alert("Du har loggats in!")
-            this.setState({loggedIn: true})
-            //renderRedirect()
+            this.setState({
+                loggedIn: true
+            })
         }
-        else{
-            alert("Inloggning misslyckades")
-        }
+        else
+            alert("Användarnamn eller lösenord är fel")
+
     }
    /* renderRedirect=()=>{
         if(this.state.redirect){
@@ -72,11 +76,12 @@ class Login extends React.Component {
         return (
             <div>
                 <div>
-                    <LoginView label={"UserName"} id={"username"} handleChange={this.handleChange}/>
-                    <LoginView label={"Password"} id={"password"} handleChange={this.handleChange}/>
+                    <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
+                    <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
                 </div>
                 <div className="SimpleButton">
-                    <button onClick={this.confirm}>Skapa konto</button>
+                    <button onClick={this.logg}>Logga in</button>
+                    <button>Registrera dig!</button>
                 </div> 
             </div>
         )

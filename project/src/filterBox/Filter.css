@@ -29,9 +29,8 @@
     margin-left: 5px;
 }
 
-.Slider{
-    color: black;
+.SliderBox{
     margin-left: 10px;
     margin-right: 10px;
-    border: solid black;
+    width: 13vw;
 }

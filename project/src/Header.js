@@ -1,4 +1,5 @@
 import React from "react"
+import './App.css'
 
 class Header extends React.Component{
     constructor(){
@@ -26,7 +27,7 @@ class Header extends React.Component{
         }
 
         return(
-            <div className={"header-container"}>
+            <div className='header-container'>
                 <div className={"logo"} onClick={this.homeView}>
                     <img src={"http://res.freestockphotos.biz/pictures/15/15031-illustration-of-a-carrot-pv.png"}/>
                     <h1>Farmers Market</h1>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import Autocomplete from 'react-google-autocomplete';
 
 class HomePage extends React.Component{
     constructor(){

@@ -17,7 +17,7 @@ import { Provider } from "react-redux";
 class SearchPage extends Component {
     constructor() {
         super()
-        this.state = { farmerInformation: false, farmerID: 0, search: "", categoryFilter: [], minRating: 1 }
+        this.state = { farmerInformation: false, farmerID: 0, search: "", categoryFilter: [], minRating: 1, minDistance: 50 }
     }
     //Farmer state gets updated
     clickedOpenFarmerInformation(id) {
@@ -57,22 +57,30 @@ class SearchPage extends Component {
         });
     }
 
+    distanceFilter(distance) {
+        this.setState({
+            minDistance: distance,
+        });
+    }
+
     filterFarmers() {
         const list = getAmountOfFarmers().map(index => <FarmerBox farmer={getFarmerById(index)} onClick={() => this.clickedOpenFarmerInformation(index)} />)
         const newList = [];
 
         list.forEach(element => {
             if (element.props.farmer.name.toLowerCase().includes(this.state.search.toLowerCase())) {
-                if (element.props.farmer.rating >= this.state.minRating) {
-                    if (this.state.categoryFilter.length === 0) {
-                        newList.push(element);
-                    } else if (_.difference(this.state.categoryFilter, element.props.farmer.types).length === 0) {
-                        newList.push(element);
+                if (element.props.farmer.distance <= this.state.minDistance) {
+                    if (element.props.farmer.rating >= this.state.minRating) {
+                        if (this.state.categoryFilter.length === 0) {
+                            newList.push(element);
+                        } else if (_.difference(this.state.categoryFilter, element.props.farmer.types).length === 0) {
+                            newList.push(element);
+                        }
                     }
                 }
             }
         });
-        return newList;
+        return _.sortBy(newList,[function(element){return element.props.farmer.distance;}]);
     }
 
     onChangeBound(value) {
@@ -95,37 +103,37 @@ class SearchPage extends Component {
 
         return (
             <Provider store={this.props.store}>
-            <Container fluid={true}>
+                <Container fluid={true}>
                     <Cart currency="SEK"
-                            checkoutLabel= "Till varukorgen"
-                            currencySymbol = "SEK"
-                    
-                     />
-                
-                <Row noGutters={true}>
-                    <Col xs={"auto"}>
-                        <Filter
-                            onCategoryClick={(category, number) => this.categoryFilter(category, number)} onRatingClick={(rating) => this.ratingFilter(rating)}>
-                        </Filter>
-                    </Col>
-                    <Col xs={"auto"}>
-                        <SearchField classNames='SearchField'
-                            placeholder="Sök bondgård"
-                            onChange={(value) => this.onChangeBound(value)}
-                        />
-                        <List
-                            width={window.innerWidth * 0.4}
-                            height={window.innerHeight - 25}
-                            rowCount={this.filterFarmers().length}
-                            rowHeight={window.innerHeight / 3.5}
-                            rowRenderer={this.rowRenderer}
-                        />
-                    </Col>
-                    <Col xs={"auto"}>
-                        {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} store={this.props.store} /> : <div></div>}
-                    </Col>
-                </Row>
-            </Container>
+                        checkoutLabel="Till varukorgen"
+                        currencySymbol="SEK"
+
+                    />
+
+                    <Row noGutters={true}>
+                        <Col xs={"auto"}>
+                            <Filter
+                                onCategoryClick={(category, number) => this.categoryFilter(category, number)} onRatingClick={(rating) => this.ratingFilter(rating)} onDistanceClick={(distance) => this.distanceFilter(distance)}>
+                            </Filter>
+                        </Col>
+                        <Col xs={"auto"}>
+                            <SearchField classNames='SearchField'
+                                placeholder="Sök bondgård"
+                                onChange={(value) => this.onChangeBound(value)}
+                            />
+                            <List
+                                width={window.innerWidth * 0.4}
+                                height={window.innerHeight - 25}
+                                rowCount={this.filterFarmers().length}
+                                rowHeight={window.innerHeight / 3.5}
+                                rowRenderer={this.rowRenderer}
+                            />
+                        </Col>
+                        <Col xs={"auto"}>
+                            {this.state.farmerInformation ? <FarmerInformation farmer={getFarmerById(this.state.farmerID)} buyClick={this.clickedBuy} onClose={this.clickedCloseFarmerInformation} store={this.props.store} /> : <div></div>}
+                        </Col>
+                    </Row>
+                </Container>
             </Provider>
         );
     }

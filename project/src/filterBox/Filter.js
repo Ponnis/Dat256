@@ -63,14 +63,14 @@ class Filter extends Component {
                             width: 15,
                             backgroundColor: 'grey',
                           }}
-                        onChange = {(value) => this.setState({distance: value})}
+                        onChange = {(value) => {this.setState({distance: value}); this.props.onDistanceClick(value)}}
+                          
                         />
                         <label>
                             {this.state.distance} km
                         </label>
 
-            </div>
-                        
+            </div>                        
                     
             </div>
         )

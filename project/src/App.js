@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { Provider } from "react-redux";
 import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
 // Test Data API
 import testPurchases from './TestPurchases'
-
+import FarmerInformation from './farmerInformation/FarmerInformation'
+import { getFarmerById } from './farmerInformation/Farmers'
+import ShoppingItem from './products/Product'
+import CreateAccPage from './AccountPage/CreateAccPage'
+import ShoppingCartdud from './shoppingCart/ShoppingCartdud';
 import Header from "./Header";
 import MainView from "./MainView";
-
-
+import configureStore from "./store";
+import {Helmet} from "react-helmet";
 
 
 

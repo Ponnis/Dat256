@@ -31,7 +31,6 @@ class HomePage extends React.Component{
         return(
             <div className={"home-container"}>
                 <h2>Skriv din adress här för att hitta gårdar nära dig:</h2>
-<<<<<<< HEAD
 
                 <div style={{display: 'flex'}}>
                 <Geosuggest
@@ -50,12 +49,6 @@ class HomePage extends React.Component{
                     initialValue={this.state.onClick ? "Din position":""}
                     />
                     <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick})} style={{width: '25px', height: '25px', backgroundColor: 'white'}}/>
-=======
-                <div><input className={"input-field"} type="text"/>
-                <button className={"SearchButton"}>sök</button>
-                <MasterForm></MasterForm>
-                    
->>>>>>> parent of 3bd5746e... minor change
                 </div>
                 <button onClick={this.search} className ={"SearchButton"}>Hitta produkter nära dig!</button>
                 

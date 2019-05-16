@@ -1,5 +1,5 @@
 import React from "react";
-import TextField from './TextField';
+import TextField from "./TextField.js"
 import AccountPage from "./AccountPage.css"
 
 
@@ -120,7 +120,6 @@ class CreateAccPage extends React.Component{
             <TextField label={"Organisationsnummer"} id={"companyNum"} handleChange={this.handleChange}/>]
 
         }
-        let style="AccountPage";
         return(
             <div className="PageWrapper">
                 <div>Välj kontotyp</div>

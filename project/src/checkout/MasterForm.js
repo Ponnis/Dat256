@@ -1,5 +1,6 @@
 import React from 'react'
 import CreditCard from './CreditCard'
+import './MasterForm.css'
 export default class MasterForm extends React.Component {
   constructor(props) {
     super(props)
@@ -51,8 +52,8 @@ export default class MasterForm extends React.Component {
     if(currentStep !==1){
       return (
         <button 
-          className="btn btn-secondary" 
-          type="button" onClick={this._prev}>
+          className="SButton" 
+          type="SimpleButton" onClick={this._prev}>
         Förgående
         </button>
       )
@@ -65,7 +66,7 @@ export default class MasterForm extends React.Component {
 
     if(currentStep ==4){
       return(
-        <button className="btn btn secondary"
+        <button className="SButton"
         type="button" onClick={this.handleSubmit}>Slutför köp</button>
       )
     }return null;
@@ -77,7 +78,7 @@ export default class MasterForm extends React.Component {
     if(currentStep <4){
       return (
         <button 
-          className="btn btn-primary float-right" 
+          className="SButton" 
           type="button" onClick={this._next}>
         Nästa
         </button>        
@@ -99,8 +100,8 @@ export default class MasterForm extends React.Component {
   render() {    
     return (
       <React.Fragment>
-      <h1>Checkout</h1>
-      <p>Step {this.state.currentStep} </p> 
+      <h1 className="HText">Checkout</h1>
+      <p className="HText">Step {this.state.currentStep} </p> 
         
       <form onSubmit={this.handleSubmit}>
       
@@ -144,13 +145,13 @@ class Step1 extends React.Component {
     // The markup for the Step 1 UI
     return(
       <div className="form-group">
-        <label htmlFor="email">Email address</label>
+        <label className="HText" htmlFor="email">Email address</label>
         <input
-          className="form-control"
+          className="TextField"
           id="email"
           name="email"
           type="text"
-          placeholder="Enter email"
+          placeholder="Skriv din email..."
           value={this.props.email} // Prop: The email input data
           onChange={this.props.handleChange} // Prop: Puts data into state
         />
@@ -166,13 +167,13 @@ class Step2 extends React.Component {
     }
     return(
       <div className="form-group">
-        <label htmlFor="name">Name</label>
+        <label className="HText" htmlFor="name">Name</label>
         <input
-          className="form-control"
+          className="TextField"
           id="name"
           name="name"
           type="text"
-          placeholder="Enter name"
+          placeholder="Skriv ditt namn..."
           value={this.props.name} 
           onChange={this.props.handleChange} // Prop: Puts data into state
         />
@@ -189,9 +190,9 @@ class Step3 extends React.Component {
     
     return(
       <div className="form-group">
-        <label htmlFor="address">Address</label>
+        <label className="HText" htmlFor="address">Address</label>
         <input
-          className="form-control"
+          className="TextField"
           id="address"
           name="address"
           type="text"

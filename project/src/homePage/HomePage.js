@@ -5,8 +5,6 @@ import ReactDOM from 'react-dom';
 import "./home.css";
 import Geosuggest from 'react-geosuggest';
 import FindLocation from './FindLocation.js'
-import MasterForm from '../checkout/MasterForm'
-
 
 class HomePage extends React.Component{
     constructor(){

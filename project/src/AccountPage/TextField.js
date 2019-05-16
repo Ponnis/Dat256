@@ -43,15 +43,14 @@ onChange = async(event) => {
  render() {
     const { focussed, value, error, label } = this.state;
     const { id, type, locked } = this.props;
-    let style1="TextField";
     let style="TextField";
     if (this.props.id==="password" || this.props.id==="confirmPassword"){
-      style="PasswordTextField";
+      style="PasswordTextField"
     }
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className={style1}>
+      <div className={style}>
         <input
           id={id}
           type="text"

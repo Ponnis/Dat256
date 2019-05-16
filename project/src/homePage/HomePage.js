@@ -43,6 +43,7 @@ class HomePage extends React.Component{
                     radius="20"
                     queryDelay={0}
                     maxFixtures={3}
+                    placeholder={"Skriv in din adress"}
                     />
                     <button onClick={this.search} className={"SearchButton"}>Hitta produkter nära dig</button>
                 </div>

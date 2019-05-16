@@ -4,6 +4,7 @@ import TestAccounts from "./AccountPage/TestAccounts";
 import HomePage from "./homePage/HomePage";
 import SearchPage from "./SearchPage";
 import ProducerPage from "./producerPage/ProducerPage"
+import Login from './login/Login';
 
 class MainView extends React.Component{
 
@@ -51,7 +52,10 @@ class MainView extends React.Component{
         }
 
         if(this.props.view ==="login"){
-            page = <CreateAccPage addAccount={this.newAccount}/>
+            page = <div>
+               <Login/>
+                <CreateAccPage addAccount={this.newAccount}/>
+                     </div>
         }
         if(this.props.view ==="search"){
             page = <SearchPage store={this.props.store}/>

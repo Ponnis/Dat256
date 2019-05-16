@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TextField.css';
+import './TextInputStyle.css';
 
-class TextField extends React.Component {
+
+class LoginView extends React.Component {
     constructor(props) {
         super(props);
     
@@ -43,15 +44,11 @@ onChange = async(event) => {
  render() {
     const { focussed, value, error, label } = this.state;
     const { id, type, locked } = this.props;
-    let style1="TextField";
-    let style="TextField";
-    if (this.props.id==="password" || this.props.id==="confirmPassword"){
-      style="PasswordTextField";
-    }
+    let style="TextInputStyle";
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className={style1}>
+      <div className="field">
         <input
           id={id}
           type="text"
@@ -64,4 +61,4 @@ onChange = async(event) => {
  }
 
 }
-export default TextField
+export default LoginView

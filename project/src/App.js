@@ -7,6 +7,7 @@ import testPurchases from './TestPurchases'
 import Header from "./Header";
 import MainView from "./MainView";
 import configureStore from "./store";
+import {Helmet} from "react-helmet";
 
 
 class App extends Component {
@@ -57,6 +58,11 @@ class App extends Component {
 
         return (
             <Provider store={store}>
+            <Helmet>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=">
+                    </script>
+            </Helmet>
             <div className="App">
                 <Header changeView={this.changeView} view={this.state.mainView} />
                 <MainView changeView={this.changeView} view={this.state.mainView} store={store} />

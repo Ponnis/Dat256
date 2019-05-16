@@ -14,8 +14,7 @@
 .SearchButton {
     margin: 20px;
     font-size: 16px;
-    height: 5vh;
-    width: 40px;
+    width: 20vw;
     border-radius: 1px;
     border: none;
     color: white;
@@ -27,3 +26,42 @@
     width: 30vw;
     height: 5vh;
 }
+
+.geosuggest__item--active {
+    font-weight: bold;
+    color: red;
+}
+
+.geosuggest__suggests--hidden {
+    max-height: 0;
+    overflow: hidden;
+    border-width: 0;
+}
+
+.geosuggest__item {
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 3px;
+}
+
+.auto{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.NavigationButton {
+    margin: 20px;
+    font-size: 16px;
+    height: 5vh;
+    width: 40px;
+    border-radius: 1px;
+    border: none;
+    color: white;
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }

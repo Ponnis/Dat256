@@ -10,15 +10,12 @@ class HomePage extends React.Component{
         super()
     }
     
-
     search=()=>{
         this.props.search("search")
     }
 
-   
-   
-
     render(){
+        //Constant with suggestions for autocomplete
         const fixtures = [
             {label: 'Göteborg', location: {lat: 57.70716, lng: 11.96679}},
             {label: 'Gibraltargatan', location: {lat: 57.685510, lng: 11.983820}},

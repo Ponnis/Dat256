@@ -60,7 +60,7 @@ class App extends Component {
             <Provider store={store}>
             <Helmet>
                 <script
-                    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDsDauVwD2vwY4WYAwIgamtTWlD_B5By1o">
+                    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=">
                     </script>
             </Helmet>
             <div className="App">

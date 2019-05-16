@@ -17,7 +17,6 @@ class HomePage extends React.Component{
                 <div><input className={"input-field"} type="text"/>
                 <button className={"SearchButton"}>sök</button>
                 <MasterForm></MasterForm>
-                    
                 </div>
             </div>
         )

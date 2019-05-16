@@ -108,6 +108,16 @@ function getAmountOfFarmers() {
     return lists;
 }
 
+function getNewID(){
+    return getAmountOfFarmers().length;
+}
+
+function addFarmer(farmerObject){
+    farmers.push(farmerObject)
+    console.log(JSON.stringify(farmers))
+}
+
 module.exports.getFarmerById = getFarmerById;
 module.exports.getAmountOfFarmers = getAmountOfFarmers;
-module.exports.getFarmers = farmers;
+module.exports.addFarmer = addFarmer;
+module.exports.getNewID = getNewID;

@@ -5,6 +5,9 @@ import HomePage from "./homePage/HomePage";
 import SearchPage from "./SearchPage";
 import ProducerPage from "./producerPage/ProducerPage"
 
+import { getNewID, addFarmer } from "./farmerInformation/Farmers"
+
+
 class MainView extends React.Component{
 
     constructor(){
@@ -22,21 +25,29 @@ class MainView extends React.Component{
         })
         console.log("Account added")
         console.log(JSON.stringify(this.state.accounts))
+        this.createNewFarmer(account)
     }
 
     createNewFarmer(account){
-        let farmer =
-            {id:"",
-            name:"",
-            distance:"",
+
+        let newID = getNewID()
+        let name = account.firstName + "s Varor"
+        console.log(account.firstName)
+
+        let newFarmer =
+            {id:newID,
+            name:name,
+            distance: 5, rating:1,
             types:[
-
+                "milk"
             ],
-            description:"",
+            description:"En Ny Gård",
             products:[
-
+                { "name": "Mjölk", "price": 12,"sku":"3-2" }
             ],
             };
+        console.log(JSON.stringify(newFarmer))
+        addFarmer(newFarmer)
     }
 
     render(){
@@ -51,7 +62,9 @@ class MainView extends React.Component{
         }
 
         if(this.props.view ==="login"){
-            page = <CreateAccPage addAccount={this.newAccount}/>
+            page = <div>
+                <CreateAccPage addAccount={this.newAccount}/>
+                     </div>
         }
         if(this.props.view ==="search"){
             page = <SearchPage store={this.props.store}/>

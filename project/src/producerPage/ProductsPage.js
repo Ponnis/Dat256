@@ -7,31 +7,30 @@ class ProductsPage extends React.Component{
     constructor(){
         super()
         this.state={
-            products: getFarmerById(2).products
+            products: getFarmerById(2).products,genSKU:0
         };
-    }
-
-    convertProducts=()=>{
-        let farmer = getFarmerById(0)
-        let a = farmer.products.map(product => <ProducerProduct/>);
-        let b = [
-            <ProducerProduct/>
-        ]
-        this.setState({
-            products: b,
-            test:"bör funka"
-        });
     }
 
     addProduct =()=>{
         let tempArr = this.state.products.slice()
-        console.log(tempArr)
+        //console.log(tempArr)
         tempArr.push({
             name:"Ny Vara!", price:0,amount:0
         })
+        let sku = "" + this.generateSKU()
+        this.setState((prevState)=>({
+            products: [...prevState.products, {name:"ny vara", price:0, sku:sku}]
+        
+        }))
+    }
+
+    generateSKU(){
+        let a = this.state.genSKU
+        let b = ++a
         this.setState({
-            products: tempArr
+            genSKU: b
         })
+        return a
     }
     
     handleChange=(sku, property, value)=>{
@@ -48,11 +47,10 @@ class ProductsPage extends React.Component{
             }
             ++i
         })
-
+        console.log(JSON.stringify(this.state.products))
     }
 
     render(){
-        let farmer = getFarmerById(0)
         let products = this.state.products.map(product => <ProducerProduct product={product} onUserInput={this.handleChange} sku={product.sku}/>);
 
 

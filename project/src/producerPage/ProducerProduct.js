@@ -47,7 +47,9 @@ class ProducerProduct extends React.Component{
     }*/
 
     handleChange=(e)=>{
+        
       this.props.onUserInput(this.props.sku, e.target.name, e.target.value)
+      e.preventDefault()
     }
 
     render(){

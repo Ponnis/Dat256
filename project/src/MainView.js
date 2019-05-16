@@ -24,6 +24,21 @@ class MainView extends React.Component{
         console.log(JSON.stringify(this.state.accounts))
     }
 
+    createNewFarmer(account){
+        let farmer =
+            {id:"",
+            name:"",
+            distance:"",
+            types:[
+
+            ],
+            description:"",
+            products:[
+
+            ],
+            };
+    }
+
     render(){
 
         let page;

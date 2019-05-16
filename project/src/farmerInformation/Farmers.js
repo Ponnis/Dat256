@@ -110,3 +110,4 @@ function getAmountOfFarmers() {
 
 module.exports.getFarmerById = getFarmerById;
 module.exports.getAmountOfFarmers = getAmountOfFarmers;
+module.exports.getFarmers = farmers;

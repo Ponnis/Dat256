@@ -2,24 +2,25 @@ import React from "react"
 import "./producerPage.css"
 import ProducerProduct from "./ProducerProduct"
 import { getFarmerById, getAmountOfFarmers } from '../farmerInformation/Farmers'
+import { getNewSKU } from "./tempData"
 
 class ProductsPage extends React.Component{
     constructor(){
         super()
         this.state={
-            products: getFarmerById(2).products,genSKU:0
+            products: getFarmerById(2).products
         };
     }
 
     addProduct =()=>{
         let tempArr = this.state.products.slice()
         //console.log(tempArr)
-        tempArr.push({
-            name:"Ny Vara!", price:0,amount:0
-        })
-        let sku = "" + this.generateSKU()
+        let sku = "" + getNewSKU()
+        let newProduct = {name:"ny vara", price:0, sku:sku}
+        tempArr.push(newProduct)
+        getFarmerById(2).products = tempArr
         this.setState((prevState)=>({
-            products: [...prevState.products, {name:"ny vara", price:0, sku:sku}]
+            products: [...prevState.products, newProduct]
         
         }))
     }
@@ -48,6 +49,7 @@ class ProductsPage extends React.Component{
             ++i
         })
         console.log(JSON.stringify(this.state.products))
+        console.log(JSON.stringify(getFarmerById(2).products))
     }
 
     render(){

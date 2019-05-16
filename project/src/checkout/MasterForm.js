@@ -91,11 +91,25 @@ export default class MasterForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { email, name, address} = this.state
-    alert(`Din order levereras till ${address}\n 
-            i namnet:  ${name} \n
-            med kontaktemail:  ${email}\n
-            Tack för ditt köp!
-      `)
+    var msg = "Du har inte fyllt i följande korrekt: "
+
+    if(email.length<=0||!(email.includes("@"))||!(email.includes("."))||name.length<=0||address.length<=0){
+      if(email.length<=0||!(email.includes("@"))||!(email.includes("."))){
+       msg= msg.concat("Email")
+      }if(name.length<=0){
+       msg= msg.concat(" Namn")
+      }if(address.length<=0){
+       msg= msg.concat(" Adress")
+      }
+      alert(msg);
+    }else{alert(`Din order levereras till ${address}\n 
+    i namnet:  ${name} \n
+    med kontaktemail:  ${email}\n
+    Tack för ditt köp!
+`)}
+    
+
+    
   }
   render() {    
     return (

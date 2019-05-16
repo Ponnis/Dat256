@@ -6,9 +6,9 @@ class FindLocation extends React.Component {
   render() {
     return (
       !this.props.isGeolocationAvailable
-      ? <div>Your browser does not support Geolocation</div>
+      ? <div>Din webbläsare har inte support för platsbehörighet</div>
       : !this.props.isGeolocationEnabled
-        ? <div>Geolocation is not enabled</div>
+        ? <div>Platsbehörighet är avstängd</div>
         : this.props.coords
           ? <table>
             <tbody>
@@ -16,7 +16,7 @@ class FindLocation extends React.Component {
               <tr><td>longitude</td><td>{this.props.coords.longitude}</td></tr>
             </tbody>
           </table>
-      : <div>Getting the location data&hellip; </div>)
+      : <div>Hämtar din position&hellip; </div>)
    
   }
 }

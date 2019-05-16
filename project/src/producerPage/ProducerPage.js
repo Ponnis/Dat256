@@ -7,7 +7,7 @@ class ProducerPage extends React.Component{
         super()
         this.state={navPage: "products"}
     }
-
+    //sets which page should be displayed depending on which button in the navbar is clicked
     navigate=(e)=>{
         console.log(e.target.id)
         this.setState({navPage: e.target.id})

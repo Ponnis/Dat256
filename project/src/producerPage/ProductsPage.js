@@ -11,10 +11,9 @@ class ProductsPage extends React.Component{
             products: getFarmerById(2).products
         };
     }
-
+    //function to add new products to inventory
     addProduct =()=>{
         let tempArr = this.state.products.slice()
-        //console.log(tempArr)
         let sku = "" + getNewSKU()
         let newProduct = {name:"ny vara", price:0, sku:sku}
         tempArr.push(newProduct)
@@ -24,7 +23,7 @@ class ProductsPage extends React.Component{
         
         }))
     }
-
+    //get a new SKU for new product
     generateSKU(){
         let a = this.state.genSKU
         let b = ++a
@@ -33,7 +32,7 @@ class ProductsPage extends React.Component{
         })
         return a
     }
-    
+    //saving updates in inventory array
     handleChange=(sku, property, value)=>{
         let i = 0
         this.state.products.map(product =>{
@@ -48,8 +47,6 @@ class ProductsPage extends React.Component{
             }
             ++i
         })
-        console.log(JSON.stringify(this.state.products))
-        console.log(JSON.stringify(getFarmerById(2).products))
     }
 
     render(){

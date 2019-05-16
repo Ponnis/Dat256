@@ -29,9 +29,10 @@ class HomePage extends React.Component{
         return(
             <div className={"home-container"}>
                 <h2>Skriv din adress här för att hitta gårdar nära dig:</h2>
-                <div><input className={"input-field"} type="text"/>
+                
                 <div>
                 <Geosuggest
+                    className={"auto"}
                     fixtures={fixtures}
                     onFocus={this.onFocus}
                     onBlur={this.onBlur}
@@ -43,10 +44,10 @@ class HomePage extends React.Component{
                     queryDelay={0}
                     maxFixtures={3}
                     />
-                    <button onClick={()=>this._geoSuggest.selectSuggest()}>Hitta produkter nära dig!</button>
+                    <button onClick={this.search} className={"SearchButton"}>Hitta produkter nära dig</button>
                 </div>
-                <button onClick={this.search} className={"SearchButton"}>sök</button>
-                </div>
+                
+                
             </div>
         )
     }

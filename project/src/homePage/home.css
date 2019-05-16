@@ -54,3 +54,14 @@
     text-align: center;
 }
 
+.NavigationButton {
+    margin: 20px;
+    font-size: 16px;
+    height: 5vh;
+    width: 40px;
+    border-radius: 1px;
+    border: none;
+    color: white;
+    background: rgb(24, 124, 54);
+    cursor: pointer;
+   }

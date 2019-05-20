@@ -6,6 +6,7 @@ import SearchPage from "./SearchPage";
 import ProducerPage from "./producerPage/ProducerPage"
 
 import { getNewID, addFarmer } from "./farmerInformation/Farmers"
+import MasterForm from "./checkout/MasterForm";
 
 
 class MainView extends React.Component{
@@ -68,6 +69,9 @@ class MainView extends React.Component{
         }
         if(this.props.view ==="search"){
             page = <SearchPage store={this.props.store}/>
+        }
+        if(this.props.view ==="checkout"){
+            page = <MasterForm></MasterForm>
         }
         return(
             <main className={"main-container"}>

@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import "./home.css";
 import Geosuggest from 'react-geosuggest';
 import FindLocation from './FindLocation.js'
+import MasterForm from '../checkout/MasterForm'
+import CreditCard from '../checkout/CreditCard'
 
 class HomePage extends React.Component{
     constructor(){
@@ -53,6 +55,7 @@ class HomePage extends React.Component{
                 <button onClick={this.search} className ={"SearchButton"}>Hitta produkter nära dig!</button>
                 
                 {this.state.onClick ? <FindLocation/>: <div/>}
+               
             </div>
         )
     }

@@ -32,8 +32,8 @@ class MainView extends React.Component{
     createNewFarmer(account){
 
         let newID = getNewID()
-        let name = account.firstName + "s Varor"
-        console.log(account.firstName)
+        let name = account.companyName
+        console.log(account.companyName)
 
         let newFarmer =
             {id:newID,

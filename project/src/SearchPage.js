@@ -107,7 +107,7 @@ class SearchPage extends Component {
             <Provider store={this.props.store}>
                 <Container fluid={true}>
                     <Cart currency="SEK"
-                        checkoutLabel="Till varukorgen"
+                        checkoutLabel="Till betalning"
                         currencySymbol="SEK"
                         handleCheckout = {this.handleCheckout}
 

@@ -10,3 +10,16 @@
     background: rgb(125, 179, 141);
     font-family: 'Times New Roman', Times, serif;
 }
+
+.divider {
+    position: relative;
+    min-width:2px;
+    max-width:2px;
+    background-color:#000;
+    margin:0 0.25%;
+  }
+
+.Login {
+    display: flex;
+    align-items: center;
+}

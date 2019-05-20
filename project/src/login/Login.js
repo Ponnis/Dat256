@@ -91,14 +91,6 @@ class Login extends React.Component {
         }
         return null;
     }
-    get registerButton(){
-        if(this.state.loggedIn==false){
-            return(
-                <button className="button">Registrera dig!</button>
-            )
-        }
-        return null;
-    }
     get usernameField() {
         if(this.state.loggedIn==false){
         return(
@@ -132,7 +124,6 @@ class Login extends React.Component {
                 {this.passwordField}
                 {this.logoutButton}
                 {this.loginButton}
-                {this.registerButton}
             </div>
         );
     }

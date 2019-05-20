@@ -1,6 +1,7 @@
 import React from "react";
-import TextField from "./TextField.js"
-import AccountPage from "./AccountPage.css"
+import TextField from "./TextField.js";
+import "./AccountPage.css";
+import LoginView from "../login/Login";
 
 
 class CreateAccPage extends React.Component{
@@ -118,11 +119,18 @@ class CreateAccPage extends React.Component{
         if (this.state.accountOption==="producer"){
             options=[<TextField label={"Företagsnamn*"} id={"companyName"} handleChange={this.handleChange}/>,
             <TextField label={"Organisationsnummer"} id={"companyNum"} handleChange={this.handleChange}/>]
-
         }
         return(
             <div className="PageWrapper">
-                <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
+            
+            <div style={{display: "flex",margin: "auto",width: "50%"}}>
+            <div className="Login">
+            <LoginView/>
+            </div>
+            <div class="divider"></div>
+            <div >
+            
+            <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
                 <div >
                     <label><input className={"UserType"} name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/>Konsument</label>
                     <label><input className={"UserType"} name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/>Producent</label>
@@ -140,6 +148,8 @@ class CreateAccPage extends React.Component{
                 <div className="CreateButton">
                     <button onClick={this.confirm}>Skapa konto</button>
                 </div>
+            </div>
+            </div>
             </div>
         )
     }

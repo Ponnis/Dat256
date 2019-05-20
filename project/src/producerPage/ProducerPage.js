@@ -36,13 +36,12 @@ class ProducerPage extends React.Component{
         return(
             <div className={"Page"}>
                 <nav className={"NavBar"}>
-                    <button id="products" onClick={this.navigate}>Produkter</button>
-                    <button id="statistics" onClick={this.navigate}>Statistik</button>
-                    <button id="orders" onClick={this.navigate}>Beställningar</button>
-                    <button id="deliveries" onClick={this.navigate}>Leveranser</button>
-                    <button id="information" onClick={this.navigate}>Information</button>
+                    <button className={"Tabs"} id="products" onClick={this.navigate}>Produkter</button>
+                    <button className={"Tabs"} id="statistics" onClick={this.navigate}>Statistik</button>
+                    <button className={"Tabs"} id="orders" onClick={this.navigate}>Beställningar</button>
+                    <button className={"Tabs"} id="deliveries" onClick={this.navigate}>Leveranser</button>
+                    <button className={"Tabs"} id="information" onClick={this.navigate}>Information</button>
                 </nav>
-
                 <div>
                 {navPage}
                 </div>

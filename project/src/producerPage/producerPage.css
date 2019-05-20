@@ -1,23 +1,28 @@
 .NavBar button{
-    margin: 0 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
     font-family: 'Times New Roman', Times, serif;
     background: white;
 }
 
+/*The container for the whole page. */
 .Page{
     background: rgb(125, 179, 141);
     height: 100%;
 }
 
-.ProductsContainer{
-    
-    
-}
-
+/*Button for aadding new items. */
 .AddButton{
-    margin: 0 30px;
+    margin-top: 15px;
     font-family: 'Times New Roman', Times, serif;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
     background: white;
+    cursor: pointer;
+    border: 2px solid rgb(24, 124, 54);
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(24, 124, 54);
 }
 
 .AddButton:hover{
@@ -28,7 +33,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    
 }
 
 .ProductItem{
@@ -42,23 +46,20 @@
 }
 
 .ProductItem input{
-    width: 50px;
+    width: 100px;
+    text-align: center;
 }
 
-.ItemName{
-    width: 80px;
-}
-/*
-.ProductItem .ItemInput{
-    margin: 0 50px;
+/*Tabs for the producer's different pages (i.e. "Produkter", "Statistik", ...) */
+.Tabs{
+    margin-top: 1000px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: white;
+    cursor: pointer;
+    border: 2px solid rgb(24, 124, 54);
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(24, 124, 54);
 }
 
-.ProductItem .ItemAmount {
-    position: fixed;
-    left: 265px;
-}
-
-.ProductItem .ItemPrice {
-    position: fixed;
-    right: 265px;
-}*/

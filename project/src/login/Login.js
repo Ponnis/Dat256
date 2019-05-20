@@ -86,7 +86,7 @@ class Login extends React.Component {
     get loginButton(){
         if(this.state.loggedIn==false){
             return(
-                <button className="button" onClick={this.logg}>Logga in</button>
+                <button className="SignInButton" onClick={this.logg}>Logga in</button>
             )
         }
         return null;
@@ -119,7 +119,8 @@ class Login extends React.Component {
     render() { 
         let style="LoginStyle"
         return (
-            <div>
+            <div className={"LeftBox"}>
+                <h3>Fyll i dina användaruppgifter!</h3>
                 {this.usernameField}
                 {this.passwordField}
                 {this.logoutButton}

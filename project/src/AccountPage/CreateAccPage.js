@@ -122,18 +122,18 @@ class CreateAccPage extends React.Component{
         }
         return(
             <div className="PageWrapper">
-                <div style={{display: "flex",margin: "auto",width: "50%"}}>
+                <div style={{display: "flex",margin: "auto"}}>
                     <div className="Login">
                         <LoginView/>
                     </div>
                     <div class="divider"></div>
                     <div className={"LeftBox"}>
+                        <h3>Fyll i dina personuppgifter!</h3>
                         <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
                         <div >
                             <label><input className={"UserType"} name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/>Konsument</label>
                             <label><input className={"UserType"} name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/>Producent</label>
                         </div>
-                        <h3>Fyll i dina personuppgifter!</h3>
                         <div>
                             <TextField label={"Användarnamn*"} id={"username"} handleChange={this.handleChange}/>
                             <TextField label={"Förnamn*"} id={"firstName"} handleChange={this.handleChange}/>

@@ -48,7 +48,7 @@ onChange = async(event) => {
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className="field">
+      <div className="TextFieldLogIn">
         <input
           id={id}
           type="text"

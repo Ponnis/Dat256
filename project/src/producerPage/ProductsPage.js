@@ -54,11 +54,16 @@ class ProductsPage extends React.Component{
 
 
         return(
-            <div className={"ProductsContainer"}>
-           <div className={"ProductHeadings"}><h6>Antal (st)</h6><h6>Varunamn</h6><h6>Pris (SEK)</h6></div>
+            //Contains everything regaring the proucts, the container contains teh headings, 
+            //all products and a button for adding new products.
+            <div>
+                <div className={"ProductHeadings"}>
+                    <h6 className={"Heading"} >Antal (st)</h6>
+                    <h6 className={"Heading"}> Varunamn</h6>
+                    <h6 className={"Heading"} >Pris (SEK)</h6>
+                </div>
                 {products}
-            <button className={"AddButton"} onClick={this.addProduct}>Lägg till vara</button>
-            
+                <button className={"AddButton"} onClick={this.addProduct}>Lägg till ny vara</button>
             </div>
         )
 

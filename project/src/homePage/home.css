@@ -21,6 +21,13 @@
     background: rgb(24, 124, 54);
     cursor: pointer;
    }
+.SearchButton:disabled,
+.SearchButton[disabled]{
+     border: 1px solid #999999;
+     background-color: #cccccc;
+     color: #666666;
+     cursor: not-allowed;
+   }
 
 .input-field{
     width: 30vw;
@@ -65,3 +72,4 @@
     background: rgb(24, 124, 54);
     cursor: pointer;
    }
+

@@ -122,34 +122,30 @@ class CreateAccPage extends React.Component{
         }
         return(
             <div className="PageWrapper">
-            
-            <div style={{display: "flex",margin: "auto",width: "50%"}}>
-            <div className="Login">
-            <LoginView/>
-            </div>
-            <div class="divider"></div>
-            <div >
-            
-            <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
-                <div >
-                    <label><input className={"UserType"} name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/>Konsument</label>
-                    <label><input className={"UserType"} name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/>Producent</label>
+                <div style={{display: "flex",margin: "auto",width: "50%"}}>
+                    <div className="Login">
+                        <LoginView/>
+                    </div>
+                    <div class="divider"></div>
+                    <div className={"LeftBox"}>
+                        <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
+                        <div >
+                            <label><input className={"UserType"} name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/>Konsument</label>
+                            <label><input className={"UserType"} name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/>Producent</label>
+                        </div>
+                        <h3>Fyll i dina personuppgifter!</h3>
+                        <div>
+                            <TextField label={"Användarnamn*"} id={"username"} handleChange={this.handleChange}/>
+                            <TextField label={"Förnamn*"} id={"firstName"} handleChange={this.handleChange}/>
+                            <TextField label={"Efternamn*"} id={"surName"} handleChange={this.handleChange}/>
+                            {options}
+                            <TextField label={"Email*"} id={"email"} handleChange={this.handleChange}/>
+                            <TextField label={"Lösenord*"} id={"password"} handleChange={this.handleChange} />
+                            <TextField label={"Bekräfta lösenord*"} id={"confirmPassword"} handleChange={this.handleChange}/>
+                        </div>
+                        <button className="CreateButton" onClick={this.confirm}>Skapa konto</button>
+                    </div>
                 </div>
-                <h3>Fyll i dina personuppgifter!</h3>
-                <div>
-                    <TextField label={"Användarnamn*"} id={"username"} handleChange={this.handleChange}/>
-                    <TextField label={"Förnamn*"} id={"firstName"} handleChange={this.handleChange}/>
-                    <TextField label={"Efternamn*"} id={"surName"} handleChange={this.handleChange}/>
-                    {options}
-                    <TextField label={"Email*"} id={"email"} handleChange={this.handleChange}/>
-                    <TextField label={"Lösenord*"} id={"password"} handleChange={this.handleChange} />
-                    <TextField label={"Bekräfta lösenord*"} id={"confirmPassword"} handleChange={this.handleChange}/>
-                </div>
-                <div className="CreateButton">
-                    <button onClick={this.confirm}>Skapa konto</button>
-                </div>
-            </div>
-            </div>
             </div>
         )
     }

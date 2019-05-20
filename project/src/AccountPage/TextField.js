@@ -50,8 +50,9 @@ onChange = async(event) => {
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className={style}>
+      <div >
         <input
+        className={"TextFields"}
           id={id}
           type="text"
           value={value}

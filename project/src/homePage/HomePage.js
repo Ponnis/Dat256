@@ -54,7 +54,7 @@ class HomePage extends React.Component{
                     placeholder={"Skriv in din adress"}
                     initialValue={this.state.onClick ? "Din position":""}
                     />
-                    <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick})} style={{width: '25px', height: '25px', backgroundColor: 'white'}}/>
+                    <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick, searchValue: 'din position'})} style={{width: '25px', height: '25px', backgroundColor: 'white'}}/>
                 </div>
                 <button onClick={this.search} disabled={!this.state.searchValue} className ={"SearchButton"}>Hitta produkter nära dig!</button>
                 

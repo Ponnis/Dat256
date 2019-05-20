@@ -122,10 +122,10 @@ class CreateAccPage extends React.Component{
         }
         return(
             <div className="PageWrapper">
-                <div>Välj kontotyp</div>
-                <div>
-                    <label>Konsument<input name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/></label>
-                    <label>Producent<input name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/></label>
+                <div className={"RegisterAs"}>Jag är vill regsitrera mig som:</div>
+                <div >
+                    <label><input className={"UserType"} name="radioButton" type="radio" value="consumer" onChange={this.handleAccountChange} checked={this.state.accountOption === "consumer"}/>Konsument</label>
+                    <label><input className={"UserType"} name="radioButton" type="radio" value="producer" onChange={this.handleAccountChange} checked={this.state.accountOption === "producer"}/>Producent</label>
                 </div>
                 <h3>Fyll i dina personuppgifter!</h3>
                 <div>
@@ -137,7 +137,7 @@ class CreateAccPage extends React.Component{
                     <TextField label={"Lösenord*"} id={"password"} handleChange={this.handleChange} />
                     <TextField label={"Bekräfta lösenord*"} id={"confirmPassword"} handleChange={this.handleChange}/>
                 </div>
-                <div className="SimpleButton">
+                <div className="CreateButton">
                     <button onClick={this.confirm}>Skapa konto</button>
                 </div>
             </div>

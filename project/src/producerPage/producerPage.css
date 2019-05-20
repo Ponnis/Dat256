@@ -2,7 +2,6 @@
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
-    font-family: 'Times New Roman', Times, serif;
     background: white;
 }
 
@@ -10,12 +9,12 @@
 .Page{
     background: rgb(125, 179, 141);
     height: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /*Button for aadding new items. */
 .AddButton{
     margin-top: 15px;
-    font-family: 'Times New Roman', Times, serif;
     box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
     background: white;
     cursor: pointer;
@@ -26,20 +25,25 @@
 }
 
 .AddButton:hover{
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
+/*The container for the hedings ("Antal (st)", "Varunamn", "Pris (SEK)") for the products. */
 .ProductHeadings{
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row;
+}
+
+/*The text on the headings. */
+.Heading{
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .ProductItem{
-    font-family: 'Times New Roman', Times, serif;
     border: solid 2px black;
     margin: 5px;
-    background: lightgrey;
+    background: rgb(219, 219, 219);
     display: flex;
     justify-content: space-evenly;
     height: 34px;
@@ -52,14 +56,16 @@
 
 /*Tabs for the producer's different pages (i.e. "Produkter", "Statistik", ...) */
 .Tabs{
-    margin-top: 1000px;
-    font-family: 'Times New Roman', Times, serif;
     box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
     background: white;
     cursor: pointer;
     border: 2px solid rgb(24, 124, 54);
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(24, 124, 54);
+}
+
+.Tabs:hover{
+    opacity: 0.8;
 }
 

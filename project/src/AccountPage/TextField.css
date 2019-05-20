@@ -1,32 +1,60 @@
 .TextField {
-    width: 100%;
-    height: 56px;
-    border-radius: 4px;
-    position: relative;
-    background: rgb(125, 179, 141);
-    transition: 0.3s all;
+  width: 100%;
+  height: 56px;
+  border-radius: 4px;
+  position: relative;
+  background: rgb(125, 179, 141);
+  transition: 0.3s all;
+}
 
-  }
-  .PasswordTextField {
-    width: 100%;
-    height: 56px;
-    border-radius: 4px;
-    position: relative;
-    background: rgb(125, 179, 141);
-    transition: 0.3s all;
-    -webkit-text-security: disc;
-  }
+.TextFieldIncorrect{
+  border: red;
+}
 
-  
+.PasswordTextField {
+  width: 100%;
+  height: 56px;
+  border-radius: 4px;
+  position: relative;
+  background: rgb(125, 179, 141);
+  transition: 0.3s all;
+  -webkit-text-security: disc;
+}
 
-  .PasswordTextField label {
-      width: 500px;
-      height: 500px;
-  }
+.PasswordTextField label {
+  width: 500px;
+  height: 500px;
+}
 
+.TextField label {
+  width: 500px;
+  height: 500px;
+}
 
+/*Button with the text "Skapa konto". */
+.CreateButton{
+  box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgb(24, 124, 54);
+  border-radius: 5px;
+  font-size: 20px;
+  color: rgb(24, 124, 54);
+  margin-bottom: 15px;
+}
 
-  .TextField label {
-      width: 500px;
-      height: 500px;
-  }
+.CreateButton:hover{
+  opacity: 0.8;
+}
+
+/*Radiobuttons*/
+.UserType{
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+/*Text above the radiobuttons*/
+.RegisterAs{
+  margin-top: 10px;
+  font-weight: 700;
+}

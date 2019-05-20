@@ -9,11 +9,13 @@ import FindLocation from './FindLocation.js'
 class HomePage extends React.Component{
     constructor(){
         super()
-        this.state={onClick: false}
+        this.state={onClick: false,searchValue: ""}
     }
     
     search=()=>{
+        if(this.state.searchValue != ""){
         this.props.search("search")
+        }
     }
 
     render(){
@@ -38,7 +40,9 @@ class HomePage extends React.Component{
                     fixtures={fixtures}
                     onFocus={this.onFocus}
                     onBlur={this.onBlur}
-                    onChange={this.onChange}
+                    onChange={(value) => {this.setState({
+                        searchValue: value
+                    });}}
                     onSuggestSelect={this.onSuggestSelect}
                     onSuggestNoResults={this.onSuggestNoResults}
                     location={new google.maps.LatLng(57.70716, 11.96679)}
@@ -50,7 +54,7 @@ class HomePage extends React.Component{
                     />
                     <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick})} style={{width: '25px', height: '25px', backgroundColor: 'white'}}/>
                 </div>
-                <button onClick={this.search} className ={"SearchButton"}>Hitta produkter nära dig!</button>
+                <button onClick={this.search} disabled={!this.state.searchValue} className ={"SearchButton"}>Hitta produkter nära dig!</button>
                 
                 {this.state.onClick ? <FindLocation/>: <div/>}
             </div>

@@ -1,12 +1,9 @@
 /* global google */
 
 import React from "react";
-import ReactDOM from 'react-dom';
 import "./home.css";
 import Geosuggest from 'react-geosuggest';
 import FindLocation from './FindLocation.js'
-import MasterForm from '../checkout/MasterForm'
-import CreditCard from '../checkout/CreditCard'
 
 class HomePage extends React.Component{
     constructor(){
@@ -15,7 +12,7 @@ class HomePage extends React.Component{
     }
     
     search=()=>{
-        if(this.state.searchValue != ""){
+        if(this.state.searchValue !== ""){
         this.props.search("search")
         }
     }
@@ -54,7 +51,7 @@ class HomePage extends React.Component{
                     placeholder={"Skriv in din adress"}
                     initialValue={this.state.onClick ? "Din position":""}
                     />
-                    <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick, searchValue: 'din position'})} style={{width: '25px', height: '25px', backgroundColor: 'white'}}/>
+                    <img src={require('./myPosition.png')} onClick ={() =>this.setState({onClick: !this.state.onClick, searchValue: 'din position'})} style={{width: '25px', height: '25px', backgroundColor: 'white'}} alt=""/>
                 </div>
                 <button onClick={this.search} disabled={!this.state.searchValue} className ={"SearchButton"}>Hitta produkter nära dig!</button>
                 

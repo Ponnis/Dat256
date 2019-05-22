@@ -42,9 +42,8 @@ onChange = async(event) => {
     this.props.handleChange(this.props.id, this.state.value)
 }
  render() {
-    const { focussed, value, error, label } = this.state;
-    const { id, type, locked } = this.props;
-    let style="TextInputStyle";
+    const { value,label } = this.state;
+    const { id } = this.props;
     
 //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (

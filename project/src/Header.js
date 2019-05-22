@@ -2,9 +2,6 @@ import React from "react"
 import './App.css'
 
 class Header extends React.Component{
-    constructor(){
-        super()
-    }
 
     loginView=()=>{
         this.props.changeView("login")
@@ -29,7 +26,7 @@ class Header extends React.Component{
         return(
             <div className='header-container'>
                 <div className={"logo"} onClick={this.homeView}>
-                    <img src={"http://res.freestockphotos.biz/pictures/15/15031-illustration-of-a-carrot-pv.png"}/>
+                    <img src={"http://res.freestockphotos.biz/pictures/15/15031-illustration-of-a-carrot-pv.png"} alt=""/>
                     <h1>Farmers Market</h1>
                 </div>
                 {headerButton}

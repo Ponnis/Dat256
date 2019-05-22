@@ -1,7 +1,7 @@
 import React from "react"
 import "./producerPage.css"
 import ProducerProduct from "./ProducerProduct"
-import { getFarmerById, getAmountOfFarmers } from '../farmerInformation/Farmers'
+import { getFarmerById } from '../farmerInformation/Farmers'
 import { getNewSKU } from "./tempData"
 
 class ProductsPage extends React.Component{
@@ -35,7 +35,7 @@ class ProductsPage extends React.Component{
     //saving updates in inventory array
     handleChange=(sku, property, value)=>{
         let i = 0
-        this.state.products.map(product =>{
+        this.state.products.forEach(product =>{
             if(product.sku === sku){
                 let newArray = this.state.products
                 let newPro = product
@@ -46,13 +46,11 @@ class ProductsPage extends React.Component{
                 })
             }
             ++i
-        })
+        });
     }
 
     render(){
         let products = this.state.products.map(product => <ProducerProduct product={product} onUserInput={this.handleChange} sku={product.sku}/>);
-
-
         return(
             //Contains everything regaring the proucts, the container contains teh headings, 
             //all products and a button for adding new products.
@@ -66,7 +64,6 @@ class ProductsPage extends React.Component{
                 <button className={"AddButton"} onClick={this.addProduct}>Lägg till ny vara</button>
             </div>
         )
-
     }
 }
 

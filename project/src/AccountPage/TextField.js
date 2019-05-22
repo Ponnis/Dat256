@@ -41,8 +41,8 @@ onChange = async(event) => {
     this.props.handleChange(this.props.id, this.state.value)
 }
  render() {
-    const { focussed, value, error, label } = this.state;
-    const { id, type, locked } = this.props;
+    const { value, label } = this.state;
+    const { id } = this.props;
     let style="TextField";
     if (this.props.id==="password" || this.props.id==="confirmPassword"){
       style="PasswordTextField"

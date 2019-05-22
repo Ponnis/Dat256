@@ -64,7 +64,7 @@ export default class MasterForm extends React.Component {
   get checkoutButton(){
     let currentStep = this.state.currentStep;
 
-    if(currentStep ==4){
+    if(currentStep === 4){
       return(
         <button className="SButton"
         type="button" onClick={this.handleSubmit}>Slutför köp</button>

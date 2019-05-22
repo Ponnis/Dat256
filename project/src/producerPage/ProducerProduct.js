@@ -2,9 +2,6 @@ import React from "react"
 import "./producerPage.css"
 
 class ProducerProduct extends React.Component{
-    constructor(){
-        super()
-    }
   
     handleChange=(e)=>{
         

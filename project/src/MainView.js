@@ -68,7 +68,7 @@ class MainView extends React.Component{
                      </div>
         }
         if(this.props.view ==="search"){
-            page = <SearchPage store={this.props.store}/>
+            page = <SearchPage store={this.props.store} search={this.props.changeView}/>
         }
         if(this.props.view ==="checkout"){
             page = <MasterForm></MasterForm>

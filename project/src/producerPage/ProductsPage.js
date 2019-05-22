@@ -1,56 +1,47 @@
 import React from "react"
 import "./producerPage.css"
 import ProducerProduct from "./ProducerProduct"
-import { getFarmerById } from '../farmerInformation/Farmers'
-import { getNewSKU } from "./tempData"
+import { getFarmerById, getSKU } from '../farmerInformation/Farmers'
 
 class ProductsPage extends React.Component{
     constructor(){
         super()
         this.state={
-            products: getFarmerById(2).products
+            id:2,
         };
     }
     //function to add new products to inventory
     addProduct =()=>{
-        let tempArr = this.state.products.slice()
-        let sku = "" + getNewSKU()
+        let tempArr = this.getProducts().slice()
+        let sku = "" + getSKU(this.state.id)
         let newProduct = {name:"ny vara", price:0, sku:sku}
         tempArr.push(newProduct)
-        getFarmerById(2).products = tempArr
-        this.setState((prevState)=>({
-            products: [...prevState.products, newProduct]
-        
-        }))
+        getFarmerById(this.state.id).products = tempArr
+        this.forceUpdate()
     }
-    //get a new SKU for new product
-    generateSKU(){
-        let a = this.state.genSKU
-        let b = ++a
-        this.setState({
-            genSKU: b
-        })
-        return a
+
+    getProducts(){
+        let products = getFarmerById(this.state.id).products
+        return products
     }
+
     //saving updates in inventory array
     handleChange=(sku, property, value)=>{
         let i = 0
-        this.state.products.forEach(product =>{
+        this.getProducts().forEach(product =>{
             if(product.sku === sku){
-                let newArray = this.state.products
+                let newArray = this.getProducts
                 let newPro = product
                 newPro[property] = value
                 newArray[i] = newPro
-                this.setState({
-                    products: newArray
-                })
+                this.forceUpdate()
             }
             ++i
         });
     }
 
     render(){
-        let products = this.state.products.map(product => <ProducerProduct product={product} onUserInput={this.handleChange} sku={product.sku}/>);
+        let products = this.getProducts().map(product => <ProducerProduct product={product} onUserInput={this.handleChange} sku={product.sku}/>);
         return(
             //Contains everything regaring the proucts, the container contains teh headings, 
             //all products and a button for adding new products.

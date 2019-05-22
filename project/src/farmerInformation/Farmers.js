@@ -117,7 +117,14 @@ function addFarmer(farmerObject){
     console.log(JSON.stringify(farmers))
 }
 
+function getSKU(id){
+    let newSKU = ""+id+"-"+(farmers[id].products.length)
+    console.log(newSKU)
+    return newSKU
+}
+
 module.exports.getFarmerById = getFarmerById;
 module.exports.getAmountOfFarmers = getAmountOfFarmers;
 module.exports.addFarmer = addFarmer;
 module.exports.getNewID = getNewID;
+module.exports.getSKU = getSKU;

@@ -11,7 +11,7 @@ import {Helmet} from "react-helmet";
 class App extends Component {
     constructor() {
         super()
-        this.state = { products: testPurchases, clicked: false, mainView: "producer" }
+        this.state = { products: testPurchases, clicked: false, mainView: "home" }
     }
 
     //Called when Buy Button is clicked, shows confirm-box

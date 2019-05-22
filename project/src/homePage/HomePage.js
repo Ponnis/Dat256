@@ -44,7 +44,6 @@ class HomePage extends React.Component{
                     });}}
                     onSuggestSelect={this.onSuggestSelect}
                     onSuggestNoResults={this.onSuggestNoResults}
-                    location={new google.maps.LatLng(57.70716, 11.96679)}
                     radius="20"
                     queryDelay={0}
                     maxFixtures={3}

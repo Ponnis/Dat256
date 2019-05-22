@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginView from './LoginView';
 import './TextInputStyle.css';
+import { checkLogin } from "../AccountPage/TestAccounts";
 
 class Login extends React.Component {
     constructor() {
@@ -29,45 +30,36 @@ class Login extends React.Component {
             default:
                 break;
             }
-        this.confirm()
+        //this.confirm()
         }
     //Checks the username 
-    checkUser= ()=>{
-        if (this.state.username !== "user"){
-            this.setState({valid: false})
-        }   
-        else {
-            if(this.checkPassword()){
-                this.setState({valid: true})
-            }
-            else
-            this.setState({valid: false})
-        }
-    }
-    //Checks the password
-    checkPassword = ()=> {
-        if(this.state.password !== "password123"){
-            return false;
-        }
-        else {
-            return true; 
+    loginCheck(){
+        console.log("Login check")
+        if(checkLogin(this.state.username,this.state.password)){
+            this.setState({
+                valid: true
+            })
         }
     }
     //Wrapper method for the user check
     confirm=()=>{
-        this.checkUser()
+        this.loginCheck()
     }
     //Sets the user to logged in or gives you an alert if your credentials are not correct
     logg=()=> {
+        console.log("Confirm..")
+        this.confirm()
+        console.log(this.state.valid)
         if(this.state.valid){
-            alert("Du har loggats in!")
+            //alert("Du har loggats in!")
             this.setState({
                 loggedIn: true
             })
             this.props.search("producer")
         }
         else {
-            alert("Användarnamn eller lösenord är fel")
+            //alert("Användarnamn eller lösenord är fel" + ": " + this.state.username+this.state.password)
+
         }
     }
     //Logs the user out of the system

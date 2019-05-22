@@ -1,6 +1,7 @@
 import React from "react"
 import "./producerPage.css"
 import ProductsPage from "./ProductsPage.js"
+import { getFarmerById} from '../farmerInformation/Farmers'
 
 class ProducerPage extends React.Component{
     constructor(){
@@ -18,7 +19,7 @@ class ProducerPage extends React.Component{
 
         let navPage;
         if(this.state.navPage ==="products"){
-            navPage = <ProductsPage test={25}/>
+            navPage = <ProductsPage loggedIn={this.props.loggedIn}/>
         }
         if(this.state.navPage ==="statistics"){
             navPage = <div>Statistiksida (todo)</div>
@@ -32,9 +33,14 @@ class ProducerPage extends React.Component{
         if (this.state.navPage ==="information"){
             navPage = <div>Din Information (todo)</div>
         }
+        
+        const farmer = getFarmerById(parseInt(this.props.loggedIn));
 
         return(
+            
             <div className={"Page"}>
+                <div>Välkommen!</div>
+                <div>Du är inloggad som: {farmer.name}</div>
                 <nav className={"NavBar"}>
                     <button className={"Tabs"} id="products" onClick={this.navigate}>Produkter</button>
                     <button className={"Tabs"} id="statistics" onClick={this.navigate}>Statistik</button>

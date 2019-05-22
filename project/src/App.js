@@ -5,13 +5,12 @@ import testPurchases from './TestPurchases'
 import Header from "./Header";
 import MainView from "./MainView";
 import configureStore from "./store";
-import {Helmet} from "react-helmet";
 
 
 class App extends Component {
     constructor() {
         super()
-        this.state = { products: testPurchases, clicked: false, mainView: "home" }
+        this.state = { products: testPurchases, clicked: false, mainView: "home",loggedIn: 0}
     }
 
     //Called when Buy Button is clicked, shows confirm-box
@@ -28,27 +27,26 @@ class App extends Component {
         })
     };
 
-    changeView = (view) => {
+    changeView = (view,loggedIn) => {
         this.setState({
             mainView: view
         })
+        if(loggedIn != null){
+            this.setState({
+                loggedIn: loggedIn
+            })
+        }
     }
 
 
 
     render() {
          var store = configureStore();
-
         return (
             <Provider store={store}>
-            <Helmet>
-                <script
-                    src="https://maps.googleapis.com/maps/api/js?libraries=places&key=">
-                    </script>
-            </Helmet>
             <div className="App">
                 <Header changeView={this.changeView} view={this.state.mainView} />
-                <MainView changeView={this.changeView} view={this.state.mainView} store={store} />
+                <MainView changeView={this.changeView} view={this.state.mainView} loggedIn={this.state.loggedIn} store={store} />
             </div>
             </Provider>
         );

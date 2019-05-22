@@ -4,24 +4,19 @@ import ProducerProduct from "./ProducerProduct"
 import { getFarmerById, getSKU } from '../farmerInformation/Farmers'
 
 class ProductsPage extends React.Component{
-    constructor(){
-        super()
-        this.state={
-            id:2,
-        };
-    }
+
     //function to add new products to inventory
     addProduct =()=>{
         let tempArr = this.getProducts().slice()
-        let sku = "" + getSKU(this.state.id)
+        let sku = "" + getSKU(parseInt(this.props.loggedIn))
         let newProduct = {name:"ny vara", price:0, sku:sku}
         tempArr.push(newProduct)
-        getFarmerById(this.state.id).products = tempArr
+        getFarmerById(parseInt(this.props.loggedIn)).products = tempArr
         this.forceUpdate()
     }
 
     getProducts(){
-        let products = getFarmerById(this.state.id).products
+        const products = getFarmerById(parseInt(this.props.loggedIn)).products;
         return products
     }
 

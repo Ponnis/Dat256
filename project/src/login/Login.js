@@ -11,7 +11,6 @@ class Login extends React.Component {
         username:"",
         password:"", 
         textValue: 'Logga in',
-        valid: false,
         loggedIn: false} 
     }
     //Sets the user name and password to the field values
@@ -30,32 +29,15 @@ class Login extends React.Component {
             default:
                 break;
             }
-        //this.confirm()
         }
-    //Checks the username 
-    loginCheck(){
-        console.log("Login check")
-        if(checkLogin(this.state.username,this.state.password)){
-            this.setState({
-                valid: true
-            })
-        }
-    }
-    //Wrapper method for the user check
-    confirm=()=>{
-        this.loginCheck()
-    }
+
     //Sets the user to logged in or gives you an alert if your credentials are not correct
-    logg=()=> {
-        console.log("Confirm..")
-        this.confirm()
-        console.log(this.state.valid)
-        if(this.state.valid){
-            //alert("Du har loggats in!")
+    tryToLogin=()=> {
+        if(checkLogin(this.state.username,this.state.password)){
             this.setState({
                 loggedIn: true
             })
-            this.props.search("producer")
+            this.props.search("producer",this.state.username)
         }
         else {
             //alert("Användarnamn eller lösenord är fel" + ": " + this.state.username+this.state.password)
@@ -65,7 +47,6 @@ class Login extends React.Component {
     //Logs the user out of the system
     loggOut=()=> {
         this.setState({
-            valid: false, 
             loggedIn: false
         })
     }
@@ -82,7 +63,7 @@ class Login extends React.Component {
     get loginButton(){
         if(!this.state.loggedIn){
             return(
-                <button className="SignInButton" onClick={this.logg}>Logga in</button>
+                <button className="SignInButton" onClick={this.tryToLogin}>Logga in</button>
             )
         }
         return null;

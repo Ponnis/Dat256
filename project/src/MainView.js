@@ -67,7 +67,7 @@ class MainView extends React.Component{
         }
 
         if(this.props.view ==="producer"){
-            page = <ProducerPage />
+            page = <ProducerPage loggedIn={this.props.loggedIn}/>
         }
 
         if(this.props.view ==="login"){

@@ -1,13 +1,16 @@
+/*The box containg all elements (farmer information and close button)*/
 .FarmerInformation{
     background-color: rgba(2, 117, 31, 0.185);
     border: 2px solid black;
     border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
     width: 40vw;
     min-width: 250px;
     height: 100vh;
     text-align: center;
 }
 
+/*The picture of the farmer*/
 .Pictures{
     border-radius: 50%;
     border: 2px solid green;
@@ -15,29 +18,31 @@
     margin-top: 10px;
 }
 
+/*Label with the farmer's name*/
 .FarmerName{
     font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
     text-align: left;
     margin-left: 15px;
 }
 
+/*Label with distance to farmer*/
 .DistanceInfo{
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
     text-align: left;
     margin-left: 15px;
 }
 
+/*The label with short description*/
 .Description{
     font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+/*The button for adding products to the shopping cart*/
 .Button {
     margin: 30px;
     font-size: 18px;
@@ -48,5 +53,5 @@
     color: white;
     box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
     background: rgb(24, 124, 54);
-     cursor: pointer;
-   }
+    cursor: pointer;
+}

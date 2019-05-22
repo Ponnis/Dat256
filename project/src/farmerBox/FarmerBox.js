@@ -43,7 +43,7 @@ class FarmerBox extends React.Component {
                     <img src={require('../farmerInformation/images/icons/' + type + '.png')} className="Icon" alt=""/>)
                 }
                 </div>
-                <div className="Description">
+                <div className="Descriptions">
                     {this.props.farmer.description}
                 </div>
             </div>

@@ -39,8 +39,8 @@ class SearchPage extends Component {
         this.setState({ state: this.state })
     };
     handleCheckout=(products)=>{
-        alert(products);
-        this.props.search("checkout")
+        alert(JSON.stringify(products));
+        this.props.checkout(products,)
     }
     categoryFilter(category, catState) {
         let filteredCat = this.state.categoryFilter;

@@ -63,6 +63,7 @@ class Login extends React.Component {
             this.setState({
                 loggedIn: true
             })
+            this.props.search("producer")
         }
         else {
             alert("Användarnamn eller lösenord är fel")

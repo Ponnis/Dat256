@@ -43,6 +43,8 @@ onChange = async(event) => {
  render() {
     const { value, label } = this.state;
     const { id } = this.props;
+
+    //Sets the style (used for className) for the fields (different for passwords)
     let style="TextFields";
     if (this.props.id==="password" || this.props.id==="confirmPassword"){
       style="PasswordTextField"

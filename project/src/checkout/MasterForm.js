@@ -1,6 +1,7 @@
 import React from 'react'
 import CreditCard from './CreditCard'
 import './MasterForm.css'
+
 export default class MasterForm extends React.Component {
   constructor(props) {
     super(props)
@@ -52,9 +53,9 @@ export default class MasterForm extends React.Component {
     if(currentStep !==1){
       return (
         <button 
-          className="SButton" 
+          className="Button" 
           type="SimpleButton" onClick={this._prev}>
-        Förgående
+          Förgående steg
         </button>
       )
     }
@@ -67,7 +68,7 @@ export default class MasterForm extends React.Component {
 
     if(currentStep === 4){
       return(
-        <button className="SButton"
+        <button className="Button"
         type="button" onClick={this.handleSubmit}>Slutför köp</button>
       )
     }return null; //... else render nothing
@@ -79,9 +80,9 @@ export default class MasterForm extends React.Component {
     if(currentStep <4){
       return (
         <button 
-          className="SButton" 
+          className="Button" 
           type="button" onClick={this._next}>
-        Nästa
+          Nästa steg
         </button>        
       )
     }
@@ -118,19 +119,19 @@ export default class MasterForm extends React.Component {
     this.props.search("search")
   }
   
-  render() {
-
+  render() { 
+       
     let products = this.props.products.products;
 
     let divs = products.map((product)=><div>Artikelnamn: {product.name}   Pris: {product.price}kr   Antal: {product.quantity}</div>);
 
     let total = <div>Totalpris: {this.props.products.total.totalPrice}</div>;
 
-
-    return (<div>
+    return (
+      <div className="PageWrapper">
       <React.Fragment>
-      <h1 className="HText">Checkout</h1>
-      <p className="HText">Step {this.state.currentStep} </p> 
+      <div className="CheckoutLabel">Betalning</div>
+      <div className="StepLabel">Steg {this.state.currentStep} </div> 
         
       <form onSubmit={this.handleSubmit}>
       
@@ -178,18 +179,22 @@ class Step1 extends React.Component {
     }
     // The markup for the Step 1 UI
     return(
-      <div className="form-group">
-        <label className="HText" htmlFor="email">Email address</label>
-        <input
-          className="TextField"
+      <div>
+        <div>
+          <label className="InformativeLabel" htmlFor="email">Fyll i din epostaddress</label>
+        </div>
+        <div>
+          <input
+          className={"TextFieldss"}
           id="email"
           name="email"
           type="text"
-          placeholder="Skriv din email..."
+          placeholder="Din epostadress"
           value={this.props.email} // Prop: The email input data
           onChange={this.props.handleChange} // Prop: Puts data into state
-        />
-      </div>
+          />
+        </div>
+      </div> 
     )
   }
 }
@@ -200,17 +205,21 @@ class Step2 extends React.Component {
       return null
     }
     return(
-      <div className="form-group">
-        <label className="HText" htmlFor="name">Name</label>
-        <input
-          className="TextField"
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Skriv ditt namn..."
-          value={this.props.name} 
-          onChange={this.props.handleChange} // Prop: Puts data into state
-        />
+      <div >
+        <div>
+          <label className="InformativeLabel" htmlFor="name">Name</label>
+        </div>
+        <div>
+          <input
+            className="TextFieldss"
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Skriv ditt namn..."
+            value={this.props.name} 
+            onChange={this.props.handleChange} // Prop: Puts data into state
+          />
+        </div>
       </div>
     )
   }
@@ -223,17 +232,21 @@ class Step3 extends React.Component {
     }
     
     return(
-      <div className="form-group">
-        <label className="HText" htmlFor="address">Address</label>
-        <input
-          className="TextField"
-          id="address"
-          name="address"
-          type="text"
-          placeholder="Enter address"
-          value={this.props.address} 
-          onChange={this.props.handleChange} // Prop: Puts data into state
-        />
+      <div>
+        <div>
+          <label className="InformativeLabel" htmlFor="address">Address</label>
+        </div>
+        <div>
+          <input
+            className="TextFieldss"
+            id="address"
+            name="address"
+            type="text"
+            placeholder="Enter address"
+            value={this.props.address} 
+            onChange={this.props.handleChange} // Prop: Puts data into state
+          />
+        </div>
       </div>
     )
   }

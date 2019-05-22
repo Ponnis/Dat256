@@ -34,3 +34,12 @@
     margin-right: 10px;
     width: 13vw;
 }
+
+.BigText{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 550;
+    text-decoration: underline;
+}

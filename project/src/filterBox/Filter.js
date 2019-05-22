@@ -27,6 +27,9 @@ class Filter extends Component {
 
         return (
             <div className="FilterBox">
+                <div className="BigText">
+                    Filter
+                </div>
                 <div className="Header">
                     Kategorier:
                 </div>

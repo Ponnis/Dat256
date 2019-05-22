@@ -1,4 +1,4 @@
-/*The text fields*/
+/*The text field for user name. */
 .TextFieldLogIn {
   position: relative;
   transition: 0.3s all;
@@ -6,6 +6,17 @@
   border-radius: 4px;
   width: 100%;
   height: 35px;
+}
+
+/*The text field for password. */
+.TextFieldLogInPassword {
+  position: relative;
+  transition: 0.3s all;
+  margin-top: 7px;
+  border-radius: 4px;
+  width: 100%;
+  height: 35px;
+  -webkit-text-security: disc;
 }
 
 /*Button with the text "Skapa konto". */

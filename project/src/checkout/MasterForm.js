@@ -129,12 +129,11 @@ export default class MasterForm extends React.Component {
 
     return (
       <div className="PageWrapper">
-      <React.Fragment>
-      <div className="CheckoutLabel">Betalning</div>
-      <div className="StepLabel">Steg {this.state.currentStep} </div> 
+        <React.Fragment>
+        <div className="CheckoutLabel">Betalning</div>
+        <div className="StepLabel">Steg {this.state.currentStep} </div> 
         
-      <form onSubmit={this.handleSubmit}>
-      
+        <form onSubmit={this.handleSubmit}>
         
         <Step1 
           currentStep={this.state.currentStep} 
@@ -168,7 +167,6 @@ export default class MasterForm extends React.Component {
         </div>
     )
     }
-
 }
 
 //The first step for filling in your email
@@ -205,9 +203,9 @@ class Step2 extends React.Component {
       return null
     }
     return(
-      <div >
+      <div>
         <div>
-          <label className="InformativeLabel" htmlFor="name">Name</label>
+          <label className="InformativeLabel" htmlFor="name">Fyll i ditt namn (För- och efternamn)</label>
         </div>
         <div>
           <input
@@ -215,11 +213,11 @@ class Step2 extends React.Component {
             id="name"
             name="name"
             type="text"
-            placeholder="Skriv ditt namn..."
+            placeholder="Förnamn Efternamn"
             value={this.props.name} 
             onChange={this.props.handleChange} // Prop: Puts data into state
-          />
-        </div>
+            />
+          </div>
       </div>
     )
   }
@@ -232,17 +230,17 @@ class Step3 extends React.Component {
     }
     
     return(
-      <div>
+      <div >
         <div>
-          <label className="InformativeLabel" htmlFor="address">Address</label>
+          <label className="InformativeLabel" htmlFor="address">Fyll i din adress</label>
         </div>
         <div>
-          <input
+        <input
             className="TextFieldss"
             id="address"
             name="address"
             type="text"
-            placeholder="Enter address"
+            placeholder="Gatuadress"
             value={this.props.address} 
             onChange={this.props.handleChange} // Prop: Puts data into state
           />

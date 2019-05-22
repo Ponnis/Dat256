@@ -38,10 +38,23 @@ class SearchPage extends Component {
     reRender = () => {
         this.setState({ state: this.state })
     };
-    handleCheckout=(products)=>{
-        alert(JSON.stringify(products));
-        this.props.checkout(products,)
+
+    //Handles the checkout call
+    handleCheckout=(product)=>{
+        //Makes an JSON-object of the products in the cart
+        var str = JSON.stringify(product);
+        //Reads the json object 
+        var json = JSON.parse(str);
+        //Checks if there are any products in the cart, if true then it alerts
+        if (json.products.length===0){
+            alert("Din varukorg är tom, lägg till varor innan du går till betalning.");
+        }
+        //else go to payment
+        else{
+            this.props.checkout(product,)
+        }
     }
+
     categoryFilter(category, catState) {
         let filteredCat = this.state.categoryFilter;
         if (catState) {

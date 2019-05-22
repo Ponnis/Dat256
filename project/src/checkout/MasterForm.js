@@ -121,11 +121,12 @@ export default class MasterForm extends React.Component {
   
   render() { 
        
+    //All products in the shopping cart
     let products = this.props.products.products;
-
-    let divs = products.map((product)=><div>Artikelnamn: {product.name}   Pris: {product.price}kr   Antal: {product.quantity}</div>);
-
-    let total = <div>Totalpris: {this.props.products.total.totalPrice}</div>;
+    //Information about all products in the shopping cart
+    let divs = products.map((product)=><div className={"CartInformation"}>{product.quantity} st {product.name} ({product.price} kr/st)</div>);
+    //Information about the total cost
+    let total = <div className={"TotalInformation"}>Totalpris: {this.props.products.total.totalPrice} kr</div>;
 
     return (
       <div className="PageWrapper">
@@ -160,7 +161,7 @@ export default class MasterForm extends React.Component {
         {this.checkoutButton}
       </form>
       </React.Fragment>
-        <h1>I din kundvagn:</h1>
+        <div className="InYourCart">I din varukorg:</div>
             {divs}
             {total}
 

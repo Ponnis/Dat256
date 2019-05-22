@@ -52,3 +52,20 @@
 .Button:hover{
   opacity: 0.8;
 }
+
+/*Label "I din varukorg:"*/
+.InYourCart{
+  font-size: 32px;
+}
+
+/*Label with information about the products in the shopping cart*/
+.CartInformation{
+  font-size: 16px;
+}
+
+/*Label with the total price*/
+.TotalInformation{
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}

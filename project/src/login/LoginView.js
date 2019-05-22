@@ -44,10 +44,16 @@ onChange = async(event) => {
  render() {
     const { value,label } = this.state;
     const { id } = this.props;
+
+    //Sets the style for the text fields (different for passwords)
+    let style="TextFieldLogIn";
+    if (this.props.id==="password"){
+      style="TextFieldLogInPassword"
+    }
     
-//Lägg till onChange för att kunna faktiskt modifiera inputs
+    //Lägg till onChange för att kunna faktiskt modifiera inputs
     return (
-      <div className="TextFieldLogIn">
+      <div className={style}>
         <input
           id={id}
           type="text"

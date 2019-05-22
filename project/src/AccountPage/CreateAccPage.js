@@ -126,7 +126,7 @@ class CreateAccPage extends React.Component{
             <div className="PageWrapper">
                 <div style={{display: "flex",margin: "auto"}}>
                     <div className="Login">
-                        <LoginView/>
+                        <LoginView search={this.props.search}/>
                     </div>
                     <div class="divider"></div>
                     <div className={"LeftBox"}>

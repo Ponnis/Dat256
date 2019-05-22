@@ -12,6 +12,8 @@ class Filter extends Component {
         this.state = { rating: 1, distance: 50 }
     }
 
+    //Changes the rating (amount of black stars) depending on what the user enters
+    //newRating is the amount of stars that should be black
     changeRating(newRating) {
         this.setState({
             rating: newRating
@@ -20,9 +22,14 @@ class Filter extends Component {
     }
 
     render() {
+        //List containing the different categories
         const categories = ["bread", "egg", "fish", "fruit", "meat", "milk", "sheep"];
+
         return (
             <div className="FilterBox">
+                <div className="BigText">
+                    Filter
+                </div>
                 <div className="Header">
                     Kategorier:
                 </div>
@@ -63,15 +70,12 @@ class Filter extends Component {
                             width: 15,
                             backgroundColor: 'grey',
                           }}
-                        onChange = {(value) => {this.setState({distance: value}); this.props.onDistanceClick(value)}}
-                          
-                        />
-                        <label>
-                            {this.state.distance} km
-                        </label>
-
-            </div>                        
-                    
+                        onChange = {(value) => {this.setState({distance: value}); this.props.onDistanceClick(value)}}  
+                    />
+                    <label>
+                        {this.state.distance} km
+                    </label>
+                </div>                             
             </div>
         )
     }

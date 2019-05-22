@@ -118,9 +118,16 @@ export default class MasterForm extends React.Component {
     this.props.search("search")
   }
   
-  render() {    
-    return (
-      //Shows the different steps and sets the change handlers accordingly.
+  render() {
+
+    let products = this.props.products.products;
+
+    let divs = products.map((product)=><div>Artikelnamn: {product.name}   Pris: {product.price}kr   Antal: {product.quantity}</div>);
+
+    let total = <div>Totalpris: {this.props.products.total.totalPrice}</div>;
+
+
+    return (<div>
       <React.Fragment>
       <h1 className="HText">Checkout</h1>
       <p className="HText">Step {this.state.currentStep} </p> 
@@ -153,6 +160,11 @@ export default class MasterForm extends React.Component {
         {this.checkoutButton}
       </form>
       </React.Fragment>
+        <h1>I din kundvagn:</h1>
+            {divs}
+            {total}
+
+        </div>
     )
     }
 

@@ -14,7 +14,8 @@ class MainView extends React.Component{
     constructor(){
         super()
         this.state={
-            accounts:TestAccounts
+            accounts:TestAccounts,
+            checkoutProducts: null
         }
     }
 
@@ -51,6 +52,13 @@ class MainView extends React.Component{
         addFarmer(newFarmer)
     }
 
+    checkout=(products)=>{
+        this.setState({
+            checkoutProducts: products
+        })
+        this.props.changeView("checkout")
+    }
+
     render(){
 
         let page;
@@ -64,14 +72,14 @@ class MainView extends React.Component{
 
         if(this.props.view ==="login"){
             page = <div>
-                <CreateAccPage addAccount={this.newAccount}/>
+                <CreateAccPage addAccount={this.newAccount} search={this.props.changeView}/>
                      </div>
         }
         if(this.props.view ==="search"){
-            page = <SearchPage store={this.props.store} search={this.props.changeView}/>
+            page = <SearchPage store={this.props.store} search={this.props.changeView} checkout={this.checkout}/>
         }
         if(this.props.view ==="checkout"){
-            page = <MasterForm search={this.props.changeView}></MasterForm>
+            page = <MasterForm search={this.props.changeView} products={this.state.checkoutProducts}></MasterForm>
         }
         return(
             <main className={"main-container"}>

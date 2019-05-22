@@ -102,15 +102,20 @@ export default class MasterForm extends React.Component {
        msg= msg.concat(" Adress")
       }
       alert(msg);
-    }else{alert(`Din order levereras till ${address}\n 
+    }else{
+      alert(`Din order levereras till ${address}\n 
     i namnet:  ${name} \n
     med kontaktemail:  ${email}\n
     Tack för ditt köp!
-`)}
-    
-
-    
+`)
+        this.clickedOk();
+    }
   }
+
+  clickedOk(){
+    this.props.search("search")
+  }
+  
   render() {    
     return (
       <React.Fragment>

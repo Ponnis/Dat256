@@ -71,7 +71,7 @@ class MainView extends React.Component{
             page = <SearchPage store={this.props.store} search={this.props.changeView}/>
         }
         if(this.props.view ==="checkout"){
-            page = <MasterForm></MasterForm>
+            page = <MasterForm search={this.props.changeView}></MasterForm>
         }
         return(
             <main className={"main-container"}>

@@ -8,7 +8,7 @@ class CreditCard extends React.Component{
         var cardNumber;
         var expiry;
         return(
-            
+            //The error handler for the credit card input
             <div>
                 <CreditCardInput
                  customTextLabels={{

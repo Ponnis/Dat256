@@ -61,6 +61,7 @@ export default class MasterForm extends React.Component {
     // ...else return nothing
     return null;
   }
+  //Shows the checkout button if you're heading to step 4
   get checkoutButton(){
     let currentStep = this.state.currentStep;
 
@@ -69,7 +70,7 @@ export default class MasterForm extends React.Component {
         <button className="SButton"
         type="button" onClick={this.handleSubmit}>Slutför köp</button>
       )
-    }return null;
+    }return null; //... else render nothing
   }
   
   get nextButton(){
@@ -92,7 +93,7 @@ export default class MasterForm extends React.Component {
     event.preventDefault()
     const { email, name, address} = this.state
     var msg = "Du har inte fyllt i följande korrekt: "
-
+    //Error handlers for the fill in form, sends an alert based on what you filled in incorrectly.
     if(email.length<=0||!(email.includes("@"))||!(email.includes("."))||name.length<=0||address.length<=0){
       if(email.length<=0||!(email.includes("@"))||!(email.includes("."))){
        msg= msg.concat("Email")
@@ -103,7 +104,8 @@ export default class MasterForm extends React.Component {
       }
       alert(msg);
     }else{
-      alert(`Din order levereras till ${address}\n 
+      //Else sends you a confirmation of the purchase and to where it will be ordered
+      alert(`Din order levereras till närmsta checkpoint till: ${address}, via våra klimatsmarta lastbilar och planerade rutter,\n 
     i namnet:  ${name} \n
     med kontaktemail:  ${email}\n
     Tack för ditt köp!
@@ -118,6 +120,7 @@ export default class MasterForm extends React.Component {
   
   render() {    
     return (
+      //Shows the different steps and sets the change handlers accordingly.
       <React.Fragment>
       <h1 className="HText">Checkout</h1>
       <p className="HText">Step {this.state.currentStep} </p> 
@@ -155,7 +158,7 @@ export default class MasterForm extends React.Component {
 
 }
 
-
+//The first step for filling in your email
 class Step1 extends React.Component {
   render() {
     if (this.props.currentStep !== 1) { // Prop: The current step
@@ -178,7 +181,7 @@ class Step1 extends React.Component {
     )
   }
 }
-
+//The 2nd step for filling in your name
 class Step2 extends React.Component {
   render() {
     if (this.props.currentStep !== 2) { // Prop: The current step
@@ -200,7 +203,7 @@ class Step2 extends React.Component {
     )
   }
 }
-
+//The 3rd step for filling in your address
 class Step3 extends React.Component {
   render() {
     if (this.props.currentStep !== 3) { // Prop: The current step
@@ -223,7 +226,7 @@ class Step3 extends React.Component {
     )
   }
 }
-
+//The credit card fill-in step, imported from the creditCard class
 class Step4 extends React.Component {
   render() {
     if (this.props.currentStep !== 4) { // Prop: The current step

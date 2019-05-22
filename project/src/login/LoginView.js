@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TextInputStyle.css';
 
-
+// renders the view for login
 class LoginView extends React.Component {
     constructor(props) {
         super(props);

@@ -5,6 +5,7 @@ import './TextInputStyle.css';
 class Login extends React.Component {
     constructor() {
         super()
+        //Default values
         this.state={
         username:"",
         password:"", 
@@ -12,7 +13,7 @@ class Login extends React.Component {
         valid: false,
         loggedIn: false} 
     }
-    
+    //Sets the user name and password to the field values
     handleChange=(id,value)=>{
         switch (id){
             case"username":
@@ -30,7 +31,7 @@ class Login extends React.Component {
             }
         this.confirm()
         }
-
+    //Checks the username 
     checkUser= ()=>{
         if (this.state.username !== "user"){
             this.setState({valid: false})
@@ -43,20 +44,20 @@ class Login extends React.Component {
             this.setState({valid: false})
         }
     }
-
+    //Checks the password
     checkPassword = ()=> {
         if(this.state.password !== "password123"){
             return false;
         }
         else {
-            //this.setState({redirect: true})
             return true; 
         }
     }
+    //Wrapper method for the user check
     confirm=()=>{
         this.checkUser()
     }
-
+    //Sets the user to logged in or gives you an alert if your credentials are not correct
     logg=()=> {
         if(this.state.valid){
             alert("Du har loggats in!")
@@ -68,14 +69,14 @@ class Login extends React.Component {
             alert("Användarnamn eller lösenord är fel")
         }
     }
-
+    //Logs the user out of the system
     loggOut=()=> {
         this.setState({
             valid: false, 
             loggedIn: false
         })
     }
-
+    //Renders the logout button if the user is logged in
     get logoutButton(){
         if(this.state.loggedIn){
             return(
@@ -84,7 +85,7 @@ class Login extends React.Component {
         }
         return null;
     }
-
+    //Renders the login button if the user is logged out
     get loginButton(){
         if(!this.state.loggedIn){
             return(
@@ -93,6 +94,7 @@ class Login extends React.Component {
         }
         return null;
     }
+    //Renders the username field if the user is logged out
     get usernameField() {
         if(!this.state.loggedIn){
         return(
@@ -101,6 +103,7 @@ class Login extends React.Component {
         }
         return null;
     }
+    //Renders the password field if the user is logged out
     get passwordField() {
         if(!this.state.loggedIn){
             return(
@@ -109,14 +112,6 @@ class Login extends React.Component {
         }
         return null;
     }
-   /* renderRedirect=()=>{
-        if(this.state.redirect){
-        return <Redirect to='/target'/>
-        }
-        
-        {this.renderRedirect()}
-                <button onClick={this.setRedirect}>Logga in</button>
-        */
     
     render() { 
         return (

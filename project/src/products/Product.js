@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { AddCartButton } from 'react-cart-components'
 
 
-
+//A product in the shopping system
 class ShoppingItem extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +21,7 @@ class ShoppingItem extends React.Component {
     this.setState({ clicks: this.state.clicks - 1 });
   }
   ConfirmPurchase = () => {
-    //TODO
+    
   }
   render() {
     return (

@@ -33,8 +33,9 @@ class Filter extends Component {
                 <div className="Header">
                     Kategorier:
                 </div>
+                {/** Maps the categories and puts a checkbox next to an icon-image */}
                 {categories.map(cat =>
-                    <label className="Label">
+                    <label>
                         <Checkbox className="CheckBox"
                             onChange={(event) => this.props.onCategoryClick(cat, event.target.checked)}>
                         </Checkbox>
@@ -44,6 +45,7 @@ class Filter extends Component {
                 <div className="Header">
                     Betyg:
                 </div>
+                {/** The star rating, styling of it is done here */}
                 <StarRatings className="StarsFilter"
                     rating={this.state.rating}
                     starRatedColor={"black"}
@@ -57,6 +59,7 @@ class Filter extends Component {
                     Avstånd:
                 </div>
                 <div className="SliderBox">
+                    {/** The slider for distance, styling is done here  */}
                     <Slider
                         defaultValue={50} 
                         min={10}

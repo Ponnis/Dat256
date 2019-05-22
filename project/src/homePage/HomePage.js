@@ -1,5 +1,3 @@
-/* global google */
-
 import React from "react";
 import "./home.css";
 import Geosuggest from 'react-geosuggest';

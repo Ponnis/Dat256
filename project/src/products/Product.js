@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css'
-//import './Product.css'
-import configureStore from '../store';
 import { Provider } from "react-redux";
 import { AddCartButton } from 'react-cart-components'
 

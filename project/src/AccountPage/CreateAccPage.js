@@ -63,6 +63,8 @@ class CreateAccPage extends React.Component{
                     companyNum: value
                 })
                 break;
+            default:
+            break;
 
         }
         this.checkInfo()

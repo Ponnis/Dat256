@@ -23,7 +23,7 @@ class FarmerBox extends React.Component {
     render() {
         return (
             <div className="FarmerBox" onClick={this.props.onClick}>
-                <img src={require('../farmerInformation/images/stars/' + this.convertRating(this.props.farmer.rating) + '.png')} className="Stars" />
+                <img src={require('../farmerInformation/images/stars/' + this.convertRating(this.props.farmer.rating) + '.png')} className="Stars" alt="" />
                 <div className="FarmerName">
                     {this.props.farmer.name}
                 </div>
@@ -31,7 +31,7 @@ class FarmerBox extends React.Component {
                     {this.props.farmer.distance} km
                 </div>
                 <div className="IconBox">{this.props.farmer.types.map(type =>
-                    <img src={require('../farmerInformation/images/icons/' + type + '.png')} className="Icon" />)
+                    <img src={require('../farmerInformation/images/icons/' + type + '.png')} className="Icon" alt=""/>)
                 }
                 </div>
                 <div className="Description">

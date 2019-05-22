@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Provider } from "react-redux";
-import ConfirmationBox from './confirmationBox/ConfirmationBox.js'
-// Test Data API
 import testPurchases from './TestPurchases'
 import Header from "./Header";
 import MainView from "./MainView";
@@ -39,21 +37,6 @@ class App extends Component {
 
 
     render() {
-
-        // Renders cBox depending on state
-        let cBox = (<div></div>);
-        if (this.state.clicked) {
-            cBox = (<ConfirmationBox products={this.state.products} click={this.clickedClosed} />)
-        }
-        else {
-            cBox = (<div></div>)
-        }
-        /*
-          <FarmerInformation farmer={getFarmerById(0)} buyClick={this.clickedBuy} />
-          {cBox}
-          <ShoppingCartdud/>
-          <CreateAccPage/>
-          */
          var store = configureStore();
 
         return (

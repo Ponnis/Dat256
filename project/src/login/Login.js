@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import LoginView from './LoginView';
 import './TextInputStyle.css';
 
@@ -24,6 +24,8 @@ class Login extends React.Component {
                 this.setState({
                     password: value
                 })
+                break;
+            default:
                 break;
             }
         this.confirm()
@@ -75,7 +77,7 @@ class Login extends React.Component {
     }
 
     get logoutButton(){
-        if(this.state.loggedIn==true){
+        if(this.state.loggedIn){
             return(
                 <button className="button" onClick={this.loggOut}>Logga ut</button>
             )
@@ -84,7 +86,7 @@ class Login extends React.Component {
     }
 
     get loginButton(){
-        if(this.state.loggedIn==false){
+        if(!this.state.loggedIn){
             return(
                 <button className="SignInButton" onClick={this.logg}>Logga in</button>
             )
@@ -92,7 +94,7 @@ class Login extends React.Component {
         return null;
     }
     get usernameField() {
-        if(this.state.loggedIn==false){
+        if(!this.state.loggedIn){
         return(
             <LoginView label={"Användarnamn"} id={"username"} handleChange={this.handleChange}/>
             )
@@ -100,7 +102,7 @@ class Login extends React.Component {
         return null;
     }
     get passwordField() {
-        if(this.state.loggedIn==false){
+        if(!this.state.loggedIn){
             return(
                 <LoginView label={"Lösenord"} id={"password"} handleChange={this.handleChange}/>
             )
@@ -117,7 +119,6 @@ class Login extends React.Component {
         */
     
     render() { 
-        let style="LoginStyle"
         return (
             <div className={"LeftBox"}>
                 <h3>Fyll i dina användaruppgifter!</h3>

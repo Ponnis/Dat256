@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Filter.css'
 import Checkbox from 'rc-checkbox';
 import StarRatings from 'react-star-ratings';
-import Slider, { Range } from 'rc-slider';
+import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 class Filter extends Component {
@@ -31,7 +31,7 @@ class Filter extends Component {
                         <Checkbox className="CheckBox"
                             onChange={(event) => this.props.onCategoryClick(cat, event.target.checked)}>
                         </Checkbox>
-                        &nbsp; <img src={require('../farmerInformation/images/icons/' + cat + '.png')} className="IconFilter" />
+                        &nbsp; <img src={require('../farmerInformation/images/icons/' + cat + '.png')} className="IconFilter" alt=""/>
                     </label>
                 )}
                 <div className="Header">

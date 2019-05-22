@@ -38,7 +38,8 @@ class SearchPage extends Component {
     reRender = () => {
         this.setState({ state: this.state })
     };
-    handleCheckout=()=>{
+    handleCheckout=(products)=>{
+        alert(products);
         this.props.search("checkout")
     }
     categoryFilter(category, catState) {
@@ -109,7 +110,7 @@ class SearchPage extends Component {
                     <Cart currency="SEK"
                         checkoutLabel="Till betalning"
                         currencySymbol="SEK"
-                        handleCheckout = {this.handleCheckout}
+                        handleCheckout = {(products) => this.handleCheckout(products)}
 
                     />
 

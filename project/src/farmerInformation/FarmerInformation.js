@@ -14,7 +14,7 @@ class FarmerInformation extends React.Component {
     state = {}
 
     informationList(){
-    return [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures"/>,
+    return [<img src={require('../farmerInformation/images/' + this.props.farmer.id + '.jpg')} className="Pictures" alt=""/>,
     <div className="FarmerName">
         {this.props.farmer.name}
     </div>,

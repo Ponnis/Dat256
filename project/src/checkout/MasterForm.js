@@ -1,6 +1,7 @@
 import React from 'react'
 import CreditCard from './CreditCard'
 import './MasterForm.css'
+import {addOrder} from "../farmerInformation/Farmers"
 
 export default class MasterForm extends React.Component {
   constructor(props) {
@@ -109,20 +110,30 @@ export default class MasterForm extends React.Component {
       alert(`Din order levereras till närmsta checkpoint till: ${address}, via våra klimatsmarta lastbilar och planerade rutter,\n 
     i namnet:  ${name} \n
     med kontaktemail:  ${email}\n
-    Tack för ditt köp!
-`)
-        this.clickedOk();
+    Tack för ditt köp!`);
+      this.clickedOk();
+      this.addOrder(this.props.products.products)
+
+
     }
   }
 
   clickedOk(){
     this.props.search("search")
   }
+
+  addOrder(products){
+    products.forEach(product =>{
+            addOrder(product)
+      }
+    )
+  }
   
   render() { 
        
     //All products in the shopping cart
     let products = this.props.products.products;
+    console.log(JSON.stringify(products))
     //Information about all products in the shopping cart
     let divs = products.map((product)=><div className={"CartInformation"}>{product.quantity} st {product.name} ({product.price} kr/st)</div>);
     //Information about the total cost

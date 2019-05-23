@@ -16,6 +16,9 @@ const farmers = [{
     "products": [
         { "name": "Tomat", "price": 8,"sku":"0-0" },
         { "name": "Vitlök", "price": 2, "sku":"0-1" }
+    ],
+    "orders":[
+
     ]
 },
 {
@@ -33,6 +36,9 @@ const farmers = [{
     "products": [
         { "name": "Potatis", "price": 10,"sku":"1-0" },
         { "name": "Ägg", "price": 14,"sku":"1-1" }
+    ],
+    "orders":[
+
     ]
 },
 {
@@ -49,6 +55,9 @@ const farmers = [{
         { "name": "Bröd", "price": 25,"sku":"2-0" },
         { "name": "Muffins", "price": 7,"sku":"2-1" },
         { "name": "Äpplen", "price": 3,"sku":"2-2" }
+    ],
+    "orders":[
+
     ]
 },
 {
@@ -65,6 +74,9 @@ const farmers = [{
         { "name": "Fläskfilé", "price": 100,"sku":"3-0" },
         { "name": "Oxfilé", "price": 400, "sku":"3-1" },
         { "name": "Mjölk", "price": 12,"sku":"3-2" }
+    ],
+    "orders":[
+        { "name": "Fläskfilé", "price": 100,"sku":"3-0","quantity":10 }
     ]
 },
 {
@@ -78,6 +90,9 @@ const farmers = [{
     "description": "Det här är en bondgård där fokus ligger på att djuren ska må bra. Vi säljer ekologiskt kött från gris och lamm.",
     "products": [
         { "name": "Lamm", "price": 300,"sku":"4-0" }
+    ],
+    "orders":[
+
     ]
 },
 ];
@@ -123,8 +138,14 @@ function getSKU(id){
     return newSKU
 }
 
+function addOrder(product){
+    farmers[product.id[0]].orders.push(product)
+    console.log(JSON.stringify(farmers[product.id[0]].orders))
+}
+
 module.exports.getFarmerById = getFarmerById;
 module.exports.getAmountOfFarmers = getAmountOfFarmers;
 module.exports.addFarmer = addFarmer;
 module.exports.getNewID = getNewID;
 module.exports.getSKU = getSKU;
+module.exports.addOrder = addOrder;

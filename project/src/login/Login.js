@@ -40,8 +40,7 @@ class Login extends React.Component {
             this.props.search("producer",this.state.username)
         }
         else {
-            //alert("Användarnamn eller lösenord är fel" + ": " + this.state.username+this.state.password)
-
+            //alert("Användarnamn eller lösenord är fel")
         }
     }
     //Logs the user out of the system

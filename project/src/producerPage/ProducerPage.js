@@ -14,6 +14,13 @@ class ProducerPage extends React.Component{
         this.setState({navPage: e.target.id})
     }
 
+    getOrders(){
+        let orders = getFarmerById(parseInt(this.props.loggedIn)).orders.map(order =>{
+            return <div>{order.quantity}st {order.name} för {order.price}kr per styck</div>
+        })
+        return orders
+    }
+
     
     render(){
 
@@ -28,7 +35,9 @@ class ProducerPage extends React.Component{
             navPage = <div>Leveranssida (todo)</div>
         }
         if (this.state.navPage ==="orders"){
-            navPage = <div>Beställningar (todo)</div>
+            navPage = <div>Beställningar
+                {this.getOrders()}
+            </div>
         }
         if (this.state.navPage ==="information"){
             navPage = <div>Din Information (todo)</div>

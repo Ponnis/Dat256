@@ -96,13 +96,12 @@ class CreateAccPage extends React.Component{
 
     confirm=()=>{
         if(this.state.valid){
-            alert("Create account successfull "+JSON.stringify(this.state))
+            alert("Grattis! Konto skapat!");
             let account = {"id":getID(),
                 "accountOption":this.state.accountOption,"username":this.state.username,"password":this.state.password,
                 "firstName":this.state.firstName,"surName":this.state.surName,"email":this.state.email,"companyName":this.state.companyName,"companyNum":this.state.companyNum
-            }
+            };
             this.props.addAccount(account)
-
         }
         else{
             alert("Incorrect Information")

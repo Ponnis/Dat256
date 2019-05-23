@@ -22,6 +22,9 @@ class Header extends React.Component{
         if(this.props.view ==="login"){
             headerButton = <div onClick={this.homeView} className={"corner-btn"}>Hem</div>
         }
+        if(this.props.view ==="producer"){
+            headerButton = <div onClick={this.homeView} className={"corner-btn"}>Logga ut</div>
+        }
 
         return(
             <div className='header-container'>

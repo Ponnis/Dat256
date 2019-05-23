@@ -40,14 +40,16 @@ class MainView extends React.Component{
         let newFarmer =
             {id:account.id,
             name:name,
-            distance: 5, rating:1,
+            distance: 5, rating:3,
             types:[
                 "milk"
             ],
             description:"En Ny Gård",
             products:[
-                { "name": "Mjölk", "price": 12,"sku":"3-2" }
-            ],
+
+            ],orders:[
+
+                ]
             };
         console.log(JSON.stringify(newFarmer))
         addFarmer(newFarmer)

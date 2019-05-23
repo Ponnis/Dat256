@@ -76,7 +76,7 @@ const farmers = [{
         { "name": "Mjölk", "price": 12,"sku":"3-2" }
     ],
     "orders":[
-        { "name": "Fläskfilé", "price": 100,"sku":"3-0","quantity":10 }
+
     ]
 },
 {

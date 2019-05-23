@@ -28,6 +28,10 @@ export default class MasterForm extends React.Component {
   }
   
   _next() {
+    if (this.checkInformation()){
+      return null;
+    }
+    else{
     let currentStep = this.state.currentStep
     // If the current step is 1 or 2, then add one on "next" button click
     if(currentStep>=1 && currentStep<=4){
@@ -37,6 +41,7 @@ export default class MasterForm extends React.Component {
     this.setState({
       currentStep: currentStep
     })
+  }
   }
     
   _prev() {
@@ -90,6 +95,45 @@ export default class MasterForm extends React.Component {
     // ...else render nothing
     return null;
   }
+
+  //Checks the information entered in the text fields
+  checkInformation(){
+      const { email, name, address, currentStep } = this.state
+      //Checks everything regarding email
+      if(currentStep === 1){
+        //No email entered 
+        if (email.length <= 0){
+          alert("Du har inte fyllt i en epostadress.")
+          return true;
+        }
+        //Email not containing @ or .
+        else if (!email.includes("@") || !email.includes(".")){
+          alert("Din epostadress är inte korrekt ifylld.")
+          return true;
+        }
+      }
+      //Checks everything in step 2 (name)
+      else if(currentStep === 2){
+        //Name not entered
+        if (name.length <= 0){
+          alert("Du har inte fyllt i ditt namn.")
+          return true;
+        }
+      }
+      //Checks everything in step 3 (address)
+      else if(currentStep === 3){
+        //Address not entered
+        if (address.length <=0){
+          alert("Du har inte fyllt i ditt namn.")
+          return true;
+        }
+      }
+      //The information is entered correctly
+      else{
+        return false;
+      }
+  }
+
   // Trigger an alert on form submission
   handleSubmit = (event) => {
     event.preventDefault()
@@ -107,14 +151,12 @@ export default class MasterForm extends React.Component {
       alert(msg);
     }else{
       //Else sends you a confirmation of the purchase and to where it will be ordered
-      alert(`Din order levereras till närmsta checkpoint till: ${address}, via våra klimatsmarta lastbilar och planerade rutter,\n 
-    i namnet:  ${name} \n
-    med kontaktemail:  ${email}\n
-    Tack för ditt köp!`);
+      alert(`Din order levereras till närmsta utlämningsställe nära: ${address}, via våra klimatsmarta lastbilar och planerade rutter,\n 
+      Till namnet:  ${name} \n
+      Med kontaktemail:  ${email}\n
+      Tack för ditt köp!`)
       this.clickedOk();
-      this.addOrder(this.props.products.products)
-
-
+      this.addOrder(this.props.products.products);
     }
   }
 

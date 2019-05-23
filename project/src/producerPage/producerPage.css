@@ -40,6 +40,7 @@
     font-weight: 700;
 }
 
+/*Container for the information about a product*/
 .ProductItem{
     border: solid 2px black;
     margin: 5px;
@@ -69,3 +70,12 @@
     opacity: 0.8;
 }
 
+.Welcome{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.LoggedIn{
+    font-size: 20px;
+    margin-bottom: 20px;
+}

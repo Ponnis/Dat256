@@ -39,8 +39,8 @@ class ProducerPage extends React.Component{
         return(
             
             <div className={"Page"}>
-                <div>Välkommen!</div>
-                <div>Du är inloggad som: {farmer.name}</div>
+                <div className="Welcome">Välkommen!</div>
+                <div className="LoggedIn">Du är inloggad som: {farmer.name}</div>
                 <nav className={"NavBar"}>
                     <button className={"Tabs"} id="products" onClick={this.navigate}>Produkter</button>
                     <button className={"Tabs"} id="statistics" onClick={this.navigate}>Statistik</button>

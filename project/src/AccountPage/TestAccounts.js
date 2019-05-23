@@ -32,4 +32,9 @@ function checkLogin(username,password) {
     return check;
 }
 
+function getAccounts() {
+    return TestAccounts
+}
+
 module.exports.checkLogin = checkLogin;
+module.exports.getAccounts = getAccounts;

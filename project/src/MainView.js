@@ -1,6 +1,6 @@
 import React from "react"
 import CreateAccPage from "./AccountPage/CreateAccPage";
-import TestAccounts from "./AccountPage/TestAccounts";
+import {getAccounts} from "./AccountPage/TestAccounts";
 import HomePage from "./homePage/HomePage";
 import SearchPage from "./SearchPage";
 import ProducerPage from "./producerPage/ProducerPage"
@@ -14,14 +14,15 @@ class MainView extends React.Component{
     constructor(){
         super()
         this.state={
-            accounts:TestAccounts,
+            accounts:getAccounts(),
             checkoutProducts: null
         }
     }
 
     newAccount=(account)=>{
-        let accounts = this.state.accounts
-        accounts.push(account)
+        let accounts = this.state.accounts;
+        console.log(accounts)
+        accounts.push(account);
         this.setState({
             accounts: accounts
         })

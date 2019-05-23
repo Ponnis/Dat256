@@ -138,17 +138,9 @@ export default class MasterForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { email, name, address} = this.state
-    var msg = "Du har inte fyllt i följande korrekt: "
     //Error handlers for the fill in form, sends an alert based on what you filled in incorrectly.
-    if(email.length<=0||!(email.includes("@"))||!(email.includes("."))||name.length<=0||address.length<=0){
-      if(email.length<=0||!(email.includes("@"))||!(email.includes("."))){
-       msg= msg.concat("Email")
-      }if(name.length<=0){
-       msg= msg.concat(" Namn")
-      }if(address.length<=0){
-       msg= msg.concat(" Adress")
-      }
-      alert(msg);
+    if(this.state.currentStep <= 3){
+      return null;
     }else{
       //Else sends you a confirmation of the purchase and to where it will be ordered
       alert(`Din order levereras till närmsta utlämningsställe nära: ${address}, via våra klimatsmarta lastbilar och planerade rutter,\n 
@@ -166,7 +158,7 @@ export default class MasterForm extends React.Component {
 
   addOrder(products){
     products.forEach(product =>{
-            addOrder(product)
+        addOrder(product)
       }
     )
   }
@@ -193,16 +185,31 @@ export default class MasterForm extends React.Component {
           currentStep={this.state.currentStep} 
           handleChange={this.handleChange}
           email={this.state.email}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              this._next();
+            }
+          }}
         />
         <Step2 
           currentStep={this.state.currentStep} 
           handleChange={this.handleChange}
           name={this.state.name}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              this._next();
+            }
+          }}
         />
         <Step3 
           currentStep={this.state.currentStep} 
           handleChange={this.handleChange}
           address={this.state.address}
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              this._next();
+            }
+          }}
         />
         <Step4 
           currentStep={this.state.currentStep} 
@@ -244,6 +251,7 @@ class Step1 extends React.Component {
           placeholder="Din epostadress"
           value={this.props.email} // Prop: The email input data
           onChange={this.props.handleChange} // Prop: Puts data into state
+          onKeyPress={this.props.onKeyPress} 
           />
         </div>
       </div> 
@@ -270,6 +278,7 @@ class Step2 extends React.Component {
             placeholder="Förnamn Efternamn"
             value={this.props.name} 
             onChange={this.props.handleChange} // Prop: Puts data into state
+            onKeyPress={this.props.onKeyPress}
             />
           </div>
       </div>
@@ -297,6 +306,7 @@ class Step3 extends React.Component {
             placeholder="Gatuadress"
             value={this.props.address} 
             onChange={this.props.handleChange} // Prop: Puts data into state
+            onKeyPress={this.props.onKeyPress}
           />
         </div>
       </div>

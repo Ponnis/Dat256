@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "./TextField.js";
 import "./AccountPage.css";
 import LoginView from "../login/Login";
+import {getID} from "./TestAccounts"
 
 
 class CreateAccPage extends React.Component{
@@ -96,7 +97,7 @@ class CreateAccPage extends React.Component{
     confirm=()=>{
         if(this.state.valid){
             alert("Create account successfull "+JSON.stringify(this.state))
-            let account = {
+            let account = {"id":getID(),
                 "accountOption":this.state.accountOption,"username":this.state.username,"password":this.state.password,
                 "firstName":this.state.firstName,"surName":this.state.surName,"email":this.state.email,"companyName":this.state.companyName,"companyNum":this.state.companyNum
             }

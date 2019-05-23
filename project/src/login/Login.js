@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginView from './LoginView';
 import './TextInputStyle.css';
-import { checkLogin } from "../AccountPage/TestAccounts";
+import { checkLogin, getUserID } from "../AccountPage/TestAccounts";
 
 class Login extends React.Component {
     constructor() {
@@ -37,7 +37,7 @@ class Login extends React.Component {
             this.setState({
                 loggedIn: true
             })
-            this.props.search("producer",this.state.username)
+            this.props.search("producer",getUserID(this.state.username))
         }
         else {
             //alert("Användarnamn eller lösenord är fel")

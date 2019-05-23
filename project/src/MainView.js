@@ -33,12 +33,12 @@ class MainView extends React.Component{
 
     createNewFarmer(account){
 
-        let newID = getNewID()
+        //let newID = getNewID()
         let name = account.companyName
         console.log(account.companyName)
 
         let newFarmer =
-            {id:newID,
+            {id:account.id,
             name:name,
             distance: 5, rating:1,
             types:[

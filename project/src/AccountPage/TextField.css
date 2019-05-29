@@ -1,0 +1,56 @@
+/*Text fields for create acount. */
+.TextFields {
+  position: relative;
+  transition: 0.3s all;
+  margin-top: 7px;
+  border-radius: 4px;
+  width: 80%;
+  height: 35px;
+}
+
+/*Used for the text fields for passwords, doesn't show what the user is typing. */
+.PasswordTextField {
+  position: relative;
+  transition: 0.3s all;
+  margin-top: 7px;
+  border-radius: 4px;
+  width: 80%;
+  height: 35px;
+  -webkit-text-security: disc;
+}
+
+/*Button with the text "Skapa konto". */
+.CreateButton{
+  box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgb(24, 124, 54);
+  border-radius: 5px;
+  font-size: 20px;
+  color: rgb(24, 124, 54);
+  margin-bottom: 15px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.CreateButton:hover{
+  opacity: 0.8;
+}
+
+/*Radiobuttons*/
+.UserType{
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+/*Text above the radiobuttons*/
+.RegisterAs{
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+/*Container for the create acount part*/
+.LeftBox{
+  margin-left: 100px;
+  margin-top: 10px;
+}

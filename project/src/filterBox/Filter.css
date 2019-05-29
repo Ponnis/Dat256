@@ -1,0 +1,45 @@
+/*Container for all filter options, the green, big box*/
+.FilterBox{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 17vw;
+    height: 100vh;
+}
+
+/*Images for the icons*/
+.IconFilter{
+    height: 24px;
+    margin-right: 8px;
+}
+
+/*The label explaining what type of filter it is*/
+.Header{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/*The checkbox next to the icon*/
+.CheckBox{
+    margin-left: 5px;
+}
+
+/*Wrapper for the slider and the text belonging to it */
+.SliderBox{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 13vw;
+}
+
+/*The label with the text "Filter"*/
+.BigText{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 550;
+    text-decoration: underline;
+}

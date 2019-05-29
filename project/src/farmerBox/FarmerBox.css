@@ -1,0 +1,55 @@
+/*The small box containing all information*/
+.FarmerBox{
+    background-color: rgba(2, 117, 31, 0.185);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 40vw;
+    min-width: 250px;
+    height: auto;
+    cursor: pointer;
+}
+
+/*The label width the farmer's name.*/
+.FarmerName{
+    font-size: 28px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/*The label with the distance*/
+.DistanceInfo{
+    font-size: 24px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/*The label containing the short description of the farmer*/
+.Descriptions{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/*Image of an icon*/
+.Icon{
+    margin-top: 3px;
+    margin-left: 15px;
+    height: 10%;
+    width: 5%;
+}
+
+/*A box containing all icons showed*/
+.IconBox{
+    display: flex;
+    justify-content: left;
+}
+
+/*Styling for the stars (image) */
+.Stars{
+    margin-top: 3px;
+    margin-left: 72%;
+    width: 23%;
+}

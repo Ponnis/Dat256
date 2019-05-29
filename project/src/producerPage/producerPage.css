@@ -1,0 +1,81 @@
+.NavBar button{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background: white;
+}
+
+/*The container for the whole page. */
+.Page{
+    background: rgb(125, 179, 141);
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Button for aadding new items. */
+.AddButton{
+    margin-top: 15px;
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: white;
+    cursor: pointer;
+    border: 2px solid rgb(24, 124, 54);
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(24, 124, 54);
+}
+
+.AddButton:hover{
+    opacity: 0.8;
+}
+
+/*The container for the hedings ("Antal (st)", "Varunamn", "Pris (SEK)") for the products. */
+.ProductHeadings{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*The text on the headings. */
+.Heading{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/*Container for the information about a product*/
+.ProductItem{
+    border: solid 2px black;
+    margin: 5px;
+    background: rgb(219, 219, 219);
+    display: flex;
+    justify-content: space-evenly;
+    height: 34px;
+}
+
+.ProductItem input{
+    width: 100px;
+    text-align: center;
+}
+
+/*Tabs for the producer's different pages (i.e. "Produkter", "Statistik", ...) */
+.Tabs{
+    box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+    background: white;
+    cursor: pointer;
+    border: 2px solid rgb(24, 124, 54);
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgb(24, 124, 54);
+}
+
+.Tabs:hover{
+    opacity: 0.8;
+}
+
+.Welcome{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.LoggedIn{
+    font-size: 20px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,71 @@
+/*Wrapper for the whole page, seets background color and some other things*/
+.PageWrapper{
+  display: grid;
+  justify-items: center;
+  background: rgb(125, 179, 141);
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*The input fields*/
+.TextFieldss {
+  position: relative;
+  transition: 0.3s all;
+  margin-top: 5px;
+  border-radius: 4px;
+  width: 40vw;
+  height: 35px;
+}
+
+/*The label used in all steps with the text "Betalning"*/
+.CheckoutLabel {
+  font-size: 40px;
+}
+
+/*The label used in all steps with the text "Steg .."*/
+.StepLabel{
+  font-size: 24px;
+}
+
+/*Label that explains what type of information the user should enter.*/
+.InformativeLabel{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/*Buttons next (Nästa) and previous (Gå tillbaka)*/
+.Button{
+  box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgb(24, 124, 54);
+  border-radius: 5px;
+  font-size: 18px;
+  color: rgb(24, 124, 54);
+  margin-bottom: 15px;
+  position: relative;
+  margin-top: 20px;
+}
+  
+.Button:hover{
+  opacity: 0.8;
+}
+
+/*Label "I din varukorg:"*/
+.InYourCart{
+  font-size: 32px;
+}
+
+/*Label with information about the products in the shopping cart*/
+.CartInformation{
+  font-size: 16px;
+}
+
+/*Label with the total price*/
+.TotalInformation{
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}

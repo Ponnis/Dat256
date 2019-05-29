@@ -3,9 +3,9 @@ import CreateAccPage from "./AccountPage/CreateAccPage";
 import {getAccounts} from "./AccountPage/TestAccounts";
 import HomePage from "./homePage/HomePage";
 import SearchPage from "./SearchPage";
-import ProducerPage from "./producerPage/ProducerPage"
+import ProducerPage from "./producerPage/ProducerPage";
 
-import { getNewID, addFarmer } from "./farmerInformation/Farmers"
+import addFarmer from "./farmerInformation/Farmers";
 import MasterForm from "./checkout/MasterForm";
 
 
